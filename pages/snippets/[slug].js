@@ -16,9 +16,7 @@ export async function getStaticPaths() {
 
   return {
     paths: snippets.map((s) => ({
-      params: {
-        slug: s.replace(/\.mdx$/, ""),
-      },
+      params: { slug: s.replace(/\.mdx/, "") },
     })),
     fallback: false,
   };
@@ -26,5 +24,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const snippet = await getFileBySlug("snippets", params.slug);
+
   return { props: snippet };
 }
