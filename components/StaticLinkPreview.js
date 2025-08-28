@@ -1,6 +1,5 @@
 import { FOCUS_VISIBLE_OUTLINE, GRADIENT_LINK } from "@/lib/constants";
-import { Portal, Transition } from "@headlessui/react";
-import * as HoverCard from "@radix-ui/react-hover-card";
+import { Portal } from "@headlessui/react";
 import cx from "clsx";
 import Image from "next/image";
 import { encode } from "qss";
@@ -42,44 +41,32 @@ export const StaticLinkPreview = ({ children, url }) => {
               height={height}
               quality={quality}
               priority={true}
+              alt="preview"
             />
           </div>
         </Portal>
       )}
 
-      <HoverCard.Root openDelay={50}>
-        <HoverCard.Trigger
-          className={cx(GRADIENT_LINK, FOCUS_VISIBLE_OUTLINE, "cursor-pointer")}
-        >
-          {children}
-        </HoverCard.Trigger>
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={cx(GRADIENT_LINK, FOCUS_VISIBLE_OUTLINE, "cursor-pointer")}
+      >
+        {children}
+      </a>
 
-        <HoverCard.Portal>
-          <HoverCard.Content
-            side="top"
-            align="center"
-            sideOffset={10}
-            className="shadow-xl rounded-xl bg-white border p-1"
-          >
-            <Transition
-              appear
-              show={true}
-              enter="transform transition duration-300 origin-bottom ease-out"
-              enterFrom="opacity-0 translate-y-2 scale-90"
-              enterTo="opacity-100 translate-y-0 scale-100"
-            >
-              <Image
-                src={src}
-                width={width}
-                height={height}
-                quality={quality}
-                priority={true}
-                className="rounded-lg"
-              />
-            </Transition>
-          </HoverCard.Content>
-        </HoverCard.Portal>
-      </HoverCard.Root>
+      <div className="mt-2 shadow-xl rounded-xl border p-1 w-fit">
+        <Image
+          src={src}
+          width={width}
+          height={height}
+          quality={quality}
+          priority={true}
+          className="rounded-lg"
+          alt="preview"
+        />
+      </div>
     </>
   );
 };
