@@ -9,14 +9,14 @@ import Link from "next/link";
 export default function BlogLayout({ children, frontMatter }) {
   return (
     <Container
-      title={`${frontMatter.title} – Manu Arora`}
+      title={`${frontMatter.title} – Anurag Singh`}
       description={frontMatter.summary}
       image={`https://manuarora.in${frontMatter.image}`}
       date={new Date(frontMatter.publishedAt).toISOString()}
       type="article"
     >
       <article className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
-        <Link href="/blog">
+        <Link href="/blog" legacyBehavior>
           <a>
             <svg
               className="h-8 w-8 dark:text-white text-gray-500"
@@ -64,23 +64,6 @@ export default function BlogLayout({ children, frontMatter }) {
         <div className="mt-8 w-full mx-auto">
           <Contact />
         </div>
-        {/* <div className="text-sm text-gray-700 dark:text-gray-300">
-          <a
-            href={discussUrl(frontMatter.slug)}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {"Discuss on Twitter"}
-          </a>
-          {` • `}
-          <a
-            href={editUrl(frontMatter.slug)}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {"Edit on GitHub"}
-          </a>
-        </div> */}
       </article>
     </Container>
   );

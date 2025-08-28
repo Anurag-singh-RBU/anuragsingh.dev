@@ -8,14 +8,14 @@ const sendEmail = async (req, res) => {
   const { email, message } = req.body;
   try {
     const data = await resend.emails.send({
-      from: "Manu Arora <hi@manuarora.in>",
+      from: "Anurag Singh <hi@manuarora.in>",
       to: [email],
       cc: ["hi@manuarora.in"],
-      subject: `Thank you for reaching out to Manu`,
+      subject: `Thank you for reaching out to Anurag`,
       react: EmailTemplate({ email: email, message: message }),
     });
 
-    console.log("Data from email response: ", data);
+    console.log("Data from email response : ", data);
     res.status(200).json(data);
   } catch (error) {
     res.status(400).json(error);

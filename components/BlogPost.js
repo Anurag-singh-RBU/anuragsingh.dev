@@ -11,7 +11,7 @@ const BlogPost = ({ title, summary, slug }) => {
   const views = data?.total;
 
   return (
-    <Link href={`/blog/${slug}`} className="">
+    <Link href={`/blog/${slug}`} className="" legacyBehavior>
       <a
         className={twMerge(
           "w-full bg-gray-100 dark:bg-zinc-800 dark:border-zinc-700 rounded-md mb-4 p-4 border border-gray-200"
@@ -23,7 +23,7 @@ const BlogPost = ({ title, summary, slug }) => {
               {title}
             </h4>
             <p className="text-gray-500 text-left md:text-right w-32 mb-4 md:mb-0">
-              {`${views ? format(views) : "---"} views`}
+              view
             </p>
           </div>
           {/* <p className="text-gray-600 dark:text-gray-400">{summary}</p> */}

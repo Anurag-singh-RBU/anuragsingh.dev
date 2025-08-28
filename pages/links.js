@@ -6,15 +6,15 @@ import clsx from "clsx";
 export default function Links() {
   return (
     <Container
-      title="Links – Manu Arora"
-      description="Links to all my socials, projects, source codes and memes."
+      title="Links – Anurag Singh"
+      description="Links to all my socials , projects , source codes and memes."
     >
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           Links
         </h1>
         <p className="text-gray-600 dark:text-gray-400 mb-4 hidden md:block">
-          Links to all my socials, projects, source codes and memes.
+          Links to all my socials , projects , source codes and memes.
         </p>
         {links?.map((el) => (
           <a

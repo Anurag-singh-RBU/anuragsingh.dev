@@ -19,7 +19,7 @@ export default function projects() {
           I’ve developed commercial projects as well as hobby projects. All
           projects are included (along with course related projects) here.
           –&nbsp;
-          <Link href="/blog">
+          <Link href="/blog" legacyBehavior>
             <a className="text-blue-500 hover:underline">
               checkout my blog&nbsp;
             </a>

@@ -9,7 +9,7 @@ export default function ResourcesCard({
   ...rest
 }) {
   return (
-    <Link href={link}>
+    <Link href={link} legacyBehavior>
       <a
         className="border border-grey-200 dark:border-zinc-800 rounded-xl p-4 w-full relative"
         {...rest}

@@ -225,7 +225,7 @@ const CustomNav = ({ onModalClick, setTheme, theme, mounted }) => {
   return (
     <nav className="w-full h-16 bg-white dark:bg-zinc-700 dark:border-0 border-b border-t border-gray-100 px-4 md:px-20 flex flex-row justify-between items-center">
       <div className="flex items-center space-x-2">
-        <Link href="/">
+        <Link href="/" legacyBehavior>
           <a>
             <Image
               src="/logo.png"

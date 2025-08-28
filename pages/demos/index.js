@@ -3,7 +3,6 @@ import DemosCard from "@/components/DemosCard";
 import ResourcesCard from "@/components/ResourcesCard";
 
 export default function Demos() {
-  // TODO: Make sections for each type, ex: Javascript, HTML CSS etc
   return (
     <Container
       title="Live Demos – Manu Arora"
@@ -24,37 +23,37 @@ export default function Demos() {
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full mt-4">
           <DemosCard
             title="Gradient"
-            link="demos/demo/gradient"
+            link="/demos/demo/gradient"
             description="Gradient text for headers"
           />
           <DemosCard
             title="Tailwind Card"
-            link="demos/demo/tailwindcard"
+            link="/demos/demo/tailwindcard"
             description="Simple tailwind css card"
           />
           <DemosCard
             title="Moving Cards"
-            link="demos/demo/movingcard"
+            link="/demos/demo/movingcard"
             description="Moving tailwind css cards"
           />
           <DemosCard
             title="Simple Loader"
-            link="demos/demo/loader"
+            link="/demos/demo/loader"
             description="A reusable react loading spinner"
           />
           <DemosCard
             title="React Toasts"
-            link="demos/demo/toast"
+            link="/demos/demo/toast"
             description="A reusable react toast notification"
           />
           <DemosCard
             title="Border Gradient"
-            link="demos/demo/borderGradient"
+            link="/demos/demo/borderGradient"
             description="Add gradients to border"
           />
           <DemosCard
             title="Navbar Hover"
-            link="demos/demo/navbarEffect"
+            link="/demos/demo/navbarEffect"
             description="Add gradients to border"
           />
         </div>

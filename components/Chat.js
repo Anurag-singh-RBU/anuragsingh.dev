@@ -137,7 +137,7 @@ export default function Chat() {
           >
             <div className="p-4 bg-gray-100 dark:bg-zinc-700">
               <h2 className="text-gray-700 font-bold text-xl dark:text-white">
-                Have a question? Drop in your message 👇
+                Have a question ? Drop in your message 👇
               </h2>
               <small className="text-xs text-gray-500 mb-10 dark:text-gray-400">
                 It won't take more than 10 seconds. Shoot your shot. 😉

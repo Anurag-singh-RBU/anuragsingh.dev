@@ -7,10 +7,10 @@ export default async (req, res) => {
     // console.log("REQ.BODY", req.body);
     let { email, message } = req.body;
     await sendgrid.send({
-      to: ["manuarorawork@gmail.com"],
-      from: "manuarorawork@gmail.com",
-      subject: `You've got a new message from: ${email}`,
-      html: `Email Address of Sender: ${email}. <br /> Message: ${message}`,
+      to: ["anuragsingh260805@gmail.com"],
+      from: "anuragsingh260805@gmail.com",
+      subject: `You've got a new message from : ${email}`,
+      html: `Email Address of Sender : ${email}. <br /> Message : ${message}`,
     });
   } catch (error) {
     // console.log(error);

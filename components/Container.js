@@ -19,8 +19,8 @@ export default function Container(props) {
   const { children, ...customMeta } = props;
   const router = useRouter();
   const meta = {
-    title: "Manu Arora – Developer, writer, creator.",
-    description: `Full-Stack developer, JavaScript enthusiast, Freelancer and a Learner.`,
+    title: "Anurag Singh",
+    description: `Full-Stack developer , JavaScript enthusiast , Freelancer and a Learner.`,
     image: "https://manuarora.in/static/images/banner.png",
     type: "website",
     ...customMeta,
@@ -37,7 +37,7 @@ export default function Container(props) {
     },
 
     {
-      name: "Snippets",
+      name: "Coding",
       link: "/snippets",
     },
     {
@@ -65,7 +65,7 @@ export default function Container(props) {
     },
 
     {
-      name: "Snippets",
+      name: "Coding",
       link: "/snippets",
     },
     {
@@ -226,9 +226,9 @@ export const Mobile = ({ links }) => {
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
-          stroke-width="1.5"
+          strokeWidth="1.5"
           stroke="currentColor"
-          class="w-6 h-6 text-black dark:text-white"
+          className="w-6 h-6 text-black dark:text-white"
         >
           <path
             strokeLinecap="round"
@@ -272,7 +272,7 @@ export const Desktop = ({ links, hoveredIndex, setHoveredIndex, router }) => {
   return (
     <>
       {links.map((navLink, index) => (
-        <NextLink href={navLink.link}>
+        <NextLink href={navLink.link} legacyBehavior>
           <a
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}

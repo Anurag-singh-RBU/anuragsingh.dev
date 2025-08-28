@@ -19,23 +19,23 @@ export default function Footer() {
       <hr className="w-full border-1 border-gray-200 dark:border-gray-800 mb-8" />
       <div className="w-full max-w-2xl grid grid-cols-1 gap-4 pb-16 sm:grid-cols-3">
         <div className="flex flex-col space-y-4">
-          <Link href="/">
+          <Link href="/" legacyBehavior>
             <a className="text-gray-500 hover:text-gray-600 transition">Home</a>
           </Link>
-          <Link href="/blog">
+          <Link href="/blog" legacyBehavior>
             <a className="text-gray-500 hover:text-gray-600 transition">Blog</a>
           </Link>
-          <Link href="/dashboard">
+          <Link href="/dashboard" legacyBehavior>
             <a className="text-gray-500 hover:text-gray-600 transition">
               Dashboard
             </a>
           </Link>
-          <Link href="/projects">
+          <Link href="/projects" legacyBehavior>
             <a className="text-gray-500 hover:text-gray-600 transition">
               Projects
             </a>
           </Link>
-          <Link href="/links">
+          <Link href="/links" legacyBehavior>
             <a className="text-gray-500 hover:text-gray-600 transition">
               Links
             </a>
@@ -54,7 +54,7 @@ export default function Footer() {
           <ExternalLink href="https://instagram.com/maninthere">
             Instagram
           </ExternalLink>
-          <Link href="/freelance">
+          <Link href="/freelance" legacyBehavior>
             <a className="text-gray-500 hover:text-gray-600 transition">
               Freelancing
             </a>
@@ -64,37 +64,37 @@ export default function Footer() {
           </ExternalLink> */}
         </div>
         <div className="flex flex-col space-y-4">
-          <Link href="/snippets">
+          <Link href="/snippets" legacyBehavior>
             <a className="text-gray-500 hover:text-gray-600 transition">
               Snippets
             </a>
           </Link>
-          <Link href="/tweets">
+          <Link href="/tweets" legacyBehavior>
             <a className="text-gray-500 hover:text-gray-600 transition">
               Tweets
             </a>
           </Link>
-          <Link href="/resources">
+          <Link href="/resources" legacyBehavior>
             <a className="text-gray-500 hover:text-gray-600 transition">
               Resources
             </a>
           </Link>
-          <Link href="/demos">
+          <Link href="/demos" legacyBehavior>
             <a className="text-gray-500 hover:text-gray-600 transition">
               Live Demos
             </a>
           </Link>
-          <Link href="/freecodecamp">
+          <Link href="/freecodecamp" legacyBehavior>
             <a className="text-gray-500 hover:text-gray-600 transition">
               freeCodeCamp
             </a>
           </Link>
-          <Link href="/boxshadows">
+          <Link href="/boxshadows" legacyBehavior>
             <a className="text-gray-500 hover:text-gray-600 transition">
               Box Shadows
             </a>
           </Link>
-          <Link href="/design-inspiration">
+          <Link href="/design-inspiration" legacyBehavior>
             <a className="text-gray-500 hover:text-gray-600 transition">
               Design Inspiration
             </a>

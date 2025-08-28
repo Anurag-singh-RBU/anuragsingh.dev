@@ -148,7 +148,7 @@ export default function Freelance() {
           ]}
         />
 
-        <Link href="/projects">
+        <Link href="/projects" legacyBehavior>
           <a className="text-gray-500 dark:text-gray-300  rounded-md flex flex-row space-x-2 items-center mb-10">
             <p>See all of my Projects</p>
             <svg

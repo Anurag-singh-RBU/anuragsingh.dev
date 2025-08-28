@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function DemosCard({ title, description, link, logo, ...rest }) {
   return (
-    <Link href={link}>
+    <Link href={link} legacyBehavior>
       <a
         className="border border-grey-200 dark:border-gray-900 rounded p-4 w-full"
         {...rest}

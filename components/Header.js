@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { LinkPreview } from "@/components/LinkPreview";
 import { BlurImage } from "./BlurImage";
+import { AuroraText } from "@/components/magicui/aurora-text";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -16,7 +16,6 @@ const Header = () => {
         staggerChildren: 0.1,
       },
     },
-    // transition: { staggerChildren: 0.5 },
     exit: { opacity: 0, y: "1vh" },
   };
 
@@ -29,40 +28,37 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="flex flex-col md:flex-row justify-between items-start md:space-x-14  w-full mb-10">
+    <div className="flex flex-col md:flex-row justify-between items-start md:space-x-14 w-full mb-10">
       <div className="flex md:w-3/4 flex-col mt-6">
-        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-2 text-black dark:text-white">
-          Manu Arora
+        <h1 className="text-4xl md:text-4xl font-bungee mb-3 text-black/70 dark:text-white">
+          <AuroraText>Anurag &nbsp;Singh</AuroraText>
         </h1>
 
-        <div className="relative leading-7 items-center flex-wrap text-zinc-700 dark:text-zinc-400 mb-5">
+        <div className="relative leading-7 items-center font-jetbrains flex-wrap text-zinc-700 dark:text-zinc-300 mb-5">
           Building
           <a
             className={
-              "inline-block px-2 py-0 font-bold bg-gray-100 dark:bg-zinc-700 dark:text-white  mx-1"
+              "inline-block px-2 py-0 font-extrabold font-jetbrains bg-gray-100 dark:bg-zinc-700 dark:text-white  mx-1"
             }
-            href="https://aceternity.com"
-            target="__blank"
-          >
-            Aceternity
+            href="https://shadyxui.in"
+            target="__blank">
+            Shadyx
           </a>
           ,
           <a
             className={
-              "inline-block px-2 py-0 font-bold bg-gray-100 dark:bg-zinc-700 dark:text-white mx-1"
+              "inline-block px-2 py-0 font-bold font-jetbrains bg-gray-100 dark:bg-zinc-700 dark:text-white mx-1"
             }
             href="https://userogue.com"
-            target="__blank"
-          >
-            Rogue
+            target="__blank">
+            Scrivo
           </a>
           other
           <span
             className="font-bold cursor-pointer text-zinc-800 dark:text-zinc-200"
             style={{ cursor: "🤩" }}
             onMouseEnter={() => setOpen(true)}
-            onMouseLeave={() => setOpen(false)}
-          >
+            onMouseLeave={() => setOpen(false)}>
             {" "}
             cool things
             <AnimatePresence>
@@ -73,67 +69,59 @@ const Header = () => {
                   initial="hidden"
                   animate="show"
                   exit="exit"
-                  className="z-20  p-4 rounded-xl bg-white dark:bg-zinc-800 shadow-2xl absolute inset-x-0  w-full min-h-96 text-xs md:text-sm"
-                >
+                  className="z-20  p-4 rounded-xl bg-white dark:bg-zinc-800 shadow-2xl absolute inset-x-0  w-full min-h-90 text-xs md:text-sm">
                   <div className="bg-grid-slate-50 dark:bg-grid-zinc-700/30 absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,white,transparent)]"></div>
                   <motion.p variants={itemA} className="font-normal py-3">
                     Founder{" "}
                     <Hyperlink
-                      text="@placeholdertech"
+                      text="@scrivo"
                       link="https://placeholdertech.in"
                     />{" "}
                     and{" "}
                     <Hyperlink
-                      text="@aceternity"
-                      link="https://aceternity.com"
+                      text="@shadyx"
+                      link="https://shadyxui.in"
                     />
                   </motion.p>
                   <motion.p variants={itemA} className="font-normal py-3">
-                    Mentoring{" "}
-                    <Hyperlink
-                      text="@codementor"
-                      link="https://codementor.io/@manuarora"
-                    />{" "}
+                    Competitive coding{" "}
+                    <Hyperlink text="@leetcode" link="https://shadyxui.in"/>{" "}
                     and{" "}
                     <Hyperlink
-                      text="@mentorcruise"
-                      link="https://mentorcruise.com/mentor/manuarora/"
-                    />
-                  </motion.p>
-                  <motion.p variants={itemA} className="font-normal py-3">
-                    Helping front-end developers{" "}
-                    <Hyperlink text="@algochurn" link="https://algochurn.com" />{" "}
-                    and{" "}
-                    <Hyperlink
-                      text="@pixelperfect"
+                      text="@codechef"
                       link="https://app.pixelperfect.quest"
                     />
                   </motion.p>
                   <motion.p variants={itemA} className="font-normal py-3">
-                    Web templates and components{" "}
+                    Cricket Hub and Manual Scoreboard{" "}
                     <Hyperlink
-                      text="@tailwindmasterkit"
+                      text="@cricvortex"
                       link="https://tailwindmasterkit.com"
                     />
                   </motion.p>
                   <motion.p variants={itemA} className="font-normal py-3">
-                    Cool TailwindCSS Box Shadows{" "}
+                    Cool TailwindCSS Colors{" "}
                     <Hyperlink
-                      text="@boxshadows"
-                      link="https://www.manuarora.in/boxshadows"
+                      text="@colors"
+                      link="https://www.shadyxui.in/colors"
                     />
                   </motion.p>
                   <motion.p variants={itemA} className="font-normal py-3">
-                    Blogs{" "}
+                    Posts{" "}
                     <Hyperlink
-                      text="@freecodecamp"
+                      text="@linkedin"
                       link="https://www.freecodecamp.org/news/author/manu/"
                     />
+                    {" "}and{" "}
+                    <Hyperlink
+                      text="@twitter"
+                      link="https://app.pixelperfect.quest"
+                    />
                   </motion.p>
                   <motion.p variants={itemA} className="font-normal py-3">
-                    Tech videos and snippets{" "}
+                    Project repositories{" "}
                     <Hyperlink
-                      text="@youtube"
+                      text="@github"
                       link="https://www.youtube.com/@manuarora"
                     />
                   </motion.p>
@@ -146,17 +134,17 @@ const Header = () => {
             </AnimatePresence>
           </span>
         </div>
-        <p className="text-zinc-600 dark:text-zinc-500">
-          Senior Software Engineer building SaaS products and web apps. Find me
-          on{" "}
+        <p className="text-zinc-600 dark:text-zinc-300 text-justify">
+          Full Stack Developer building SaaS products and web apps. Find me
+          on&nbsp;
           <a
             href="https://twitter.com/mannupaaji"
-            className="font-bold group dark:text-zinc-400 font-inter relative inline-flex  overflow-hidden"
+            className="font-bold group dark:text-zinc-400 font-jetbrains relative inline-flex overflow-hidden"
             target="__blank"
           >
-            <span className="relative">twitter</span>
-          </a>{" "}
-          for tech updates and memes.
+            <span className="relative font-bold dark:text-blue-400">Twitter&nbsp;</span>
+          </a>
+          for tech updates and fun.
         </p>
       </div>
 
@@ -167,10 +155,10 @@ const Header = () => {
           className="block  z-[5] overflow-hidden rounded shadow-xl ring-1 ring-slate-900/5  relative bg-white h-20 w-20"
         >
           <BlurImage
-            objectFit="cover"
-            layout="fill"
-            className="bg-gray-100 object-contain"
-            src="/avatar-new.png"
+            fill
+            style={{ objectFit: "cover" }}
+            className="bg-gray-100"
+            src="/my-logo.jpg"
           />
         </a>
         <div className="z-0">

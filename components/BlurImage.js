@@ -11,7 +11,7 @@ export const BlurImage = ({ src, className, ...rest }) => {
         isLoading ? "blur-sm scale-100" : " blur-0 scale-100",
         className
       )}
-      onLoadingComplete={() => setLoading(false)}
+      onLoad={() => setLoading(false)}
       src={src}
       loading="lazy"
       decoding="async"

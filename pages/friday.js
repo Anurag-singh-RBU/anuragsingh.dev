@@ -19,8 +19,8 @@ const Friday = () => {
 
   return (
     <Container
-      title="FRIDAY AAAAAAAA! KARAAAR HOJO | Manu Arora"
-      description="Keda kaabu ni husan te paave, Dil seene to nikalda jaave, batti bor billo do nain kaale, PENCHO FRIDAY AAA, KARAAR HOJO KOKAIN HOOKARAN NAAL SAX SUX PHUDDIYAN PAADOOOOO!"
+      title="FRIDAY AAAAAAAA ! KARAAAR HOJO | Anurag Singh"
+      description="Keda kaabu ni husan te paave, Dil seene to nikalda jaave, batti bor billo do nain kaale, PENCHO FRIDAY AAA, KARAAR HOJO KOKAIN HOOKARAN NAAL SAX SUX PHUDDIYAN PAADOOOOO !"
       image="/sardarji.jpeg"
     >
       <div className="max-w-4xl mx-auto py-40">

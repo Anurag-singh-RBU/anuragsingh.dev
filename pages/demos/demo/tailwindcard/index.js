@@ -6,7 +6,7 @@ export default function CardBasic() {
     <div>
       <div className="bg-gray-200 h-screen">
         <div className="px-8">
-          <Link href="https://manuarora.in/snippets/tailwind-card">
+          <Link href="https://manuarora.in/snippets/tailwind-card" legacyBehavior>
             <a>
               <div className="mx-auto lg:w-3/5 lg:flex lg:flex-row lg:h-auto ">
                 <img

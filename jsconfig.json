@@ -8,8 +8,10 @@
         "@/lib/*": ["lib/*"],
         "@/styles/*": ["styles/*"],
         "@/ui/*": ["ui/*"],
-        "@/constants/*": ["constants/*"],
-      }
+        "@/constants/*": ["constants/*"]
+      },
+      "typeRoots": ["./node_modules/@types"],
+      "types": ["node"]
     }
-  }
+}
   
