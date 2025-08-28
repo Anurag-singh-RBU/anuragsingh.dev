@@ -1,6 +1,8 @@
+"use client";
+
 import { FOCUS_VISIBLE_OUTLINE, GRADIENT_LINK } from "@/lib/constants";
 import { Portal, Transition } from "@headlessui/react";
-import * as HoverCardPrimitive from "@radix-ui/react-hover-card";
+import * as HoverCard from "@radix-ui/react-hover-card";
 import cx from "clsx";
 import Image from "next/image";
 import { encode } from "qss";
@@ -10,9 +12,7 @@ export const LinkPreview = ({ children, url, className }) => {
   const width = 200;
   const height = 125;
   const quality = 50;
-  const layout = "fixed";
 
-  // Simplifies things by encoding our microlink params into a query string.
   const params = encode({
     url,
     screenshot: true,
@@ -21,21 +21,14 @@ export const LinkPreview = ({ children, url, className }) => {
     colorScheme: "dark",
     "viewport.isMobile": true,
     "viewport.deviceScaleFactor": 1,
-
-    // To capture useful content, the screenshot viewport needs to be bigger
-    // than our images but maintain the same ratio
     "viewport.width": width * 3,
     "viewport.height": height * 3,
   });
 
   const src = `https://api.microlink.io/?${params}`;
 
-  const [isOpen, setOpen] = React.useState(false);
-  // const [static, setStatic] = useState(false);
-
-  // if (staticImage) setStatic(true);
-
   const [isMounted, setIsMounted] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
 
   React.useEffect(() => {
     setIsMounted(true);
@@ -43,16 +36,7 @@ export const LinkPreview = ({ children, url, className }) => {
 
   return (
     <>
-      {/**
-       * Microlink.io + next/image can take a few seconds to fetch and generate
-       * a screenshot. The delay makes <LinkPreview> pointless. As a hacky
-       * solution we create a second <Image> in a Portal after the component has
-       * mounted. This <Image> triggers microlink.io + next/image so that the
-       * image itself is ready by the time the user hovers on a <LinkPreview>.
-       * Not concerned about the performance impact because <Image>'s are cached
-       * after they are generated and the images themselves are tiny (< 10kb).
-       */}
-      {isMounted ? (
+      {isMounted && (
         <Portal>
           <div className="hidden">
             <Image
@@ -60,53 +44,52 @@ export const LinkPreview = ({ children, url, className }) => {
               width={width}
               height={height}
               quality={quality}
-              layout={layout}
               priority={true}
+              alt="preview"
             />
           </div>
         </Portal>
-      ) : null}
+      )}
 
-      <HoverCardPrimitive.Root
+      <HoverCard.Root
         openDelay={50}
-        onOpenChange={(open) => {
-          setOpen(open);
-        }}
+        onOpenChange={(open) => setIsOpen(open)}
       >
-        <HoverCardPrimitive.Trigger className={className} href={url}>
-          {children}
-        </HoverCardPrimitive.Trigger>
+        <HoverCard.Trigger asChild>
+          <a className={className} href={url}>
+            {children}
+          </a>
+        </HoverCard.Trigger>
 
-        <HoverCardPrimitive.Content side="top" align="center" sideOffset={10}>
-          <Transition
-            show={isOpen}
-            appear={true}
-            enter="transform transition duration-300 origin-bottom ease-out"
-            enterFrom="opacity-0 translate-y-2 scale-0"
-            enterTo="opacity-100 translate-y-0 scale-100"
-            className="shadow-xl rounded-xl"
-          >
-            <a
-              href={url}
-              className="block p-1 bg-white border border-transparent shadow rounded-xl hover:border-pink-500"
-              // Unfortunate hack to remove the weird whitespace left by
-              // next/image wrapper div
-              // https://github.com/vercel/next.js/issues/18915
-              style={{ fontSize: 0 }}
+        <HoverCard.Portal>
+          <HoverCard.Content side="top" align="center" sideOffset={10}>
+            <Transition
+              show={isOpen}
+              appear={true}
+              enter="transform transition duration-300 origin-bottom ease-out"
+              enterFrom="opacity-0 translate-y-2 scale-0"
+              enterTo="opacity-100 translate-y-0 scale-100"
+              className="shadow-xl rounded-xl"
             >
-              <Image
-                src={src}
-                width={width}
-                height={height}
-                quality={quality}
-                layout={layout}
-                priority={true}
-                className="rounded-lg"
-              />
-            </a>
-          </Transition>
-        </HoverCardPrimitive.Content>
-      </HoverCardPrimitive.Root>
+              <a
+                href={url}
+                className="block p-1 bg-white border border-transparent shadow rounded-xl hover:border-pink-500"
+                style={{ fontSize: 0 }}
+              >
+                <Image
+                  src={src}
+                  width={width}
+                  height={height}
+                  quality={quality}
+                  priority={true}
+                  className="rounded-lg"
+                  alt="preview"
+                />
+              </a>
+            </Transition>
+          </HoverCard.Content>
+        </HoverCard.Portal>
+      </HoverCard.Root>
     </>
   );
 };
