@@ -2,8 +2,15 @@ import clsx from "clsx";
 import Image from "next/image";
 import React, { useState } from "react";
 
-export const BlurImage = ({ src, className, ...rest }) => {
+export const BlurImage = ({ src, className, fill, ...rest }) => {
   const [isLoading, setLoading] = useState(true);
+  
+  // Convert fill prop to layout="fill" for Next.js 12 compatibility
+  const imageProps = {
+    ...rest,
+    ...(fill && { layout: "fill" })
+  };
+  
   return (
     <Image
       className={clsx(
@@ -16,7 +23,7 @@ export const BlurImage = ({ src, className, ...rest }) => {
       loading="lazy"
       decoding="async"
       blurDataURL={src}
-      {...rest}
+      {...imageProps}
     />
   );
 };

@@ -30,25 +30,27 @@ export function ProjectCard({
           href={href || "#"}
           className={clsx("block cursor-pointer", className)}
         >
-          {video && (
-            <video
-              src={video}
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="pointer-events-none mx-auto h-40 w-full object-cover object-top"
-            />
-          )}
-          {image && (
-            <Image
-              src={image}
-              alt={title}
-              width={500}
-              height={300}
-              className="h-40 w-full overflow-hidden object-cover object-top"
-            />
-          )}
+          <div>
+            {video && (
+              <video
+                src={video}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="pointer-events-none mx-auto h-40 w-full object-cover object-top"
+              />
+            )}
+            {image && (
+              <Image
+                src={image}
+                alt={title}
+                width={600}
+                height={300}
+                className="h-full w-full overflow-hidden object-cover"
+              />
+            )}
+          </div>
         </Link>
       ) : (
         <div className={clsx("block cursor-pointer", className)}>

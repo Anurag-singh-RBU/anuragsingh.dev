@@ -1,6 +1,5 @@
 import Container from "@/components/Container";
 import FunctionCard from "@/components/FunctionCard";
-import { getAllFilesFrontMatter } from "@/lib/mdx";
 import Image from "next/image";
 import Link from "next/link";
 

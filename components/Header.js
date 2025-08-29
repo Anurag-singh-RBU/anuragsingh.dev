@@ -40,8 +40,7 @@ const Header = () => {
             className={
               "inline-block px-2 py-0 font-extrabold font-jetbrains bg-gray-100 dark:bg-zinc-700 dark:text-white  mx-1"
             }
-            href="https://shadyxui.in"
-            target="__blank">
+            href="https://shadyxui.in">
             Shadyx
           </a>
           ,
@@ -49,8 +48,7 @@ const Header = () => {
             className={
               "inline-block px-2 py-0 font-bold font-jetbrains bg-gray-100 dark:bg-zinc-700 dark:text-white mx-1"
             }
-            href="https://userogue.com"
-            target="__blank">
+            href="https://userogue.com">
             Scrivo
           </a>
           other
@@ -85,7 +83,7 @@ const Header = () => {
                   </motion.p>
                   <motion.p variants={itemA} className="font-normal py-3">
                     Competitive coding{" "}
-                    <Hyperlink text="@leetcode" link="https://shadyxui.in"/>{" "}
+                    <Hyperlink text="@leetcode" link="https://leetcode.com"/>{" "}
                     and{" "}
                     <Hyperlink
                       text="@codechef"

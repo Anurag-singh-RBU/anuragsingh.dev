@@ -1,6 +1,5 @@
 import Container from "@/components/Container";
 import Link from "next/link";
-import BlogPost from "@/components/BlogPost";
 import Timeline from "@/components/Timeline";
 import Contact from "@/components/Contact";
 import { Github, Globe } from "lucide-react"
@@ -40,39 +39,6 @@ export default function Home() {
     >
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
         <Header />
-        <h3 className="text-2xl md:text-3xl font-bungee mb-4 sm:mt-10 mt-5 text-black/80 dark:text-white" style={{wordSpacing: "6px"}}>
-          <HighlightBox>Recent Blogs</HighlightBox>
-        </h3>
-        <BlogPost
-          title="Ace the Javascript Interview - Practical questions to help you clear your next interview"
-          summary="Ace your next Javascript Interview - Practice these topics in depth with examples and code snippets."
-          slug="ace-the-javascript-interview"
-        />
-        <BlogPost
-          title="Free portfolio website template that gets you hired in 2021"
-          summary="Build a modern, minimal portfolio website with Next.js and tailwindcss for developers that gets you hired for Full Stack Developer roles in 2021."
-          slug="developer-portfolio-website"
-        />
-        <Link
-          href="/blog"
-          className="flex items-center font-sans text-sm my-4 mx-auto px-4 py-2 rounded-md font-medium text-gray-900 dark:text-gray-100"
-        >
-          See All Blogs
-          <svg
-            className="h-4 w-4 ml-1"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 9l-7 7-7-7"
-            />
-          </svg>
-        </Link>
 
         <h3 className="text-2xl md:text-3xl font-bungee mb-8 sm:mt-10 mt-5 text-black/80 dark:text-white" style={{wordSpacing: "6px"}}>
           <HighlightBox>Projects</HighlightBox>
@@ -199,21 +165,23 @@ export default function Home() {
           href="/projects"
           className="flex items-center text-sm my-4 mx-auto px-4 py-2 rounded-md font-medium text-gray-900 dark:text-gray-100"
         >
-          See More
-          <svg
-            className="h-4 w-4 ml-1"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 9l-7 7-7-7"
-            />
-          </svg>
+          <span className="flex items-center">
+            See More
+            <svg
+              className="h-4 w-4 ml-1"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </span>
         </Link>
         
         <div className=" my-6 md:my-10">
