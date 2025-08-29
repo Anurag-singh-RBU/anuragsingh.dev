@@ -1,5 +1,4 @@
 import Container from "@/components/Container";
-import FunctionCard from "@/components/FunctionCard";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -117,8 +116,3 @@ export default function DesignInspiration({ snippets }) {
   );
 }
 
-export async function getStaticProps() {
-  const snippets = await getAllFilesFrontMatter("snippets");
-
-  return { props: { snippets } };
-}
