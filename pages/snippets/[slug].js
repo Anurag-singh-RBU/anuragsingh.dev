@@ -1,5 +1,4 @@
 import { MDXRemote } from "next-mdx-remote";
-import { getFiles, getFileBySlug } from "@/lib/mdx";
 import SnippetLayout from "@/layouts/snippets";
 import MDXComponents from "@/components/MDXComponents";
 
@@ -22,8 +21,3 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
-  const snippet = await getFileBySlug("snippets", params.slug);
-
-  return { props: snippet };
-}

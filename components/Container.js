@@ -27,7 +27,6 @@ export default function Container(props) {
 
   const links = [
     { name: "Home", link: "/" },
-    { name: "Blog", link: "/blog" },
     { name: "Coding", link: "/snippets" },
     { name: "Resources", link: "/resources" },
     { name: "Projects", link: "/projects" },
@@ -36,7 +35,6 @@ export default function Container(props) {
   const mobileLinks = [
     { name: "Home", link: "/" },
     { name: "Projects", link: "/projects" },
-    { name: "Blog", link: "/blog" },
     { name: "Coding", link: "/snippets" },
     { name: "Resources", link: "/resources" },
     { name: "Freelancing", link: "/freelance" },

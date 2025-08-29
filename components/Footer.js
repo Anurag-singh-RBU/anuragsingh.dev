@@ -22,9 +22,6 @@ export default function Footer() {
           <Link href="/" className="text-gray-500 hover:text-gray-600 transition">
             Home
           </Link>
-          <Link href="/blog" className="text-gray-500 hover:text-gray-600 transition">
-            Blog
-          </Link>
           <Link href="/dashboard" className="text-gray-500 hover:text-gray-600 transition">
             Dashboard
           </Link>

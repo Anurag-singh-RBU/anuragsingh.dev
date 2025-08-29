@@ -1,6 +1,5 @@
 import Container from "@/components/Container";
 import FunctionCard from "@/components/FunctionCard";
-import { getAllFilesFrontMatter } from "@/lib/mdx";
 
 export default function Snippets({ snippets }) {
   return (
@@ -43,8 +42,3 @@ export default function Snippets({ snippets }) {
   );
 }
 
-export async function getStaticProps() {
-  const snippets = await getAllFilesFrontMatter("snippets");
-
-  return { props: { snippets } };
-}
