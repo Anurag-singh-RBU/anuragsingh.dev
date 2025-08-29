@@ -1,3 +1,4 @@
+
 ---
 title: "Ace the Javascript Interview"
 publishedAt: "2021-07-03"
@@ -52,9 +53,9 @@ Questions around array methods revolve around different array functions that are
 map() iterates over an array and returns a new array based on the condition provided.
 
 <HighlightBox>
-  <strong>Example:</strong>
-</HighlightBox> The following iterates over an array of numbers and returns a new
+  <strong>Example:</strong> The following iterates over an array of numbers and returns a new
 array - in which every number is multiplied by 2.
+</HighlightBox>
 
 ```js
 const myArray = [1, 2, 3, 4, 5];
@@ -67,10 +68,10 @@ console.log(newArray); // [2, 4, 6, 8, 10]
 Filter does exactly what it says, filters out the elements from an array. Based on the condition, one can filter out the elements from an array.
 
 <HighlightBox>
-  <strong>Example:</strong>
-</HighlightBox> The following iterates over an array of numbers and filters the array
+  <strong>Example:</strong> The following iterates over an array of numbers and filters the array
 in such a way that if the number is greater than 4, only then it is kept. Results
 are stored in a new array.
+</HighlightBox>
 
 ```js
 let myArray = [1, 2, 3, 4, 5];
@@ -83,9 +84,8 @@ console.log(newArray); // [5]
 reduce() is a powerful method which can be used to reduce the values of array to one single element. Values get accumulated over each iteration and at the end, we are left with a single value / element.
 
 <HighlightBox>
-  <strong>Example:</strong>
+  <strong>Example:</strong> Sum all the numbers of the array numbers = [1, 2, 3] and return the result
 </HighlightBox>
-Sum all the numbers of the array numbers = [1, 2, 3] and return the result
 
 <HighlightBox>
   <strong>with reduce()</strong>
@@ -119,9 +119,8 @@ It reduced 3 steps for calculating the sum to just 1 step.
 This is the simplest to understand method. It simply iterates over the array and performs whichever condition is specified.
 
 <HighlightBox>
-  <strong>Example:</strong>
+  <strong>Example:</strong> Iterate over the numbers = [1, 2, 3, 4] array and check if it is even or odd.
 </HighlightBox>
-Iterate over the numbers = [1, 2, 3, 4] array and check if it is even or odd.
 
 ```js
 let numbers = [1, 2, 3, 4];
@@ -138,10 +137,9 @@ Note: `forEach()` doesn't return a new array.
 find() method takes in a callback function which checks the condition while iterating over every element of the array and returns the `first` match.
 
 <HighlightBox>
-  <strong>Example:</strong>
-</HighlightBox>
-Check the age of the person in the ages array. ages = [12, 32, 42, 22, 13], if the
+  <strong>Example:</strong> Check the age of the person in the ages array. ages = [12, 32, 42, 22, 13], if the
 age is greater than 18 then accept the first match, otherwise return.
+</HighlightBox>
 
 ```js
 let ages = [12, 32, 42, 22, 13];
@@ -254,10 +252,10 @@ const text; // error
 ```
 
 <HighlightBox>
-  <strong>Note:</strong>
-</HighlightBox> The interviewer might ask the difference between the three. Other
+  <strong>Note:</strong> The interviewer might ask the difference between the three. Other
 popular questions revolving around var let and const cover Hoisting, which is discussed
 below.
+</HighlightBox>
 
 <Divider />
 
@@ -378,11 +376,11 @@ Here, the output is `BMW` because the method `getBrand()` is called where `this.
 In JavaScript, we have various ways for binding `this` to a function.
 
 1. <HighlightBox>
-     <strong>Default Binding</strong>{" "}
-   </HighlightBox> - `this` points to global scope.
+     <strong>Default Binding</strong> - `this` points to global scope.
+   </HighlightBox>
 2. <HighlightBox>
-     <strong>Implicitly</strong>
-   </HighlightBox> - using dot notation
+     <strong>Implicitly</strong> - using dot notation
+   </HighlightBox>
 
 ```js
 function fun() {
@@ -399,9 +397,9 @@ obj.fun();
 ```
 
 3. <HighlightBox>
-     <strong>Explicitly</strong>
-   </HighlightBox> - Force a function to use an object at their `this` place. Here,
-   We have three options: `call()`, `apply()`, and `bind()`
+     <strong>Explicitly</strong> - Force a function to use an object at their `this` place. Here,
+     We have three options: `call()`, `apply()`, and `bind()`
+   </HighlightBox>
 
 <HighlightBox>
   <strong>call():</strong>{" "}
