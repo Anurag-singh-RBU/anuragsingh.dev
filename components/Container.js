@@ -27,12 +27,14 @@ export default function Container(props) {
 
   const links = [
     { name: "Home", link: "/" },
+    { name: "Coding", link: "/coding" },
     { name: "Resources", link: "/resources" },
     { name: "Projects", link: "/projects" },
   ];
 
   const mobileLinks = [
     { name: "Home", link: "/" },
+    { name: "Coding", link: "/coding" },
     { name: "Projects", link: "/projects" },
     { name: "Resources", link: "/resources" },
     { name: "Freelancing", link: "/freelance" },
