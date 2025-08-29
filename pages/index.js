@@ -148,7 +148,7 @@ export default function Home() {
             "Aceternity UI",
             "Spectrum UI",
             "Magic UI",
-            "Figma",]}
+            "Figma"]}
             link="https://shadyxui.in"
             image="/shadyxui.jpg"
             links={[
@@ -176,7 +176,7 @@ export default function Home() {
             "Aceternity UI",
             "Spectrum UI",
             "Magic UI",
-            "Figma",]}
+            "Figma"]}
             link="https://shadyxui.in"
             image="/shadyxui.jpg"
             links={[

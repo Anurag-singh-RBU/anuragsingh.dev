@@ -29,29 +29,26 @@ export function ProjectCard({
         <Link
           href={href || "#"}
           className={clsx("block cursor-pointer", className)}
-          legacyBehavior
         >
-          <a>
-            {video && (
-              <video
-                src={video}
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="pointer-events-none mx-auto h-40 w-full object-cover object-top"
-              />
-            )}
-            {image && (
-              <Image
-                src={image}
-                alt={title}
-                width={500}
-                height={300}
-                className="h-40 w-full overflow-hidden object-cover object-top"
-              />
-            )}
-          </a>
+          {video && (
+            <video
+              src={video}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="pointer-events-none mx-auto h-40 w-full object-cover object-top"
+            />
+          )}
+          {image && (
+            <Image
+              src={image}
+              alt={title}
+              width={500}
+              height={300}
+              className="h-40 w-full overflow-hidden object-cover object-top"
+            />
+          )}
         </Link>
       ) : (
         <div className={clsx("block cursor-pointer", className)}>
@@ -120,13 +117,11 @@ export function ProjectCard({
       {links && links.length > 0 && (
         <div className="flex flex-row flex-wrap justify-center items-center gap-2">
           {links.map((link, idx) => (
-            <Link href={link.href} key={idx} target="_blank" legacyBehavior>
-              <a>
-                <button className="flex items-center font-sans text-center text-white font-semibold bg-black dark:border dark:border-gray-600 dark:bg-white rounded-md gap-2 px-2 py-1 text-xs mb-2">
-                  <span className="flex items-center">{link.icon}</span>
-                  <span>{link.type}</span>
-                </button>
-              </a>
+            <Link href={link.href} key={idx} target="_blank">
+              <button className="flex items-center font-sans text-center text-white font-semibold bg-black dark:border dark:border-gray-600 dark:bg-white rounded-md gap-2 px-2 py-1 text-xs mb-2">
+                <span className="flex items-center">{link.icon}</span>
+                <span>{link.type}</span>
+              </button>
             </Link>
           ))}
         </div>

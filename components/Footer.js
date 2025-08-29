@@ -19,26 +19,20 @@ export default function Footer() {
       <hr className="w-full border-1 border-gray-200 dark:border-gray-800 mb-8" />
       <div className="w-full max-w-2xl grid grid-cols-1 gap-4 pb-16 sm:grid-cols-3">
         <div className="flex flex-col space-y-4">
-          <Link href="/" legacyBehavior>
-            <a className="text-gray-500 hover:text-gray-600 transition">Home</a>
+          <Link href="/" className="text-gray-500 hover:text-gray-600 transition">
+            Home
           </Link>
-          <Link href="/blog" legacyBehavior>
-            <a className="text-gray-500 hover:text-gray-600 transition">Blog</a>
+          <Link href="/blog" className="text-gray-500 hover:text-gray-600 transition">
+            Blog
           </Link>
-          <Link href="/dashboard" legacyBehavior>
-            <a className="text-gray-500 hover:text-gray-600 transition">
-              Dashboard
-            </a>
+          <Link href="/dashboard" className="text-gray-500 hover:text-gray-600 transition">
+            Dashboard
           </Link>
-          <Link href="/projects" legacyBehavior>
-            <a className="text-gray-500 hover:text-gray-600 transition">
-              Projects
-            </a>
+          <Link href="/projects" className="text-gray-500 hover:text-gray-600 transition">
+            Projects
           </Link>
-          <Link href="/links" legacyBehavior>
-            <a className="text-gray-500 hover:text-gray-600 transition">
-              Links
-            </a>
+          <Link href="/links" className="text-gray-500 hover:text-gray-600 transition">
+            Links
           </Link>
         </div>
         <div className="flex flex-col space-y-4">
@@ -54,50 +48,34 @@ export default function Footer() {
           <ExternalLink href="https://instagram.com/maninthere">
             Instagram
           </ExternalLink>
-          <Link href="/freelance" legacyBehavior>
-            <a className="text-gray-500 hover:text-gray-600 transition">
-              Freelancing
-            </a>
+          <Link href="/freelance" className="text-gray-500 hover:text-gray-600 transition">
+            Freelancing
           </Link>
           {/* <ExternalLink href="https://www.youtube.com/channel/UCZMli3czZnd1uoc1ShTouQw">
             YouTube
           </ExternalLink> */}
         </div>
         <div className="flex flex-col space-y-4">
-          <Link href="/snippets" legacyBehavior>
-            <a className="text-gray-500 hover:text-gray-600 transition">
-              Snippets
-            </a>
+          <Link href="/snippets" className="text-gray-500 hover:text-gray-600 transition">
+            Snippets
           </Link>
-          <Link href="/tweets" legacyBehavior>
-            <a className="text-gray-500 hover:text-gray-600 transition">
-              Tweets
-            </a>
+          <Link href="/tweets" className="text-gray-500 hover:text-gray-600 transition">
+            Tweets
           </Link>
-          <Link href="/resources" legacyBehavior>
-            <a className="text-gray-500 hover:text-gray-600 transition">
-              Resources
-            </a>
+          <Link href="/resources" className="text-gray-500 hover:text-gray-600 transition">
+            Resources
           </Link>
-          <Link href="/demos" legacyBehavior>
-            <a className="text-gray-500 hover:text-gray-600 transition">
-              Live Demos
-            </a>
+          <Link href="/demos" className="text-gray-500 hover:text-gray-600 transition">
+            Live Demos
           </Link>
-          <Link href="/freecodecamp" legacyBehavior>
-            <a className="text-gray-500 hover:text-gray-600 transition">
-              freeCodeCamp
-            </a>
+          <Link href="/freecodecamp" className="text-gray-500 hover:text-gray-600 transition">
+            freeCodeCamp
           </Link>
-          <Link href="/boxshadows" legacyBehavior>
-            <a className="text-gray-500 hover:text-gray-600 transition">
-              Box Shadows
-            </a>
+          <Link href="/boxshadows" className="text-gray-500 hover:text-gray-600 transition">
+            Box Shadows
           </Link>
-          <Link href="/design-inspiration" legacyBehavior>
-            <a className="text-gray-500 hover:text-gray-600 transition">
-              Design Inspiration
-            </a>
+          <Link href="/design-inspiration" className="text-gray-500 hover:text-gray-600 transition">
+            Design Inspiration
           </Link>
         </div>
       </div>
