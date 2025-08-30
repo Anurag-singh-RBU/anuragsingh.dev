@@ -15,8 +15,50 @@ import Talks from "@/components/Talks";
 import Header from "@/components/Header";
 import HighlightBox from "@/components/HighlightBox";
 import { ProjectCard } from "@/components/project-card";
+import { AuroraText } from "@/components/magicui/aurora-text";
+import {WorkExperience} from "@/components/components/work-experience";
+
 
 export default function Home() {
+
+  const WORK_EXPERIENCE = [
+  {
+    id: "quaric",
+    companyName: "Bluestock Fintech",
+    companyLogo: "https://assets.chanhdai.com/images/companies/quaric.svg",
+    positions: [
+      {
+        id: "30d3a9fb-021d-452a-9d27-83655369b4b9",
+        title: "SDE Intern",
+        employmentPeriod: "August 2025 - Present",
+        employmentType: "Part time",
+        icon: "code",
+        description: `- Integrated VNPAY-QR for secure transactions.
+- Registered the e-commerce site with [online.gov.vn](https://online.gov.vn) for compliance.
+- Developed online ordering to streamline purchases.
+- Build and maintain ZaDark.com with Docusaurus, integrating AdSense.
+- Develop and maintain the ZaDark extension for Zalo Web on Chrome, Safari, Edge, and Firefox — with 15,000+ active users via Chrome Web Store.`,
+        skills: [
+          "Next.js",
+          "Strapi",
+          "Auth0",
+          "VNPAY-QR",
+          "Docker",
+          "NGINX",
+          "Google Cloud",
+          "Docusaurus",
+          "Extension",
+          "Research",
+          "Project Management",
+        ],
+        isExpanded: true,
+      }
+    ],
+    isCurrentEmployer: true,
+  },
+];
+ 
+
   const [colors, setColors] = useState([]);
 
   let tempInterval;
@@ -38,7 +80,21 @@ export default function Home() {
       description="Full-Stack developer , JavaScript enthusiast , Freelancer , Tech Blogger and a Learner. I love building products and web apps that impact millions of lives."
     >
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
-        <Header />
+        <Header/>
+
+        <h3 className="text-2xl md:text-3xl font-bungee mb-8 sm:mt-10 mt-5 text-black/80 dark:text-white" style={{wordSpacing: "6px"}}>
+          <HighlightBox>About</HighlightBox>
+        </h3>
+
+        <div className="prose prose-sm max-w-none text-justify font-medium text-zinc-600 dark:text-zinc-300 font-GS text-foreground prose-zinc dark:prose-invert prose-headings:font-sans prose-headings:font-semibold prose-headings:text-balance prose-h2:border-b prose-h2:border-edge prose-h2:pb-2 prose-h2:text-2xl prose-lead:text-base prose-a:font-medium prose-a:break-words prose-a:text-foreground prose-a:underline prose-a:underline-offset-4 prose-code:rounded-md prose-code:border prose-code:bg-muted/50 prose-code:px-[0.3rem] prose-code:py-[0.2rem] prose-code:text-sm prose-code:font-normal prose-code:before:content-none prose-code:after:content-none prose-hr:border-edge">
+        <p>
+          Hello World ✨ I am <span className="text-xl" style={{wordSpacing: "-3px"}}> &nbsp;ᴀɴᴜʀᴀɢ ꜱɪɴɢʜ&nbsp; </span> — A Full Stack Web Developer passionate about creating high performance, user centric software solutions with intuitive and engaging designs. I have expertise in frameworks like React Js, Node Js and Next Js. I leverage AWS Services to create efficient and reliable solutions. MongoDB and PostgreSQL for database management, Clerk and Zustand for effective authentication and state management. 
+        </p>
+        <p>
+          One of my key projects <AuroraText className = "font-bold font-jetbrains" style={{wordSpacing: "-3px"}}>Shadyx UI</AuroraText> enhances the frontend experience on PC and Web surpassing <span className="text-teal-700 font-GS dark:text-teal-200">150
+            </span> downloads on SourceForge and <span className="text-blue-800 font-GS dark:text-blue-300">100 plus</span> active users since 2025.
+        </p>
+        </div>
 
         <h3 className="text-2xl md:text-3xl font-bungee mb-8 sm:mt-10 mt-5 text-black/80 dark:text-white" style={{wordSpacing: "6px"}}>
           <HighlightBox>Projects</HighlightBox>
@@ -104,21 +160,19 @@ export default function Home() {
             ]}
           />
           <ProjectCard
-            title="Shadyx UI"
-            href="https://shadyxui.in"
-            description="UI components library that offers awesome reusable components for building web applications , create stunning websites and enjoy the flow from COPY to VIBE."
-            dates="May 2025 - Present"
-            tags={["Next js",
-            "Typescript",
-            "Tailwind CSS",
-            "Aceternity UI",
-            "Spectrum UI",
-            "Magic UI",
-            "Figma"]}
-            link="https://shadyxui.in"
-            image="/shadyxui.jpg"
+            title="CricVortex"
+            href="https://cricvortex.netlify.app/??"
+            description="Web Based platform that allows users to watch live match scores , upcoming fixtures and real time cricket insights all in one place alongwith a manual scorecard feature."
+            dates="Sept 2024 - Oct 2024"
+            tags={["React",
+            "JavaScript",
+            "Cricapi",
+            "Tailwind Css",
+            "Local Storage"]}
+            link="https://cricvortex.netlify.app/??"
+            image="/cricvortex.jpg"
             links={[
-              { icon: <Globe size={13}/>, type: "Website", href: "https://shadyxui.in" },
+              { icon: <Globe size={13}/>, type: "Website", href: "https://cricvortex.netlify.app/??" },
               { icon: (
                 <svg 
                   xmlns="http://www.w3.org/2000/svg" 
@@ -132,21 +186,20 @@ export default function Home() {
             ]}
           />
           <ProjectCard
-            title="Shadyx UI"
-            href="https://shadyxui.in"
-            description="UI components library that offers awesome reusable components for building web applications , create stunning websites and enjoy the flow from COPY to VIBE."
-            dates="May 2025 - Present"
-            tags={["Next js",
+            title="fiscal.cdm"
+            href="https://fiscalcdm.netlify.app"
+            description="A platform that displays a calendar for visualizing historical volatility , liquidity and performance data across different time periods for financial instruments."
+            dates="Dec 2024 - Jan 2025"
+            tags={["React",
             "Typescript",
             "Tailwind CSS",
-            "Aceternity UI",
-            "Spectrum UI",
-            "Magic UI",
-            "Figma"]}
-            link="https://shadyxui.in"
-            image="/shadyxui.jpg"
+            "D3 js",
+            "OKX API",
+            "Ant Design"]}
+            link="https://fiscalcdm.netlify.app"
+            image="/fiscalcdm.jpg"
             links={[
-              { icon: <Globe size={13}/>, type: "Website", href: "https://shadyxui.in" },
+              { icon: <Globe size={13}/>, type: "Website", href: "https://fiscalcdm.netlify.app" },
               { icon: (
                 <svg 
                   xmlns="http://www.w3.org/2000/svg" 
@@ -161,28 +214,38 @@ export default function Home() {
           />
         </div>
 
-        <Link
-          href="/projects"
-          className="flex items-center text-sm my-4 mx-auto px-4 py-2 rounded-md font-medium text-gray-900 dark:text-gray-100"
-        >
-          <span className="flex items-center">
-            See More
-            <svg
-              className="h-4 w-4 ml-1"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </span>
-        </Link>
+        <div className="w-full flex justify-center mt-8 mb-10 font-jetbrains font-bold">
+          <Link
+            href="/projects"
+            className="text-sm px-4 py-2 rounded-md font-medium text-gray-900 dark:text-gray-100"
+          >
+            <div className="flex items-center justify-center">
+              <div>See More</div>
+              <svg
+                className="h-4 w-4 ml-2 mt-1"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </div>
+          </Link>
+        </div>
+
+        {/* <h3 className="text-2xl md:text-3xl font-bungee mb-8 sm:mt-15 mt-5 text-black/80 dark:text-white">
+          <HighlightBox>Experience</HighlightBox>
+        </h3>
+
+        <div className="max-w-3xl mx-auto mt-5">
+          <WorkExperience experiences={WORK_EXPERIENCE} className="border rounded-lg" />
+        </div> */}
         
         <div className=" my-6 md:my-10">
           <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-8 mt-8 text-black dark:text-white">

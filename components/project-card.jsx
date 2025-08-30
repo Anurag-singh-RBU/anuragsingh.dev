@@ -99,13 +99,13 @@ export function ProjectCard({
         </div>
       </CardHeader>
 
-      <CardContent className="mt-4 flex flex-col sm:px-2 px-2">
+      <CardContent className="mt-4 flex flex-col sm:px-2 px-2 font-GS">
         {tags && tags.length > 0 && (
           <div className="mt-2 flex flex-wrap gap-1">
             {tags?.map((tag, idx) => (
               <p
                 key={idx}
-                className={`leading-5 mb-2 dark:border dark:border-zinc-700 font-semibold dark:text-black text-black rounded-md text-xs mr-2 px-1`}
+                className={`leading-5 mb-2 dark:border dark:border-zinc-700 sm:font-semibold font-bold dark:text-black text-black rounded-md text-xs mr-2 px-2`}
                 style={{ backgroundColor: "rgb(240,240,240)"}}
               >
                 {tag}

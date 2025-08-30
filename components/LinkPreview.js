@@ -1,8 +1,6 @@
 "use client";
 
-import { FOCUS_VISIBLE_OUTLINE, GRADIENT_LINK } from "@/lib/constants";
-import { Portal, Transition } from "@headlessui/react";
-import * as HoverCard from "@radix-ui/react-hover-card";
+import { Transition } from "@headlessui/react";
 import cx from "clsx";
 import Image from "next/image";
 import { encode } from "qss";
@@ -35,61 +33,53 @@ export const LinkPreview = ({ children, url, className }) => {
   }, []);
 
   return (
-    <>
+    <div
+      className="relative inline-block"
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+    >
+      <a className={className} href={url}>
+        {children}
+      </a>
+
+      {/* preload hidden image */}
       {isMounted && (
-        <Portal>
-          <div className="hidden">
-            <Image
-              src={src}
-              width={width}
-              height={height}
-              quality={quality}
-              priority={true}
-              alt="preview"
-            />
-          </div>
-        </Portal>
+        <div className="hidden">
+          <Image
+            src={src}
+            width={width}
+            height={height}
+            quality={quality}
+            priority={true}
+            alt="preview"
+          />
+        </div>
       )}
 
-      <HoverCard.Root
-        openDelay={50}
-        onOpenChange={(open) => setIsOpen(open)}
+      <Transition
+        show={isOpen}
+        appear={true}
+        enter="transform transition duration-300 origin-bottom ease-out"
+        enterFrom="opacity-0 translate-y-2 scale-0"
+        enterTo="opacity-100 translate-y-0 scale-100"
+        className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 shadow-xl rounded-xl z-50"
       >
-        <HoverCard.Trigger asChild>
-          <a className={className} href={url}>
-            {children}
-          </a>
-        </HoverCard.Trigger>
-
-        <HoverCard.Portal>
-          <HoverCard.Content side="top" align="center" sideOffset={10}>
-            <Transition
-              show={isOpen}
-              appear={true}
-              enter="transform transition duration-300 origin-bottom ease-out"
-              enterFrom="opacity-0 translate-y-2 scale-0"
-              enterTo="opacity-100 translate-y-0 scale-100"
-              className="shadow-xl rounded-xl"
-            >
-              <a
-                href={url}
-                className="block p-1 bg-white border border-transparent shadow rounded-xl hover:border-pink-500"
-                style={{ fontSize: 0 }}
-              >
-                <Image
-                  src={src}
-                  width={width}
-                  height={height}
-                  quality={quality}
-                  priority={true}
-                  className="rounded-lg"
-                  alt="preview"
-                />
-              </a>
-            </Transition>
-          </HoverCard.Content>
-        </HoverCard.Portal>
-      </HoverCard.Root>
-    </>
+        <a
+          href={url}
+          className="block p-1 bg-white border border-transparent shadow rounded-xl hover:border-pink-500"
+          style={{ fontSize: 0 }}
+        >
+          <Image
+            src={src}
+            width={width}
+            height={height}
+            quality={quality}
+            priority={true}
+            className="rounded-lg"
+            alt="preview"
+          />
+        </a>
+      </Transition>
+    </div>
   );
 };

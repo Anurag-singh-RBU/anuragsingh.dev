@@ -30,8 +30,8 @@ const Header = () => {
   return (
     <div className="flex flex-col md:flex-row justify-between items-start md:space-x-14 w-full mb-10">
       <div className="flex md:w-3/4 flex-col mt-6">
-        <h1 className="text-4xl md:text-4xl font-bungee mb-3 text-black/70 dark:text-white">
-          <AuroraText>Anurag &nbsp;Singh</AuroraText>
+        <h1 className="text-4xl md:text-4xl font-bungee mb-4 text-black/70 dark:text-white">
+          <AuroraText className = "dark:hidden block">Anurag &nbsp;Singh</AuroraText><span className="dark:block hidden">Anurag &nbsp;Singh</span>
         </h1>
 
         <div className="relative leading-7 items-center font-jetbrains flex-wrap text-zinc-700 dark:text-zinc-300 mb-5">
@@ -132,15 +132,15 @@ const Header = () => {
             </AnimatePresence>
           </span>
         </div>
-        <p className="text-zinc-600 dark:text-zinc-300 text-justify">
+        <p className="text-zinc-600 dark:text-zinc-300 text-justify font-GS">
           Full Stack Developer building SaaS products and web apps. Find me
-          on&nbsp;
+          on
           <a
-            href="https://twitter.com/mannupaaji"
+            href="https://twitter.com/anuragRBU"
             className="font-bold group dark:text-zinc-400 font-jetbrains relative inline-flex overflow-hidden"
             target="__blank"
           >
-            <span className="relative font-bold dark:text-blue-400">Twitter&nbsp;</span>
+            <span className="relative font-bold text-xl dark:text-blue-400">&nbsp;X&nbsp;</span>
           </a>
           for tech updates and fun.
         </p>
@@ -148,7 +148,7 @@ const Header = () => {
 
       <div className=" relative flex-shrink-1 p-4 md:p-4 md:order-last order-first">
         <a
-          href="https://twitter.com/mannupaaji"
+          href="https://twitter.com/anuragRBU"
           target="__blank"
           className="block  z-[5] overflow-hidden rounded shadow-xl ring-1 ring-slate-900/5  relative bg-white h-20 w-20"
         >
