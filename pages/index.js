@@ -18,26 +18,58 @@ import { ProjectCard } from "@/components/project-card";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import {WorkExperience} from "@/components/components/work-experience";
 
-
 export default function Home() {
 
   const WORK_EXPERIENCE = [
   {
     id: "quaric",
-    companyName: "Bluestock Fintech",
-    companyLogo: "https://assets.chanhdai.com/images/companies/quaric.svg",
+    companyName: "Navodita Infotech",
+    companyLogo: "https://web.virtualinternships.com/android-chrome-512x512.png",
     positions: [
       {
         id: "30d3a9fb-021d-452a-9d27-83655369b4b9",
-        title: "SDE Intern",
-        employmentPeriod: "August 2025 - Present",
-        employmentType: "Part time",
+        title: "Frontend Intern",
+        employmentPeriod: "Feb 2025 - March 2025",
+        employmentType: "Remote",
         icon: "code",
-        description: `- Integrated VNPAY-QR for secure transactions.
-- Registered the e-commerce site with [online.gov.vn](https://online.gov.vn) for compliance.
+        description: `- Designed and developed a dynamic eCommerce product catalog for a real-world client project.
+- Registered the eCommerce site with [online.gov.vn](https://online.gov.vn) for compliance.
 - Developed online ordering to streamline purchases.
-- Build and maintain ZaDark.com with Docusaurus, integrating AdSense.
-- Develop and maintain the ZaDark extension for Zalo Web on Chrome, Safari, Edge, and Firefox — with 15,000+ active users via Chrome Web Store.`,
+- Implemented key features like responsive layout, real-time product filtering, and dynamic rendering of product data based on user interactions.
+- Tech Stack : MERN, Auth0, Docker, Tailwind, NGINX`,
+        skills: [
+          "Next.js",
+          "Strapi",
+          "Auth0",
+          "VNPAY-QR",
+          "Docker",
+          "NGINX",
+          "Google Cloud",
+          "Docusaurus",
+          "Extension",
+          "Research",
+          "Project Management",
+        ],
+        isExpanded: true,
+      }
+    ],
+    isCurrentEmployer: true,
+  },
+  {
+    id: "hacksagon",
+    companyName: "HackSagon 2025",
+    companyLogo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2AKlLFT1KEn6wqNYSi8KQFkYWranaY2nX3Q&s",
+    positions: [
+      {
+        id: "30d3a9fb-021d-452a-9d27-83655369b4b9",
+        title: "Project Lead",
+        employmentPeriod: "Feb 2025 - June 2025",
+        employmentType: "Onsite",
+        icon: "code",
+        description: `- 36-hour hackathon where me and my team developed a web application called NeuroLearn using MERN Stack.
+- Neurolearn is an AI-powered study companion that summarizes lectures, generates
+quizzes, and crafts personalized study plans from PDFs or notes.
+- Tech Stack : React, Tailwind, Node, Express, MongoDB, OpenAI, NLP`,
         skills: [
           "Next.js",
           "Strapi",
@@ -239,13 +271,13 @@ export default function Home() {
           </Link>
         </div>
 
-        {/* <h3 className="text-2xl md:text-3xl font-bungee mb-8 sm:mt-15 mt-5 text-black/80 dark:text-white">
+        <h3 className="text-2xl md:text-3xl font-bungee mb-8 sm:mt-15 mt-5 text-black/80 dark:text-white">
           <HighlightBox>Experience</HighlightBox>
         </h3>
 
         <div className="max-w-3xl mx-auto mt-5">
           <WorkExperience experiences={WORK_EXPERIENCE} className="border rounded-lg" />
-        </div> */}
+        </div>
         
         <div className=" my-6 md:my-10">
           <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-8 mt-8 text-black dark:text-white">

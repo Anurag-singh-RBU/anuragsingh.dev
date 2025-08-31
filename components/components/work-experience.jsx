@@ -7,6 +7,7 @@ import {
   DraftingCompassIcon,
   GitCommitHorizontal,
   GraduationCapIcon,
+  ScanEye,
 } from "lucide-react";
 import Image from "next/image";
 import React from "react";
@@ -94,36 +95,39 @@ export function ExperiencePositionItem({
       <div
         className="relative last:before:absolute last:before:h-full last:before:w-4 last:before:bg-background">
         <CollapsibleTrigger className="group/experience not-prose block w-full text-left select-none">
-          <div className="relative z-1 mb-1 flex items-center gap-3">
-            <div className="flex size-6 shrink-0items-center justify-center rounded-lg bg-gray-400 text-muted-foreground dark:inset-shadow-[1px_1px_1px,0px_0px_1px] dark:inset-shadow-white/15">
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width={20}
-                height={20}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="lucide lucide-code-xml size-4"
-                aria-hidden="true"
-              >
-                <path d="m18 16 4-4-4-4"></path>
-                <path d="m6 8-4 4 4 4"></path>
-              </svg>
-            </div>
-            <h4 className="flex-1 text-base font-semibold font-jetbrains text-balance ml-2">
-              {position.title}
-            </h4>
+          <div className="relative z-1 mb-1 flex items-center gap-3 justify-between">
+            <div className="flex items-center gap-3">
+              <div className="flex size-6 shrink-0 items-center justify-center rounded-lg bg-gray-400 text-muted-foreground dark:inset-shadow-[1px_1px_1px,0px_0px_1px] dark:inset-shadow-white/15">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width={20}
+                  height={20}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide lucide-code-xml size-4"
+                  aria-hidden="true"
+                >
+                  <path d="m18 16 4-4-4-4"></path>
+                  <path d="m6 8-4 4 4 4"></path>
+                </svg>
+              </div>
 
-            <div className="shrink-0 text-muted-foreground [&_svg]:size-4" aria-hidden>
-              <ChevronsDownUpIcon className="hidden group-data-[state=open]/experience:block" />
-              <ChevronsUpDownIcon className="hidden group-data-[state=closed]/experience:block" />
+              <h4 className="text-base font-semibold font-jetbrains text-balance ml-2">
+                {position.title}
+              </h4>
+            </div>
+
+            <div className="shrink-0 text-muted-foreground" aria-hidden>
+              <ScanEye size={18}/>
             </div>
           </div>
 
-          <div className="flex items-center font-bebas font-semibold text-gray-600 gap-2 pl-9 ml-6 text-sm text-muted-foreground">
+    
+          <div className="flex items-center font-bebas font-semibold text-gray-600 gap-2 pl-9 ml-6 text-xs text-muted-foreground">
             {position.employmentType && (
               <>
                 <dl>
@@ -131,7 +135,7 @@ export function ExperiencePositionItem({
                   <dd>&nbsp;{position.employmentType}</dd>
                 </dl>
 
-                <ClockFading size={14} className="mt-px"/>
+                <ClockFading size={14}/>
               </>
             )}
 
@@ -143,21 +147,12 @@ export function ExperiencePositionItem({
         </CollapsibleTrigger>
 
         <CollapsibleContent
-          className="overflow-hidden duration-300 data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down">
+          className="w-full overflow-hidden duration-300 data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down"
+        >
           {position.description && (
-            <Prose className="pt-2 pl-9">
+            <Prose className="pt-2 pl-0 text-justify">
               <ReactMarkdown>{position.description}</ReactMarkdown>
             </Prose>
-          )}
-
-          {Array.isArray(position.skills) && position.skills.length > 0 && (
-            <ul className="not-prose flex flex-wrap gap-1.5 pt-2 pl-9">
-              {position.skills.map((skill, index) => (
-                <li key={index} className="flex">
-                  <Skill>{skill}</Skill>
-                </li>
-              ))}
-            </ul>
           )}
         </CollapsibleContent>
       </div>
@@ -193,4 +188,4 @@ function Skill({
       )}
       {...props} />
   );
-}
+} 
