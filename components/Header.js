@@ -91,10 +91,10 @@ const Header = () => {
                     />
                   </motion.p>
                   <motion.p variants={itemA} className="font-normal py-3">
-                    Cricket Hub and Manual Scoreboard{" "}
+                    Checkout my npm CLI{" "}
                     <Hyperlink
-                      text="@cricvortex"
-                      link="https://tailwindmasterkit.com"
+                      text="@anuragcodes/shadyx"
+                      link="https://www.npmjs.com/package/@anuragcodes/shadyx"
                     />
                   </motion.p>
                   <motion.p variants={itemA} className="font-normal py-3">
