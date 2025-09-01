@@ -323,7 +323,7 @@ quizzes, and crafts personalized study plans from PDFs or notes.
           {skills.map((skill, index) => (
             <span
               key={index}
-              className="p-2 rounded-md text-xs font-medium
+              className="p-2 rounded-md text-xs font-bold
                         bg-black text-white
                         dark:bg-white dark:text-black
                         shadow-md transition [--pattern-foreground:var(--color-zinc-950)]/5 dark:[--pattern-foreground:var(--color-white)]/5 bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-size-[10px_10px] bg-center bg-zinc-950/0.75 dark:bg-white/0.75">
