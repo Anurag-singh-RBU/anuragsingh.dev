@@ -127,7 +127,7 @@ export function ExperiencePositionItem({
           </div>
 
     
-          <div className="flex items-center font-bebas font-semibold text-gray-600 gap-2 pl-9 ml-6 text-xs text-muted-foreground">
+          <div className="flex items-center font-bebas font-semibold text-gray-600 gap-2 pl-9 ml-6 text-sm text-muted-foreground">
             {position.employmentType && (
               <>
                 <dl>

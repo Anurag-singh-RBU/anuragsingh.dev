@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { BsPatchCheckFill } from "react-icons/bs";
+import HighlightBox from "./HighlightBox";
 
 const Divider = () => {
   return (
-    <div className="border border-gray-200 dark:border-gray-600 w-full my-8" />
+    <div className="border border-gray-200 dark:border-gray-600 w-full my-8 mt-10" />
   );
 };
 
@@ -140,8 +141,8 @@ export default function Timeline() {
 
   return (
     <>
-      <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">
-        Life Changelog and Updates
+     <h3 className="text-2xl md:text-3xl font-bungee mb-8 sm:mt-10 mt-5 text-black/80 dark:text-white" style={{wordSpacing: "6px"}}>
+        <HighlightBox>Life Updates</HighlightBox>
       </h3>
       <Year>2023</Year>
       <ul>

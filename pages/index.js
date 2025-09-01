@@ -17,6 +17,7 @@ import HighlightBox from "@/components/HighlightBox";
 import { ProjectCard } from "@/components/project-card";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import {WorkExperience} from "@/components/components/work-experience";
+import { skills } from "@/data/TechStack";
 
 export default function Home() {
 
@@ -32,8 +33,8 @@ export default function Home() {
         employmentPeriod: "Feb 2025 - March 2025",
         employmentType: "Remote",
         icon: "code",
-        description: `- Designed and developed a dynamic eCommerce product catalog for a real-world client project.
-- Registered the eCommerce site with [online.gov.vn](https://online.gov.vn) for compliance.
+        description: `- Designed and developed a dynamic Shopping product catalog for a real-world client project.
+- Registered the Shopping site with [online.gov.vn](https://online.gov.vn) for compliance.
 - Developed online ordering to streamline purchases.
 - Implemented key features like responsive layout, real-time product filtering, and dynamic rendering of product data based on user interactions.
 - Tech Stack : MERN, Auth0, Docker, Tailwind, NGINX`,
@@ -53,15 +54,15 @@ export default function Home() {
         isExpanded: true,
       }
     ],
-    isCurrentEmployer: true,
+    isCurrentEmployer: false,
   },
   {
     id: "hacksagon",
     companyName: "HackSagon 2025",
-    companyLogo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2AKlLFT1KEn6wqNYSi8KQFkYWranaY2nX3Q&s",
+    companyLogo: "https://imgs.search.brave.com/RUWAoatFLcQ-xAnYwSPVqOPc35JMYaCp0hu_LoPsHyc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZmF2cG5nLmNvbS8y/Mi8xLzgvaGFja2F0/aG9uLXdlYi1kZXNp/Z24tZGVzaWduZXIt/cnVieS1vbi1yYWls/cy1wbmctZmF2cG5n/LWpVakp3UFRLUEN0/d0pRdUROYndUZFNp/RkxfdC5qcGc",
     positions: [
       {
-        id: "30d3a9fb-021d-452a-9d27-83655369b4b9",
+        id: "30d3a9fb-021d-452a-9d27-83655369b4b0",
         title: "Project Lead",
         employmentPeriod: "Feb 2025 - June 2025",
         employmentType: "Onsite",
@@ -84,6 +85,38 @@ quizzes, and crafts personalized study plans from PDFs or notes.
           "Project Management",
         ],
         isExpanded: true,
+      }
+    ],
+    isCurrentEmployer: false,
+  },
+  {
+    id: "contribution",
+    companyName: "Contributions",
+    companyLogo: "https://imgs.search.brave.com/MZuhpqk_WO7bd6Yotim_Vrbj4TLAv0IWL2HmJo2H6z4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cG5nYWxsLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMTMvR2l0/aHViLUxvZ28tUE5H/LVBob3Rvcy5wbmc",
+    positions: [
+      {
+        id: "30d3a9fb-021d-452a-9d27-83655369b4b1",
+        title: "Active Contributor",
+        employmentPeriod: "Jan 2025 - Present",
+        employmentType: "Remote",
+        icon: "code",
+        description: `- Contributed to the dvelopment of a web application for a local bussiness.
+- Worked in a team to design and implement a project and gained experience of React Tanstack Query and Backend stuff.
+- Acquired expertise in version control and web development with git and github.`,
+        skills: [
+          "Next.js",
+          "Strapi",
+          "Auth0",
+          "VNPAY-QR",
+          "Docker",
+          "NGINX",
+          "Google Cloud",
+          "Docusaurus",
+          "Extension",
+          "Research",
+          "Project Management",
+        ],
+        isExpanded: false,
       }
     ],
     isCurrentEmployer: true,
@@ -127,6 +160,7 @@ quizzes, and crafts personalized study plans from PDFs or notes.
             </span> downloads on SourceForge and <span className="text-blue-800 font-GS dark:text-blue-300">100 plus</span> active users since 2025.
         </p>
         </div>
+
 
         <h3 className="text-2xl md:text-3xl font-bungee mb-8 sm:mt-10 mt-10 text-black/80 dark:text-white" style={{wordSpacing: "6px"}}>
           <HighlightBox>Projects</HighlightBox>
@@ -275,69 +309,29 @@ quizzes, and crafts personalized study plans from PDFs or notes.
           <HighlightBox>Experience</HighlightBox>
         </h3>
 
-        <div className="max-w-3xl mx-auto mt-5">
+        <div className="max-w-3xl mx-auto mt-5 mb-10">
           <WorkExperience experiences={WORK_EXPERIENCE} className="border rounded-lg" />
         </div>
         
-        <div className=" my-6 md:my-10">
-          <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-8 mt-8 text-black dark:text-white">
-            Tech Talks and Videos
-          </h3>
-          <Talks
-            title={`Components Of A Great Portfolio Website`}
-            description={`I talk about how to create a targeted website to land more job interviews and freelance clients with all the other things that matter. Hosted on codementor.`}
-            company={`codementor.io`}
-            image={`/talks/codementor.jpg`}
-            url={`https://www.youtube.com/watch?v=viXpJ5Xwtfs`}
-          />
-          <Talks
-            title={`Crafting The Perfect Portfolio Website For Developers`}
-            description={` Talked about how to effectively utilise a portfolio website to
-          put yourself in the best position to win.`}
-            company={`roc8.careers`}
-            image={`/talks/roc8.png`}
-            url={`https://www.youtube.com/watch?v=yKVCl1jFkQQ`}
-          />
-          <Talks
-            title={`How To Use Algochurn To Clear Technical Interviews With Ease.`}
-            description={`Algochurn is a free resource that helps front-end developers practice machine coding questions. Here I talk about how to effectively make use of Algochurn.`}
-            company={`Youtube`}
-            image={`/talks/algochurn-youtube.png`}
-            url={`https://www.youtube.com/watch?v=sZA-WrS39KI&t=19s`}
-          />
-          <Talks
-            title={`How To Implement Debouncing In React.`}
-            description={`Debouncing is a method of preventing a function from being invoked too often. In this video, I talk about how to create a custom debounce function from scratch.`}
-            company={`Youtube`}
-            image={`/talks/debouncing.png`}
-            url={`https://www.youtube.com/watch?v=uncrKqVtgrc`}
-          />
-          <div className="flex w-full justify-center">
-            <a
-              type="button"
-              href="https://www.youtube.com/channel/UC7MQDjVfjEPkHMe1lZGkDRA"
-              target="__blank"
-              className="flex items-center text-sm  mx-auto px-4 py-2 rounded-md font-medium text-gray-900 dark:text-gray-100 self-center "
-            >
-              See All Videos
-              <svg
-                className="h-4 w-4 ml-1"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-            </a>
-          </div>
+        <div className="flex justify-center items-center text-2xl md:text-3xl font-bungee mb-8 sm:mt-10 mt-5 text-black/80 dark:text-white mx-auto">
+          <HighlightBox className="mx-auto inline-block text-center">
+            STACK
+          </HighlightBox>
         </div>
 
+        <div className="flex flex-wrap gap-3 justify-center mb-8">
+          {skills.map((skill, index) => (
+            <span
+              key={index}
+              className="p-2 rounded-md text-xs font-medium
+                        bg-black text-white
+                        dark:bg-white dark:text-black
+                        shadow-md transition [--pattern-foreground:var(--color-zinc-950)]/5 dark:[--pattern-foreground:var(--color-white)]/5 bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-size-[10px_10px] bg-center bg-zinc-950/0.75 dark:bg-white/0.75">
+              {skill}
+            </span>
+          ))}
+        </div>
+        
         <Timeline />
         <Contact />
       </div>
