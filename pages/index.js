@@ -25,7 +25,7 @@ export default function Home() {
   {
     id: "quaric",
     companyName: "Navodita Infotech",
-    companyLogo: "https://web.virtualinternships.com/android-chrome-512x512.png",
+    companyLogo: "https://imgs.search.brave.com/NhQwsSCfuietlLWBLt-Bsb7wnP85V2AmhBVSIKPU9hk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5jYWtlcmVzdW1l/LmNvbS9pbWFnZS91/cGxvYWQvcy0tWGh5/SWtyU0EtLS9jX2Zp/bGwsZ19mYWNlLGhf/MzAwLHdfMzAwL3Yx/NzAwNzI5OTM5L2g3/c2lzaHMxaG1iamh3/Zmhtb2RxLmpwZw",
     positions: [
       {
         id: "30d3a9fb-021d-452a-9d27-83655369b4b9",
@@ -92,7 +92,7 @@ quizzes, and crafts personalized study plans from PDFs or notes.
   {
     id: "contribution",
     companyName: "Contributions",
-    companyLogo: "https://imgs.search.brave.com/MZuhpqk_WO7bd6Yotim_Vrbj4TLAv0IWL2HmJo2H6z4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cG5nYWxsLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMTMvR2l0/aHViLUxvZ28tUE5H/LVBob3Rvcy5wbmc",
+    companyLogo: "https://imgs.search.brave.com/S5YuHClZzCyuSzkE9xZHnmh9kdHBW8QPJo2EITI0sZ0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aWNvbnNjb3V0LmNv/bS9pY29uL2ZyZWUv/cG5nLTI1Ni9mcmVl/LWdpdGh1Yi1pY29u/LXN2Zy1wbmctZG93/bmxvYWQtMzE0Nzg3/My5wbmc_Zj13ZWJw/Jnc9MTI4",
     positions: [
       {
         id: "30d3a9fb-021d-452a-9d27-83655369b4b1",
@@ -233,7 +233,7 @@ quizzes, and crafts personalized study plans from PDFs or notes.
             tags={["React",
             "JavaScript",
             "Cricapi",
-            "Tailwind Css",
+            "Tailwind",
             "Local Storage"]}
             link="https://cricvortex.netlify.app/??"
             image="/cricvortex.jpg"
@@ -323,7 +323,7 @@ quizzes, and crafts personalized study plans from PDFs or notes.
           {skills.map((skill, index) => (
             <span
               key={index}
-              className="p-2 rounded-md text-xs font-bold font-mono
+              className="p-2 rounded-md text-xs sm:text-sm font-bold font-jetbrains
                         bg-black text-white
                         dark:bg-white dark:text-black
                         shadow-md transition [--pattern-foreground:var(--color-zinc-950)]/5 dark:[--pattern-foreground:var(--color-white)]/5 bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-size-[10px_10px] bg-center bg-zinc-950/0.75 dark:bg-white/0.75">

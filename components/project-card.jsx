@@ -120,7 +120,7 @@ export function ProjectCard({
         <div className="flex flex-row flex-wrap justify-center items-center gap-2">
           {links.map((link, idx) => (
             <Link href={link.href} key={idx} target="_blank">
-              <button className="flex items-center font-sans text-center text-white font-semibold bg-black dark:border dark:border-gray-600 dark:bg-white rounded-md gap-2 px-2 py-1 text-xs mb-2">
+              <button className="flex items-center font-sans text-center text-white dark:text-black font-semibold bg-black dark:border dark:border-gray-600 dark:bg-white rounded-md gap-2 px-2 py-1 text-xs mb-2">
                 <span className="flex items-center">{link.icon}</span>
                 <span>{link.type}</span>
               </button>

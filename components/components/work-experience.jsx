@@ -62,7 +62,7 @@ export function ExperienceItem({
           )}
         </div>
 
-        <h3 className="text-lg leading-snug ml-2 font-jetbrains font-bold">
+        <h3 className="text-lg leading-snug font-jetbrains font-bold">
           {experience.companyName}
         </h3>
 
@@ -116,7 +116,7 @@ export function ExperiencePositionItem({
                 </svg>
               </div>
 
-              <h4 className="text-base font-semibold font-jetbrains text-balance ml-2">
+              <h4 className="text-base font-semibold font-jetbrains text-balance">
                 {position.title}
               </h4>
             </div>
@@ -127,15 +127,16 @@ export function ExperiencePositionItem({
           </div>
 
     
-          <div className="flex items-center font-bebas font-semibold text-gray-600 gap-2 pl-9 ml-6 text-sm text-muted-foreground">
+          <div className="flex items-center font-bebas font-semibold text-gray-600 dark:text-teal-500 gap-2 pl-9 ml-6 text-sm text-muted-foreground">
             {position.employmentType && (
               <>
                 <dl>
                   <dt className="sr-only">Employment Type</dt>
-                  <dd>&nbsp;{position.employmentType}</dd>
+                  <dd>&nbsp;&nbsp;{position.employmentType}</dd>
                 </dl>
+                
+                <ClockFading size={14} className="text-black dark:text-white" />
 
-                <ClockFading size={14}/>
               </>
             )}
 
@@ -150,7 +151,7 @@ export function ExperiencePositionItem({
           className="w-full overflow-hidden duration-300 data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down"
         >
           {position.description && (
-            <Prose className="pt-2 pl-0 text-justify">
+            <Prose className="pt-2 ml-1 text-justify">
               <ReactMarkdown>{position.description}</ReactMarkdown>
             </Prose>
           )}
