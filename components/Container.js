@@ -120,10 +120,10 @@ export default function Container(props) {
       {/* Page content */}
       <main
         id="skip"
-        className="flex flex-col justify-center bg-white dark:bg-zinc-900 px-8 text-gray-900 dark:text-gray-100 antialiased"
+        className="flex flex-col justify-center bg-white dark:bg-zinc-900 px-8 sm:px-0 text-gray-900 dark:text-gray-100 antialiased"
       >
         {children}
-        <Footer />
+        <Footer/>
       </main>
     </div>
   );

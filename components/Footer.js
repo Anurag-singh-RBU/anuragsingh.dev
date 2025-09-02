@@ -1,99 +1,168 @@
-import Link from "next/link";
-import NowPlaying from "@/components/NowPlaying";
-
-const ExternalLink = ({ href, children }) => (
-  <a
-    className="text-gray-500 hover:text-gray-600 transition"
-    target="_blank"
-    rel="noopener noreferrer"
-    href={href}
-  >
-    {children}
-  </a>
-);
+"use client"
+import * as React from "react"
+import Link from "next/link"
+import { Github, Instagram, Linkedin, Twitter } from "lucide-react"
+import { Button } from "./components/ui/button"
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./components/ui/tooltip"
 
 export default function Footer() {
   return (
-    <footer className="flex flex-col justify-center items-start max-w-2xl mx-auto w-full mb-8">
-      <NowPlaying />
-      <hr className="w-full border-1 border-gray-200 dark:border-gray-800 mb-8" />
-      <div className="w-full max-w-2xl grid grid-cols-1 gap-4 pb-16 sm:grid-cols-3">
-        <div className="flex flex-col space-y-4">
-          <Link href="/" className="text-gray-500 hover:text-gray-600 transition">
-            Home
-          </Link>
-          <Link href="/dashboard" className="text-gray-500 hover:text-gray-600 transition">
-            Dashboard
-          </Link>
-          <Link href="/projects" className="text-gray-500 hover:text-gray-600 transition">
-            Projects
-          </Link>
-          <Link href="/links" className="text-gray-500 hover:text-gray-600 transition">
-            Links
-          </Link>
+    <footer className="relative w-full border-t font-GS mt-10 bg-background dark:bg-neutral-900/50 text-foreground transition-colors duration-300">
+      <div className="sm:px-6 max-w-2xl mx-auto py-12">
+        
+        {/* Responsive Layout */}
+        <div className="flex flex-col lg:flex-row gap-12 lg:justify-between w-full">
+          
+          {/* Mobile: Pages + Contact row, lg: separate */}
+          <div className="flex flex-row gap-10 w-full">
+            
+            {/* Pages Section */}
+            <div className="text-left">
+              <h3 className="mb-4 text-lg text-black/70 font-bungee dark:text-white">Pages</h3>
+              <nav className="flex flex-col space-y-2 text-sm font-jetbrains sm:font-semibold font-bold text-gray-600 sm:ml-1 dark:text-teal-300">
+                <Link href="/" className="transition-colors">Home</Link>
+                <Link href="/coding" className="transition-colors">Coding</Link>
+                <Link href="/dashboard" className="transition-colors">Dashboard</Link>
+                <Link href="/projects" className="transition-colors">Projects</Link>
+                <Link href="https://shadyxui.in/colors" className="transition-colors">Colors</Link>
+              </nav>
+            </div>
+
+            {/* Contact Section */}
+            <div className="sm:text-left sm:ml-10 ml-10">
+              <h3 className="mb-4 text-lg text-black/70 font-bungee dark:text-white">Contact &nbsp;Me</h3>
+              <address className="flex flex-col space-y-2 text-sm not-italic sm:font-semibold font-bold text-gray-600 dark:text-teal-300 font-mono sm:ml-1">
+                
+                <a 
+                  href="/links" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                >
+                  Links
+                </a>
+
+                <Link href="/resources">
+                  Resources
+                </Link>
+
+                <p>
+                  Phone <span className="dark:text-white">:</span> <span className="sm:font-semibold font-bold text-black dark:text-orange-200">7387857715</span>
+                </p>
+
+              </address>
+            </div>
+          </div>
+
+          {/* Follow Section */}
+          <div className="text-left">
+            <h3 className="mb-4 text-lg text-black/70 font-bungee ml-1 dark:text-white">Follow &nbsp;Me</h3>
+            <div className="flex justify-start space-x-4">
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <a href="https://github.com/Anurag-singh-RBU" target="_blank" rel="noopener noreferrer">
+                      <Button variant="outline" size="icon" className="rounded-full p-2 dark:border-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" 
+                          viewBox="0 0 24 24" 
+                          fill="currentColor" 
+                          width="18" 
+                          height="18">
+                          <path d="M12 .297c-6.63 0-12 5.373-12 12 
+                                0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 
+                                0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61 
+                                C4.422 18.07 3.633 17.7 3.633 17.7 
+                                c-1.087-.744.084-.729.084-.729 
+                                1.205.084 1.838 1.236 1.838 1.236 
+                                1.07 1.835 2.809 1.305 3.495.998 
+                                .108-.776.417-1.305.76-1.605 
+                                -2.665-.3-5.466-1.332-5.466-5.93 
+                                0-1.31.465-2.38 1.235-3.22 
+                                -.135-.303-.54-1.523.105-3.176 
+                                0 0 1.005-.322 3.3 1.23 
+                                .96-.267 1.98-.399 3-.405 
+                                1.02.006 2.04.138 3 .405 
+                                2.28-1.552 3.285-1.23 3.285-1.23 
+                                .645 1.653.24 2.873.12 3.176 
+                                .765.84 1.23 1.91 1.23 3.22 
+                                0 4.61-2.805 5.625-5.475 5.92 
+                                .42.36.81 1.096.81 2.22 
+                                0 1.606-.015 2.896-.015 3.286 
+                                0 .315.21.69.825.57 
+                                C20.565 22.092 24 17.592 24 12.297 
+                                c0-6.627-5.373-12-12-12"/>
+                          </svg>
+                        <span className="sr-only">Github</span>
+                      </Button>
+                    </a>
+                  </TooltipTrigger>
+                </Tooltip>
+              </TooltipProvider>
+
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <a href="https://x.com/anuragRBU" target="_blank" rel="noopener noreferrer">
+                      <Button variant="outline" size="icon" className="rounded-full p-2 dark:border-white">
+                        <Twitter className="h-4 w-4" />
+                        <span className="sr-only">Twitter</span>
+                      </Button>
+                    </a>
+                  </TooltipTrigger>
+                </Tooltip>
+              </TooltipProvider>
+
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">
+                      <Button variant="outline" size="icon" className="rounded-full p-2 dark:border-white">
+                        <Instagram className="h-4 w-4" />
+                        <span className="sr-only">Instagram</span>
+                      </Button>
+                    </a>
+                  </TooltipTrigger>
+                </Tooltip>
+              </TooltipProvider>
+
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <a href="https://www.linkedin.com/in/anuragsinghrbu/" target="_blank" rel="noopener noreferrer">
+                      <Button variant="outline" size="icon" className="rounded-full p-2 dark:border-white">
+                        <Linkedin className="h-4 w-4" />
+                        <span className="sr-only">LinkedIn</span>
+                      </Button>
+                    </a>
+                  </TooltipTrigger>
+                </Tooltip>
+              </TooltipProvider>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col space-y-4">
-          <ExternalLink href="https://github.com/manuarora700">
-            GitHub
-          </ExternalLink>
-          <ExternalLink href="https://linkedin.com/in/manuarora28">
-            LinkedIn
-          </ExternalLink>
-          <ExternalLink href="https://twitter.com/mannupaaji">
-            Twitter
-          </ExternalLink>
-          <ExternalLink href="https://instagram.com/maninthere">
-            Instagram
-          </ExternalLink>
-          <Link href="/freelance" className="text-gray-500 hover:text-gray-600 transition">
-            Freelancing
-          </Link>
-          {/* <ExternalLink href="https://www.youtube.com/channel/UCZMli3czZnd1uoc1ShTouQw">
-            YouTube
-          </ExternalLink> */}
-        </div>
-        <div className="flex flex-col space-y-4">
-          <Link href="/tweets" className="text-gray-500 hover:text-gray-600 transition">
-            Tweets
-          </Link>
-          <Link href="/resources" className="text-gray-500 hover:text-gray-600 transition">
-            Resources
-          </Link>
-          <Link href="/demos" className="text-gray-500 hover:text-gray-600 transition">
-            Live Demos
-          </Link>
-          <Link href="/freecodecamp" className="text-gray-500 hover:text-gray-600 transition">
-            freeCodeCamp
-          </Link>
-          <Link href="/boxshadows" className="text-gray-500 hover:text-gray-600 transition">
-            Box Shadows
-          </Link>
-          <Link href="/design-inspiration" className="text-gray-500 hover:text-gray-600 transition">
-            Design Inspiration
-          </Link>
+
+        {/* Bottom Bar */}
+        <div className="mt-10 flex flex-col sm:items-center sm:justify-between gap-4 border-t pt-8 sm:text-center md:flex-row">
+          <p className="text-sm text-muted-foreground font-GS text-gray-400">
+            © 2025 Anurag Singh. All rights reserved.
+          </p>
+          <nav className="flex gap-2 text-sm font-GS dark:text-white">
+            <p className="flex flex-row text-gray-400 items-center">
+              Find me on
+              <a href="https://twitter.com" target="__blank" className="dark:text-white">
+                <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 mx-1 dark:text-white">
+                  <g>
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                  </g>
+                </svg>
+              </a>{" "}
+              and{" "}
+              <a href="https://www.peerlist.io/manuarora" target="__blank">
+                <img src="/peerlist.png" className="h-5 w-5 mx-1" />
+              </a>
+            </p>
+          </nav>
         </div>
       </div>
-      <p className="flex flex-row text-gray-400 items-center">
-        Find me on
-        <a href="https://twitter.com" target="__blank">
-          {/* <img src="/logos/tailwind.svg" className="h-6 w-6 mx-1" /> */}
-          <svg viewBox="0 0 24 24" aria-hidden="true" class="h-4 w-4 mx-1">
-            <g>
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
-            </g>
-          </svg>
-        </a>{" "}
-        and{" "}
-        <a href="https://www.peerlist.io/manuarora" target="__blank">
-          <img src="/peerlist.png" className="h-5 w-5 mx-1" />
-        </a>
-      </p>
-      <p className="flex flex-row text-gray-400 items-center mt-2">
-        Portfolio inspired by{" "}
-        <a href="https://leerob.io" className="ml-1" target="__blank">
-          Lee Rob
-        </a>
-      </p>
     </footer>
-  );
+  )
 }
