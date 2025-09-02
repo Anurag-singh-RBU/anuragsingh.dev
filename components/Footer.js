@@ -19,7 +19,7 @@ export default function Footer() {
             {/* Pages Section */}
             <div className="text-left">
               <h3 className="mb-4 text-lg text-black/70 font-bungee dark:text-white">Pages</h3>
-              <nav className="flex flex-col space-y-4 text-sm font-jetbrains sm:font-semibold font-bold text-gray-600 sm:ml-1 dark:text-teal-300">
+              <nav className="flex flex-col space-y-4 text-sm font-jetbrains sm:font-semibold font-bold text-gray-600 ml-1 dark:text-teal-300">
                 <Link href="/" className="transition-colors">Home</Link>
                 <Link href="/coding" className="transition-colors">Coding</Link>
                 <Link href="/dashboard" className="transition-colors">Dashboard</Link>
@@ -31,7 +31,7 @@ export default function Footer() {
             {/* Contact Section */}
             <div className="sm:text-left sm:ml-10 ml-10">
               <h3 className="mb-4 text-lg text-black/70 font-bungee dark:text-white">Contact &nbsp;Me</h3>
-              <address className="flex flex-col space-y-4 text-sm not-italic sm:font-semibold font-bold text-gray-600 dark:text-teal-300 font-mono sm:ml-1">
+              <address className="flex flex-col space-y-4 text-sm not-italic sm:font-semibold font-bold text-gray-600 dark:text-teal-300 font-mono ml-1">
                 
                 <a 
                   href="/links" 
