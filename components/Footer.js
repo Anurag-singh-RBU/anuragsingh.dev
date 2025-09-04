@@ -146,18 +146,13 @@ export default function Footer() {
             © 2025 Anurag Singh. All rights reserved.
           </p>
           <nav className="flex gap-2 text-sm font-GS dark:text-white">
-            <p className="flex flex-row text-gray-400 items-center">
+            <p className="flex flex-row text-gray-400 items-center" style={{wordSpacing: "3px"}}>
               Find me on
               <a href="https://twitter.com" target="__blank" className="dark:text-white">
-                <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 mx-1 dark:text-white">
-                  <g>
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
-                  </g>
-                </svg>
-              </a>{" "}
-              and{" "}
+                <Twitter size={18} className="mx-2 mb-0.5 text-black dark:text-blue-400"/>
+              </a>and&nbsp;
               <a href="https://www.peerlist.io/manuarora" target="__blank">
-                <img src="/peerlist.png" className="h-5 w-5 mx-1" />
+                <img src="/peerlist.png" className="h-5 w-5"/>
               </a>
             </p>
           </nav>
