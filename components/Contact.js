@@ -60,7 +60,7 @@ export default function Contact() {
         Say HI – I’d love to hear from you ❤️
       </p>
       <a
-        href="https://wa.me/919587738861?text=I want to work on a project with you"
+        href="https://wa.me/9860988325?text=Hello Anurag , I am "
         className="mt-4 px-4 text-center w-full font-bold h-8 bg-green-400 dark:bg-green-400 text-gray-900 py-1 dark:text-gray-900 rounded"
         type="submit"
       >
