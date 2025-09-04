@@ -18,14 +18,14 @@ const Year = ({ children }) => {
 
 const Step = ({ title, children }) => {
   return (
-    <li className="mb-4 ml-2">
+    <li className="mb-4 sm:ml-2">
       <div className="flex items-center mb-2 text-green-700 dark:text-green-300">
         <span className="sr-only">Check</span>
         <BsPatchCheckFill className="text-blue-500 mr-2" />
 
         <p className="sm:font-bold font-bold font-jetbrains text-gray-900 dark:text-gray-100">{title}</p>
       </div>
-      <p className="text-gray-700 dark:text-gray-400 ml-6 font-mono text-justify">{children}</p>
+      <p className="text-gray-700 dark:text-gray-400 ml-6 font-mono text-justify text-sm">{children}</p>
     </li>
   );
 };
@@ -60,7 +60,7 @@ const FullTimeline = () => (
       </Step>
       <Step title="C and Java 🙌🏻">
         Started learning logics and basic programming fundamentals with Object
-        Oriented Programming. C was intimidating, Java was fun.
+        Oriented Programming. C was intimidating and Java was fun.
       </Step>
       <Step title="First Achievement 😂">
         I consider this as an achievement. Got 9.25 SGPA in my first ever sem.
@@ -99,7 +99,7 @@ const FullTimeline = () => (
     <Divider />
     <Year>2005</Year>
     <ul>
-      <Step className = "font-sans" title="An Enginner was Born in India 👶🏼 🍼"/>
+      <Step className = "font-sans" title="An Enginner was Born in India 👶🏼"/>
     </ul>
   </>
 );
@@ -118,7 +118,7 @@ export default function Timeline() {
           Created my first ever full stack website using Next Js and got over 150 users in just 2 damn months.
         </Step>
         <Step title="SaaS Products 🚀">
-          Started freelancing, developed full stack applications for clients
+          Started freelancing - developed full stack applications for clients
           ranging from E Commerce stores to static landing pages.
         </Step>
       </ul>
