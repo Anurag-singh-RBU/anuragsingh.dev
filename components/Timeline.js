@@ -109,7 +109,7 @@ export default function Timeline() {
 
   return (
     <>
-     <h3 className="text-2xl md:text-3xl font-bungee mb-8 sm:mt-10 mt-5 text-black/80 dark:text-white" style={{wordSpacing: "6px"}}>
+     <h3 className="text-2xl md:text-3xl font-bungee mb-8 sm:mt-20 mt-10 text-black/80 dark:text-white" style={{wordSpacing: "6px"}}>
         <HighlightBox>Life Updates</HighlightBox>
       </h3>
       <Year>2025</Year>
@@ -127,12 +127,12 @@ export default function Timeline() {
       ) : (
         <button
           type="button"
-          className="flex items-center text-sm my-4 mx-auto px-4 py-2 rounded-md font-bold font-mono text-gray-900 dark:text-gray-100"
+          className="flex items-center text-md my-4 mx-auto px-4 py-2 rounded-md font-bold font-mono text-gray-900 dark:text-gray-100"
           onClick={() => showFullTimeline(true)}
         >
           See More
           <svg
-            className="h-4 w-4 ml-1"
+            className="h-4 w-4 ml-2 mt-0.5"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"

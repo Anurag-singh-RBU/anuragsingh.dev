@@ -142,14 +142,14 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-10 flex flex-col sm:items-center sm:justify-between gap-4 border-t pt-8 sm:text-center md:flex-row">
-          <p className="text-sm text-muted-foreground font-GS text-gray-400">
+          <p className="text-sm font-GS text-gray-400" style={{wordSpacing: "3px"}}>
             © 2025 Anurag Singh. All rights reserved.
           </p>
           <nav className="flex gap-2 text-sm font-GS dark:text-white">
             <p className="flex flex-row text-gray-400 items-center" style={{wordSpacing: "3px"}}>
               Find me on
               <a href="https://twitter.com" target="__blank" className="dark:text-white">
-                <Twitter size={18} className="mx-2 mb-0.5 text-black dark:text-blue-400"/>
+                <Twitter size={18} className="mx-2 text-black dark:text-blue-400"/>
               </a>and&nbsp;
               <a href="https://www.peerlist.io/manuarora" target="__blank">
                 <img src="/peerlist.png" className="h-5 w-5"/>
