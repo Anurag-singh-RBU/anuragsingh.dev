@@ -10,7 +10,7 @@ const Divider = () => {
 
 const Year = ({ children }) => {
   return (
-    <h3 className="text-lg md:text-xl font-bold mb-4 tracking-tight text-gray-900 dark:text-gray-100">
+    <h3 className="text-lg md:text-xl font-mono font-bold mb-4 tracking-tight text-gray-900 dark:text-gray-100">
       {children}
     </h3>
   );
@@ -75,7 +75,7 @@ const FullTimeline = () => (
       </Step>
       <Step title="Developed interest in Web 2 🚀">
         One of my friends introduced me to Web Development. I started off by
-        making simple HTML and CSS websites like Amazon and Flipkart Clone with a keen interest in design.
+        making simple HTML and CSS websites like Amazon and Flipkart Clone.
       </Step>
     </ul>
     <Divider />
@@ -119,7 +119,7 @@ export default function Timeline() {
         </Step>
         <Step title="SaaS Products 🚀">
           Started freelancing - developed full stack applications for clients
-          ranging from E Commerce stores to static landing pages.
+          ranging from SaaS to static landing pages.
         </Step>
       </ul>
       {isShowingFullTimeline ? (
