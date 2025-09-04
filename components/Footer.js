@@ -142,7 +142,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-10 flex flex-col sm:items-center sm:justify-between gap-4 border-t pt-8 sm:text-center md:flex-row">
-          <p className="text-sm font-GS text-gray-400" style={{wordSpacing: "2px"}}>
+          <p className="text-sm font-GS text-gray-500" style={{wordSpacing: "2px"}}>
             © 2025 Anurag Singh. All rights reserved.
           </p>
           <nav className="flex gap-2 text-sm font-GS dark:text-white">
