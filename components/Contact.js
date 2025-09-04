@@ -61,7 +61,7 @@ export default function Contact() {
       </p>
       <a
         href="https://wa.me/9860988325?text=Hello Anurag , I am "
-        className="mt-4 px-4 text-center w-full font-bold font-jetbrains h-8 bg-green-400 dark:bg-green-400 text-gray-900 py-1 dark:text-gray-900 rounded"
+        className="mt-4 px-4 text-center w-full font-bold font-jetbrains leading-wide h-8 bg-green-400 dark:bg-green-400 text-gray-900 py-1 dark:text-gray-900 rounded"
         type="submit"
       >
         Chat on WhatsApp
