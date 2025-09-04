@@ -332,8 +332,8 @@ quizzes, and crafts personalized study plans from PDFs or notes.
           ))}
         </div>
         
-        <Timeline />
-        <Contact />
+        <Timeline/>
+        <Contact/>
       </div>
     </Container>
   );

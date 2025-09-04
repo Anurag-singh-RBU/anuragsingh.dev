@@ -52,7 +52,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="border border-blue-200 rounded p-6 my-4 w-full dark:border-gray-800 bg-blue-50 dark:bg-blue-opaque">
+    <div className="border border-blue-200 rounded p-6 my-4 w-full dark:border-gray-800 bg-blue-50 dark:bg-blue-opaque mt-10">
       <h5 className="text-lg md:text-xl font-bold text-gray-900 dark:text-gray-100">
         Want to hire me as a freelancer? Let's discuss.
       </h5>
