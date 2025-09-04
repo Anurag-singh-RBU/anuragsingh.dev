@@ -48,7 +48,7 @@ const FullTimeline = () => (
     <Year>2024</Year>
     <ul>
       <Step title="Started College 🔥">
-        Opted for Computer Science B.Tech Degree from Ramdeobaba University, Nagpur.
+        Opted for Computer Science B.Tech Degree from Ramdeobaba University Nagpur.
       </Step>
       <Step title="Introduced to Frontend ⚡️">
         Started getting interest in Frontend Development. Used to learn this stuff
@@ -85,7 +85,7 @@ const FullTimeline = () => (
         Scored 9 CGPA in 10th Grade. For me it was huge.
       </Step>
       <Step title="Wanted to take up Science 🌪❤️">
-        I always wanted to become a Engineer. Though my parents
+        I always wanted to become an Engineer. My parents
         agreed and that let me to opt for Science stream.
       </Step>
     </ul>
@@ -93,7 +93,7 @@ const FullTimeline = () => (
     <Year>2010</Year>
     <ul>
       <Step title="First Computer 💻">
-        I played games all day, everyday.
+        I played games all day - everyday.
       </Step>
     </ul>
     <Divider />
