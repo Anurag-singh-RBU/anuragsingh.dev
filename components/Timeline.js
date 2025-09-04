@@ -25,7 +25,7 @@ const Step = ({ title, children }) => {
 
         <p className="sm:font-bold font-bold font-jetbrains text-gray-900 dark:text-gray-100">{title}</p>
       </div>
-      <p className="text-gray-700 dark:text-gray-400 ml-6 font-sans">{children}</p>
+      <p className="text-gray-700 dark:text-gray-400 ml-6 font-mono text-justify">{children}</p>
     </li>
   );
 };
@@ -50,7 +50,7 @@ const FullTimeline = () => (
       <Step title="Started College 🔥">
         Opted for Computer Science B.Tech Degree from Ramdeobaba University, Nagpur.
       </Step>
-      <Step title="Introduced to Frontend Development ⚡️">
+      <Step title="Introduced to Frontend ⚡️">
         Started getting interest in Frontend Development. Used to learn this stuff
         from Youtube.
       </Step>
@@ -73,7 +73,7 @@ const FullTimeline = () => (
         Completed 12th grade with 88.6% Marks in Science stream. Again, a big
         achievement for me.
       </Step>
-      <Step title="Developed interest in Web Development 🚀">
+      <Step title="Developed interest in Web 2 🚀">
         One of my friends introduced me to Web Development. I started off by
         making simple HTML and CSS websites like Amazon and Flipkart Clone with a keen interest in design.
       </Step>
@@ -99,7 +99,7 @@ const FullTimeline = () => (
     <Divider />
     <Year>2005</Year>
     <ul>
-      <Step title="An Enginner was Born in India 👶🏼 🍼"/>
+      <Step className = "font-sans" title="An Enginner was Born in India 👶🏼 🍼"/>
     </ul>
   </>
 );
@@ -117,7 +117,7 @@ export default function Timeline() {
         <Step title="Open Source - SHADYX ✨">
           Created my first ever full stack website using Next Js and got over 150 users in just 2 damn months.
         </Step>
-        <Step title="Full Stack Applications 🚀">
+        <Step title="SaaS Products 🚀">
           Started freelancing, developed full stack applications for clients
           ranging from E Commerce stores to static landing pages.
         </Step>
