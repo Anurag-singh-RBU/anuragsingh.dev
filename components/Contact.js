@@ -60,11 +60,13 @@ export default function Contact() {
         Say HI – I’d love to hear from you ❤️
       </p>
       <a
-        href="https://wa.me/9860988325?text=Hello Anurag , I am "
-        className="mt-4 px-4 text-center w-full font-bold font-sans leading-wide h-8 bg-green-400 dark:bg-green-400 text-gray-900 py-2 dark:text-gray-900 rounded"
-        type="submit"
+        href="https://wa.me/9860988325?text=Hello Anurag, I am "
+        target="_blank"
+        rel="noopener noreferrer"
+        className="relative inline-flex items-center justify-center rounded-md text-sm font-mono bg-black px-6 py-2 font-semibold text-white shadow-md transition duration-300 hover:opacity-90 overflow-hidden"
       >
-        Chat on WhatsApp
+        <span>Chat on WhatsApp</span>
+        <span className="absolute bottom-0 left-0 h-[2px] w-full bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500"></span>
       </a>
 
       <Divider />

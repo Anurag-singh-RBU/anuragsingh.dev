@@ -87,6 +87,16 @@ html {
     --chart-4: 43 74% 66%;
 
     --chart-5: 27 87% 67%;
+
+    --color-1: oklch(66.2% 0.225 25.9);
+
+    --color-2: oklch(60.4% 0.26 302);
+
+    --color-3: oklch(69.6% 0.165 251);
+
+    --color-4: oklch(80.2% 0.134 225);
+
+    --color-5: oklch(90.7% 0.231 133);
   }
 
   .dark {
@@ -122,9 +132,15 @@ html {
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    --color-1: oklch(66.2% 0.225 25.9);
+    --color-2: oklch(60.4% 0.26 302);
+    --color-3: oklch(69.6% 0.165 251);
+    --color-4: oklch(80.2% 0.134 225);
+    --color-5: oklch(90.7% 0.231 133);
   }
   .theme {
     --animate-aurora: aurora 8s ease-in-out infinite alternate;
+    --animate-rainbow: rainbow var(--speed, 2s) infinite linear;
   }
 
 }
@@ -314,6 +330,14 @@ input[type="email"] {
   100% {
     background-position: 0% 50%;
     transform: rotate(-5deg) scale(0.9);
+    }
+  }
+  @keyframes rainbow {
+  0% {
+    background-position: 0%;
+    }
+  100% {
+    background-position: 200%;
     }
   }
 }
