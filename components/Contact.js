@@ -56,7 +56,7 @@ export default function Contact() {
       <h5 className="text-lg md:text-xl text-gray-900 font-bungee sm:mb-5 mb-2" style={{wordSpacing : "5px"}}>
         Want to Interact ?
       </h5>
-      <p className="my-1 text-gray-800 dark:text-blue-900 font-mono font-semibold text-sm sm:text-lg mb-3" style={{wordSpacing : "-3px"}}>
+      <p className="my-1 text-gray-800 dark:text-blue-900 font-mono text-sm sm:text-lg mb-3" style={{wordSpacing : "-3px"}}>
         Say HI – I’d love to hear from you ❤️
       </p>
       <a
