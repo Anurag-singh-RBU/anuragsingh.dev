@@ -132,7 +132,7 @@ const Header = () => {
             </AnimatePresence>
           </span>
         </div>
-        <p className="text-zinc-600 dark:text-zinc-300 text-justify font-GS">
+        <p className="text-zinc-600 dark:text-zinc-300 text-justify font-cabin">
           Full Stack Developer building SaaS products and web apps. Find me
           on
           <a

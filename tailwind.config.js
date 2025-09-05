@@ -109,6 +109,7 @@ module.exports = {
         jetbrains: ["JetBrains Mono", "monospace"],
         bungee: ["Bungee", "cursive"],
         bebas: ["'Bebas Neue'", "sans-serif"],
+        cabin: ["Cabin", "sans-serif"],
       },
       typography: (theme) => ({
         DEFAULT: {
