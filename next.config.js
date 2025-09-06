@@ -1,4 +1,6 @@
-module.exports = {
+const withTM = require('next-transpile-modules')(['react-tweet']);
+
+module.exports = withTM({
   images: {
     domains: [
       "i.scdn.co", // Spotify Album Art
@@ -6,13 +8,6 @@ module.exports = {
       "api.microlink.io", // Microlink Image Preview
       "avatars.githubusercontent.com", // GitHub avatars
     ],
-  },
-  webpack: (config, { dev, isServer }) => {
-    if (isServer) {
-      require("./scripts/generate-sitemap");
-    }
-
-    return config;
   },
   async redirects() {
     return [
@@ -23,4 +18,4 @@ module.exports = {
       },
     ];
   },
-};
+});

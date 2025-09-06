@@ -1,4 +1,5 @@
 import Container from "@/components/Container";
+import HighlightBox from "@/components/HighlightBox";
 import ResourcesCard from "@/components/ResourcesCard";
 import { links } from "@/constants/links";
 import clsx from "clsx";
@@ -10,11 +11,11 @@ export default function Links() {
       description="Links to all my socials , projects , source codes and memes."
     >
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
-        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
-          Links
-        </h1>
-        <p className="text-gray-600 dark:text-gray-400 mb-4 hidden md:block">
-          Links to all my socials , projects , source codes and memes.
+        <h3 className="text-2xl md:text-3xl font-bungee mb-5 mt-5 text-black/80 dark:text-white" style={{wordSpacing: "6px"}}>
+          <HighlightBox>Links</HighlightBox>
+        </h3>
+        <p className="text-gray-600 dark:text-gray-400 font-mono font-bold mb-4 hidden md:block">
+          Links to all my socials and source codes.
         </p>
         {links?.map((el) => (
           <a
@@ -25,7 +26,7 @@ export default function Links() {
           >
             <span className="inline-block mr-2">{el?.icon}</span>{" "}
             <el.icon className={clsx("h-5 w-5", el?.iconClass)} />
-            <span className="font-bold">{el?.name}</span>
+            <span className="font-bold font-mono">{el?.name}</span>
           </a>
         ))}
       </div>

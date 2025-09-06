@@ -5,53 +5,39 @@ import GitHub from "@/components/metrics/Github";
 import Followers from "@/components/metrics/Followers";
 import Following from "@/components/metrics/Following";
 import Repositories from "@/components/metrics/Repositories";
-import TopTracks from "@/components/TopTracks";
 
 import Analytics from "@/components/metrics/Analytics";
-// import NowPlaying from "@/components/NowPlaying";
-// import TopTracks from "@/components/TopTracks";
-// Have one for twitter
+import HighlightBox from "@/components/HighlightBox";
+import { TweetCard } from "@/components/magicui/tweet-card";
+import { getTweet } from "react-tweet/api";
 
-export default function Dashboard() {
+export default function Dashboard({ tweet }) {
   return (
     <Container
-      title="Dashboard – Manu Arora"
-      description="A Dashboard to show various metrics via Next JS _api routes, deployed as serverless functions."
+      title="Dashboard – Anurag Singh"
+      description="A Dashboard to show various metrics via Next JS _api routes , deployed as serverless functions."
     >
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
-        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
-          Dashboard
-        </h1>
+        <h3 className="text-2xl md:text-3xl font-bungee mb-5 mt-5 text-black/80 dark:text-white" style={{wordSpacing: "6px"}}>
+          <HighlightBox>dashboard</HighlightBox>
+        </h3>
         <div className="mb-8">
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
-            This dashboard is created with NextJS _api routes converted to
-            serverless functions that tracks various metrics across platforms
-            like GitHub, Twitter, Spotify and more 🚀.
+          <p className="text-gray-600 dark:text-gray-400 mb-4 font-mono">
+            This dashboard is created with Next JS api routes converted to
+            serverless functions that tracks various metrics across platforms.
           </p>
         </div>
-        {/* <div className="flex flex-col w-full">
-          <Unsplash />
-          <YouTube />
-        </div> */}
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full">
-          {/* <Analytics /> */}
           <GitHub />
           <Followers />
         </div>
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full">
           <Following />
           <Repositories />
-          <Analytics />
         </div>{" "}
-        <h2 className="font-bold text-3xl tracking-tight mb-4 mt-16 text-black dark:text-white">
-          Top Tracks
-        </h2>
-        <p className="text-gray-600 dark:text-gray-400 mb-4">
-          Curious what I'm currently jamming to? Here's my top tracks on Spotify
-          updated daily.
-        </p>
-        <TopTracks />
+
       </div>
     </Container>
   );
 }
+

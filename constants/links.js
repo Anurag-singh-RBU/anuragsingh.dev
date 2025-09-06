@@ -9,14 +9,19 @@ import { SiAltiumdesigner } from "react-icons/si";
 import { FaFreeCodeCamp } from "react-icons/fa";
 import { BiCodeAlt, BiCodeCurly } from "react-icons/bi";
 import { MdComputer } from "react-icons/md";
+import { RiComputerLine } from "react-icons/ri";
+import { TbComponents } from "react-icons/tb";
+import { MdManageHistory } from "react-icons/md";
+import { CgNpm } from "react-icons/cg";
+import { SiLeetcode } from "react-icons/si";
+import { SiCodechef } from "react-icons/si";
 
 export const links = [
   {
     id: 17,
-    name: "Aceternity",
+    name: "Shadyx UI",
     href: "https://aceternity.com/?ref=instagram",
-    icon: MdComputer,
-    iconClass: "text-gray-500",
+    icon: RiComputerLine,
   },
   {
     id: 7,
@@ -27,28 +32,28 @@ export const links = [
   },
   {
     id: 4,
-    name: "Website",
-    href: "https://manuarora.in",
-    icon: SiNextdotjs,
+    name: "Components",
+    href: "https://shadyxui.in/components",
+    icon: TbComponents,
   },
 
   {
     id: 1,
-    name: "Tailwind Master Kit",
+    name: "Tailwind Colors",
     href: "https://tailwindmasterkit.com",
     icon: SiTailwindcss,
     iconClass: "text-blue-500",
   },
   {
     id: 2,
-    name: "Algochurn",
+    name: "Scrivo",
     href: "https://algochurn.com",
-    icon: BsFileEarmarkCode,
+    icon: MdManageHistory,
   },
 
   {
     id: 8,
-    name: "PlaceholderTech",
+    name: "CricVortex",
     href: "https://placeholdertech.in",
     icon: SiAltiumdesigner,
   },
@@ -60,9 +65,9 @@ export const links = [
   },
   {
     id: 3,
-    name: "FreeCodeCamp",
+    name: "NPM",
     href: "https://www.freecodecamp.org/news/author/manu/",
-    icon: FaFreeCodeCamp,
+    icon: CgNpm,
   },
 
   {
@@ -73,14 +78,14 @@ export const links = [
   },
   {
     id: 9,
-    name: "Codementor",
+    name: "Leetcode",
     href: "https://www.codementor.io/@manuarorawork",
-    icon: BiCodeAlt,
+    icon: SiLeetcode,
   },
   {
     id: 10,
-    name: "Mentorcruise",
+    name: "Codechef",
     href: "https://mentorcruise.com/mentor/manuarora/",
-    icon: BiCodeCurly,
+    icon: SiCodechef,
   },
 ];
