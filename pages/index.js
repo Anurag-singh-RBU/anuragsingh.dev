@@ -338,36 +338,36 @@ quizzes, and crafts personalized study plans from PDFs or notes.
         </h3>
 
         <div className="flex flex-col gap-4 items-start text-justify">
-          <div className="flex items-start gap-2">
-            <CircleDot size={10} className="mt-2" />
+          <div className="flex justify-center items-start gap-2">
+            <CircleDot size={10} className="sm:mt-1.5 sm:block hidden" />
             <p className="text-sm font-mono">
               Cracked <span className="font-bold text-blue-600 dark:text-blue-400" style={{ letterSpacing: "1px" }}>JEE MAINS <span className="text-black dark:text-white font-bold">2023</span></span> and <span className="font-bold text-black dark:text-white">2024</span> with <span className="text-black dark:text-white font-bold">92.35</span> and <span className="text-black dark:text-white font-bold">98.62</span> percentile respectively.
             </p>
           </div>
 
-          <div className="flex items-start gap-2">
-            <CircleDot size={10} className="mt-2" />
+          <div className="flex justify-center items-start gap-2">
+            <CircleDot size={10} className="sm:mt-1.5 sm:block hidden" />
             <p className="text-sm font-mono">
               Cracked <span className="font-bold text-blue-600 dark:text-blue-400" style={{ letterSpacing: "1px" }}>MHTCET <span className="text-black font-bold dark:text-white">2023</span></span> with <span className="text-black dark:text-white font-bold">97.63</span> percentile – State Level Entrance Exam.
             </p>
           </div>
 
-          <div className="flex items-start gap-2">
-            <CircleDot size={10} className="mt-2" />
+          <div className="flex justify-center items-start gap-2">
+            <CircleDot size={10} className="sm:mt-1.5 sm:block hidden" />
             <p className="text-sm font-mono">
               Cracked <span className="font-bold text-blue-600 dark:text-blue-400">KIITEE <span className="text-black dark:text-white font-bold">2023</span></span> with <span className="text-black dark:text-white font-bold">99.26</span> percentile – Conducted by KIIT University Nationally.
             </p>
           </div>
 
-          <div className="flex items-start gap-2">
-            <CircleDot size={10} className="mt-2" />
+          <div className="flex justify-center items-start gap-2">
+            <CircleDot size={10} className="sm:mt-1.5 sm:block hidden" />
             <p className="text-sm font-mono">
               Cracked <span className="font-bold text-blue-600 dark:text-blue-400" style={{ letterSpacing: "1px" }}>JEE ADVANCE <span className="text-black dark:text-white font-bold">2023</span></span> and scored <span className="text-black dark:text-white font-bold font-sans">100</span><span className="text-black dark:text-white font-bold font-mono">&nbsp;percentile</span> in <span className="font-bold text-blue-600 dark:text-blue-400" style={{ letterSpacing: "1px" }}>JEE MAINS PHYSICS <span className="text-black dark:text-white font-bold">2024</span></span>.
             </p>
           </div>
 
-          <div className="flex items-start gap-2">
-            <CircleDot size={10} className="mt-2" />
+          <div className="flex justify-center items-start gap-2">
+            <CircleDot size={10} className="sm:mt-1.5 sm:block hidden" />
             <p className="text-sm font-mono">
               Current CGPA : <span className="text-black dark:text-white font-bold">9.35</span> , 12th Boards : <span className="text-black dark:text-white font-semibold">88.63</span> percent and 10th Boards : <span className="text-black dark:text-white font-bold">85.5</span> percent.
             </p>
