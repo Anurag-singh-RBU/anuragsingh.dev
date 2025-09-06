@@ -17,25 +17,24 @@ export default function Dashboard({ tweet }) {
       title="Dashboard – Anurag Singh"
       description="A Dashboard to show various metrics via Next JS _api routes , deployed as serverless functions."
     >
-      <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
+      <div className="flex flex-col justify-center max-w-2xl mx-auto mb-16">
         <h3 className="text-2xl md:text-3xl font-bungee mb-5 mt-5 text-black/80 dark:text-white" style={{wordSpacing: "6px"}}>
           <HighlightBox>dashboard</HighlightBox>
         </h3>
         <div className="mb-8">
-          <p className="text-gray-600 dark:text-gray-400 mb-4 font-mono">
+          <p className="text-gray-600 dark:text-gray-400 mb-4 font-mono text-justify">
             This dashboard is created with Next JS api routes converted to
             serverless functions that tracks various metrics across platforms.
           </p>
         </div>
-        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full">
-          <GitHub />
-          <Followers />
-        </div>
-        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full">
-          <Following />
-          <Repositories />
-        </div>{" "}
-
+          <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full sm:justify-items-start justify-items-center">
+            <GitHub />
+            <Followers />
+          </div>
+          <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full sm:justify-items-start justify-items-center">
+            <Following />
+            <Repositories />
+          </div>
       </div>
     </Container>
   );
