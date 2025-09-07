@@ -2,7 +2,7 @@ import Container from "@/components/Container";
 import Link from "next/link";
 import Timeline from "@/components/Timeline";
 import Contact from "@/components/Contact";
-import { CircleDot, Github, Globe } from "lucide-react"
+import { CircleDot, Download, Github, Globe } from "lucide-react"
 
 import { LIGHT_COLORS } from "@/lib/constants";
 
@@ -372,6 +372,16 @@ quizzes, and crafts personalized study plans from PDFs or notes.
               Current CGPA : <span className="text-black dark:text-white font-bold">9.35</span> , 12th Boards : <span className="text-black dark:text-white font-semibold">88.63</span> percent and 10th Boards : <span className="text-black dark:text-white font-bold">85.5</span> percent.
             </p>
           </div>
+          <div className="mt-2 cursor-pointer">
+                    <a
+                    href="https://wa.me/9860988325?text=Hello Anurag , I am "
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative inline-flex gap-2 items-center justify-center rounded-md text-sm font-mono bg-black px-3 py-2 font-semibold text-white shadow-md transition duration-300 hover:opacity-90 overflow-hidden">
+                    <span>Resume</span><Download size={13} fontWeight={30}/>
+                    <span className="absolute bottom-0 left-0 h-[2px] w-full bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500"></span>
+                  </a>
+                  </div>
         </div>
 
 

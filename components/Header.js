@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { BlurImage } from "./BlurImage";
 import { AuroraText } from "@/components/magicui/aurora-text";
+import { Download } from "lucide-react";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
