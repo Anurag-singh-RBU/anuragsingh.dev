@@ -20,72 +20,72 @@ export const links = [
   {
     id: 17,
     name: "Shadyx UI",
-    href: "https://aceternity.com/?ref=instagram",
+    href: "https://shadyxui.in",
     icon: RiComputerLine,
   },
   {
     id: 7,
     name: "Twitter",
-    href: "https://twitter.com/mannupaaji",
+    href: "https://twitter.com/anuragRBU",
     icon: AiFillTwitterCircle,
     iconClass: "text-blue-500",
   },
   {
     id: 4,
     name: "Components",
-    href: "https://shadyxui.in/components",
+    href: "https://shadyxui.in/component",
     icon: TbComponents,
   },
 
   {
     id: 1,
     name: "Tailwind Colors",
-    href: "https://tailwindmasterkit.com",
+    href: "https://shadyxui.in/colors",
     icon: SiTailwindcss,
     iconClass: "text-blue-500",
   },
   {
     id: 2,
     name: "Scrivo",
-    href: "https://algochurn.com",
+    href: "https://scrivo.vercel.app",
     icon: MdManageHistory,
   },
 
   {
     id: 8,
     name: "CricVortex",
-    href: "https://placeholdertech.in",
+    href: "https://cricvortex-v2.netlify.app",
     icon: SiAltiumdesigner,
   },
   {
     id: 6,
     name: "LinkedIn",
-    href: "https://linkedin.com/in/manuarora28",
+    href: "https://linkedin.com/in/anuragsinghrbu",
     icon: AiFillLinkedin,
   },
   {
     id: 3,
     name: "NPM",
-    href: "https://www.freecodecamp.org/news/author/manu/",
+    href: "https://www.npmjs.com/package/@anuragcodes/shadyx",
     icon: CgNpm,
   },
 
   {
     id: 5,
     name: "GitHub",
-    href: "https://github.com/manuarora700",
+    href: "https://github.com/Anurag-singh-RBU",
     icon: AiFillGithub,
   },
   {
     id: 9,
     name: "Leetcode",
-    href: "https://www.codementor.io/@manuarorawork",
+    href: "https://www.leetcode.com/singhar_7/",
     icon: SiLeetcode,
   },
   {
     id: 10,
     name: "Codechef",
-    href: "https://mentorcruise.com/mentor/manuarora/",
+    href: "https://codechef.com",
     icon: SiCodechef,
   },
 ];
