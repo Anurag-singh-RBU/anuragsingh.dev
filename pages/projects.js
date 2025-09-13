@@ -1,129 +1,215 @@
 import React from "react";
 import Container from "@/components/Container";
 import Link from "next/link";
-import ProjectCard from "@/components/ProjectCard";
 import Contact from "@/components/Contact";
+import HighlightBox from "@/components/HighlightBox";
+import { ProjectCard } from "@/components/project-card";
+import { CircleDot, Download, Github, Globe } from "lucide-react"
 
 export default function projects() {
   return (
     <Container
-      title="Projects – Manu Arora"
-      description="Projects that I've built from scratch, upcoming projects, learned from courses and projects that I'm proud of."
-      image="/avatar.jpg"
-    >
+      title="Projects – Anurag Singh"
+      description="Projects that I've built from scratch , learned from courses and projects that I'm proud of."
+      image="/my-logo.jpg">
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
-        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
-          Projects
-        </h1>
+        <h3 className="text-2xl md:text-3xl font-bungee mb-10 sm:mt-8 mt-5 text-black/80 dark:text-white" style={{wordSpacing: "6px"}}>
+          <HighlightBox>Projects</HighlightBox>
+        </h3>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <ProjectCard
-            title="Moonbeam"
-            description="Never write from scratch again. Kickstart your next great writing piece with Moonbeam. Your long-form writing AI assistant."
-            href="https://gomoonbeam.com"
-            icon="moonbeam"
-            tags={[
-              "Front-end",
-              "GPT-3",
-              "Next.js",
-              "React",
-              "TailwindCSS",
-              "Chrome Extension",
+            title="Shadyx UI"
+            href="https://shadyxui.in"
+            description="UI components library that offers awesome reusable components for building web applications , create stunning websites and enjoy the flow from COPY to VIBE."
+            dates="May 2025 - June 2025"
+            tags={["Next js",
+            "Typescript",
+            "Tailwind",
+            "Figma",
+            "Prisma",
+            "Aceternity",
+            "MongoDB"]}
+            link="https://shadyxui.in"
+            image="/shadyxui.jpg"
+            links={[
+              { icon: <Globe size={13}/>, type: "Website", href: "https://shadyxui.in" },
+              { icon: (
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  viewBox="0 0 438.549 438.549" 
+                  width="14" 
+                  height="14" 
+                  fill="currentColor">
+                  <path d="M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8-33.598-19.607-70.277-29.408-110.063-29.408-39.781 0-76.472 9.804-110.063 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.854 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.419-1.996 2.475-2.282 3.711-5.14 3.711-8.562 0-.571-.049-5.708-.144-15.417a2549.81 2549.81 0 01-.144-25.406l-6.567 1.136c-4.187.767-9.469 1.092-15.846 1-6.374-.089-12.991-.757-19.842-1.999-6.854-1.231-13.229-4.086-19.13-8.559-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-.951-2.568-2.098-3.711-3.429-1.142-1.331-1.997-2.663-2.568-3.997-.572-1.335-.098-2.43 1.427-3.289 1.525-.859 4.281-1.276 8.28-1.276l5.708.853c3.807.763 8.516 3.042 14.133 6.851 5.614 3.806 10.229 8.754 13.846 14.842 4.38 7.806 9.657 13.754 15.846 17.847 6.184 4.093 12.419 6.136 18.699 6.136 6.28 0 11.704-.476 16.274-1.423 4.565-.952 8.848-2.383 12.847-4.285 1.713-12.758 6.377-22.559 13.988-29.41-10.848-1.14-20.601-2.857-29.264-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.979-3.901-12.374-5.852-26.648-5.852-42.826 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.379-36.732 1.997-58.24 5.52-1.715 13.706-.428 24.554 3.853 10.85 4.283 18.794 7.952 23.84 10.994 5.046 3.041 9.089 5.618 12.135 7.708 17.705-4.947 35.976-7.421 54.818-7.421s37.117 2.474 54.823 7.421l10.849-6.849c7.419-4.57 16.18-8.758 26.262-12.565 10.088-3.805 17.802-4.853 23.134-3.138 8.562 21.509 9.325 40.922 2.279 58.24 15.036 16.18 22.559 35.787 22.559 58.817 0 16.178-1.958 30.497-5.853 42.966-3.9 12.471-8.941 22.457-15.125 29.979-6.191 7.521-13.901 13.85-23.131 18.986-9.232 5.14-18.182 8.85-26.84 11.136-8.662 2.286-18.415 4.004-29.263 5.146 9.894 8.562 14.842 22.077 14.842 40.539v60.237c0 3.422 1.19 6.279 3.572 8.562 2.379 2.279 6.136 2.95 11.276 1.995 44.163-14.653 80.185-41.062 108.068-79.226 27.88-38.161 41.825-81.126 41.825-128.906-.01-39.771-9.818-76.454-29.414-110.049z"/>
+                </svg>
+                ), type: "Source", href: "https://github.com/username/repo" }
             ]}
           />
           <ProjectCard
-            title="Aceternity"
-            description="Building modern applications that scale well and are easy to maintain. Cutting edge websites with a pinch of magic, and a lot of love."
-            href="https://aceternity.com"
-            icon="aceternity"
-            tags={["Next.js", "React", "TailwindCSS", "Full-Stack"]}
+            title="Scrivo"
+            href="https://shadyxui.in"
+            description="A full featured project management platform designed to streamline task tracking and team collaboration through dashboards that is customizable workflows and real time updates."
+            dates="August 2025 - Present"
+            tags={["Next js",
+            "Javascript",
+            "Tailwind CSS",
+            "Clerk",
+            "Prisma",
+            "Shadcn",
+            "Neon DB",
+            "Figma"]}
+            link="https://shadyxui.in"
+            image="/scrivo.jpg"
+            links={[
+              { icon: <Globe size={13}/>, type: "Website", href: "https://shadyxui.in" },
+              { icon: (
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  viewBox="0 0 438.549 438.549" 
+                  width="14" 
+                  height="14" 
+                  fill="currentColor">
+                  <path d="M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8-33.598-19.607-70.277-29.408-110.063-29.408-39.781 0-76.472 9.804-110.063 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.854 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.419-1.996 2.475-2.282 3.711-5.14 3.711-8.562 0-.571-.049-5.708-.144-15.417a2549.81 2549.81 0 01-.144-25.406l-6.567 1.136c-4.187.767-9.469 1.092-15.846 1-6.374-.089-12.991-.757-19.842-1.999-6.854-1.231-13.229-4.086-19.13-8.559-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-.951-2.568-2.098-3.711-3.429-1.142-1.331-1.997-2.663-2.568-3.997-.572-1.335-.098-2.43 1.427-3.289 1.525-.859 4.281-1.276 8.28-1.276l5.708.853c3.807.763 8.516 3.042 14.133 6.851 5.614 3.806 10.229 8.754 13.846 14.842 4.38 7.806 9.657 13.754 15.846 17.847 6.184 4.093 12.419 6.136 18.699 6.136 6.28 0 11.704-.476 16.274-1.423 4.565-.952 8.848-2.383 12.847-4.285 1.713-12.758 6.377-22.559 13.988-29.41-10.848-1.14-20.601-2.857-29.264-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.979-3.901-12.374-5.852-26.648-5.852-42.826 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.379-36.732 1.997-58.24 5.52-1.715 13.706-.428 24.554 3.853 10.85 4.283 18.794 7.952 23.84 10.994 5.046 3.041 9.089 5.618 12.135 7.708 17.705-4.947 35.976-7.421 54.818-7.421s37.117 2.474 54.823 7.421l10.849-6.849c7.419-4.57 16.18-8.758 26.262-12.565 10.088-3.805 17.802-4.853 23.134-3.138 8.562 21.509 9.325 40.922 2.279 58.24 15.036 16.18 22.559 35.787 22.559 58.817 0 16.178-1.958 30.497-5.853 42.966-3.9 12.471-8.941 22.457-15.125 29.979-6.191 7.521-13.901 13.85-23.131 18.986-9.232 5.14-18.182 8.85-26.84 11.136-8.662 2.286-18.415 4.004-29.263 5.146 9.894 8.562 14.842 22.077 14.842 40.539v60.237c0 3.422 1.19 6.279 3.572 8.562 2.379 2.279 6.136 2.95 11.276 1.995 44.163-14.653 80.185-41.062 108.068-79.226 27.88-38.161 41.825-81.126 41.825-128.906-.01-39.771-9.818-76.454-29.414-110.049z"/>
+                </svg>
+                ), type: "Source", href: "https://github.com/username/repo" }
+            ]}
           />
           <ProjectCard
-            title="Algochurn"
-            description="Practice the most popular algorithmic questions and Front-end interview questions with an interactive IDE and learning environment."
-            href="https://algochurn.com"
-            icon="algochurn"
-            tags={["Next.js", "React", "TailwindCSS", "Monaco", "Algorithms"]}
+            title="CricVortex 2.0"
+            href="https://cricvortex-v2.netlify.app/"
+            description="Web Based platform that allows users to watch live match scores , upcoming fixtures and real time cricket insights all in one place alongwith a manual scorecard feature."
+            dates="Sept 2024 - Oct 2024"
+            tags={["React",
+            "JavaScript",
+            "Cricapi",
+            "Tailwind",
+            "Local Storage"]}
+            link="https://cricvortex.netlify.app/??"
+            image="/cricvortex.jpg"
+            links={[
+              { icon: <Globe size={13}/>, type: "Website", href: "https://cricvortex.netlify.app/??" },
+              { icon: (
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  viewBox="0 0 438.549 438.549" 
+                  width="14" 
+                  height="14" 
+                  fill="currentColor">
+                  <path d="M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8-33.598-19.607-70.277-29.408-110.063-29.408-39.781 0-76.472 9.804-110.063 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.854 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.419-1.996 2.475-2.282 3.711-5.14 3.711-8.562 0-.571-.049-5.708-.144-15.417a2549.81 2549.81 0 01-.144-25.406l-6.567 1.136c-4.187.767-9.469 1.092-15.846 1-6.374-.089-12.991-.757-19.842-1.999-6.854-1.231-13.229-4.086-19.13-8.559-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-.951-2.568-2.098-3.711-3.429-1.142-1.331-1.997-2.663-2.568-3.997-.572-1.335-.098-2.43 1.427-3.289 1.525-.859 4.281-1.276 8.28-1.276l5.708.853c3.807.763 8.516 3.042 14.133 6.851 5.614 3.806 10.229 8.754 13.846 14.842 4.38 7.806 9.657 13.754 15.846 17.847 6.184 4.093 12.419 6.136 18.699 6.136 6.28 0 11.704-.476 16.274-1.423 4.565-.952 8.848-2.383 12.847-4.285 1.713-12.758 6.377-22.559 13.988-29.41-10.848-1.14-20.601-2.857-29.264-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.979-3.901-12.374-5.852-26.648-5.852-42.826 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.379-36.732 1.997-58.24 5.52-1.715 13.706-.428 24.554 3.853 10.85 4.283 18.794 7.952 23.84 10.994 5.046 3.041 9.089 5.618 12.135 7.708 17.705-4.947 35.976-7.421 54.818-7.421s37.117 2.474 54.823 7.421l10.849-6.849c7.419-4.57 16.18-8.758 26.262-12.565 10.088-3.805 17.802-4.853 23.134-3.138 8.562 21.509 9.325 40.922 2.279 58.24 15.036 16.18 22.559 35.787 22.559 58.817 0 16.178-1.958 30.497-5.853 42.966-3.9 12.471-8.941 22.457-15.125 29.979-6.191 7.521-13.901 13.85-23.131 18.986-9.232 5.14-18.182 8.85-26.84 11.136-8.662 2.286-18.415 4.004-29.263 5.146 9.894 8.562 14.842 22.077 14.842 40.539v60.237c0 3.422 1.19 6.279 3.572 8.562 2.379 2.279 6.136 2.95 11.276 1.995 44.163-14.653 80.185-41.062 108.068-79.226 27.88-38.161 41.825-81.126 41.825-128.906-.01-39.771-9.818-76.454-29.414-110.049z"/>
+                </svg>
+                ), type: "Source", href: "https://github.com/username/repo" }
+            ]}
           />
           <ProjectCard
-            title="Tailwind Master Kit"
-            description="Beautiful, Handcrafted, ready-to-use components and templates for your next Tailwind web app project."
-            href="https://tailwindmasterkit.com/"
-            icon="tailwindmasterkit"
-            tags={["Tailwind", "Next.js", "Freemium"]}
+            title="fiscal.cdm"
+            href="https://fiscalcdm.netlify.app"
+            description="A platform that displays a calendar for visualizing historical volatility , liquidity and performance data across different time periods for financial instruments."
+            dates="Dec 2024 - Jan 2025"
+            tags={["React",
+            "Typescript",
+            "Tailwind CSS",
+            "D3 js",
+            "OKX API",
+            "Ant Design"]}
+            link="https://fiscalcdm.netlify.app"
+            image="/fiscalcdm.jpg"
+            links={[
+              { icon: <Globe size={13}/>, type: "Website", href: "https://fiscalcdm.netlify.app" },
+              { icon: (
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  viewBox="0 0 438.549 438.549" 
+                  width="14" 
+                  height="14" 
+                  fill="currentColor">
+                  <path d="M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8-33.598-19.607-70.277-29.408-110.063-29.408-39.781 0-76.472 9.804-110.063 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.854 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.419-1.996 2.475-2.282 3.711-5.14 3.711-8.562 0-.571-.049-5.708-.144-15.417a2549.81 2549.81 0 01-.144-25.406l-6.567 1.136c-4.187.767-9.469 1.092-15.846 1-6.374-.089-12.991-.757-19.842-1.999-6.854-1.231-13.229-4.086-19.13-8.559-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-.951-2.568-2.098-3.711-3.429-1.142-1.331-1.997-2.663-2.568-3.997-.572-1.335-.098-2.43 1.427-3.289 1.525-.859 4.281-1.276 8.28-1.276l5.708.853c3.807.763 8.516 3.042 14.133 6.851 5.614 3.806 10.229 8.754 13.846 14.842 4.38 7.806 9.657 13.754 15.846 17.847 6.184 4.093 12.419 6.136 18.699 6.136 6.28 0 11.704-.476 16.274-1.423 4.565-.952 8.848-2.383 12.847-4.285 1.713-12.758 6.377-22.559 13.988-29.41-10.848-1.14-20.601-2.857-29.264-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.979-3.901-12.374-5.852-26.648-5.852-42.826 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.379-36.732 1.997-58.24 5.52-1.715 13.706-.428 24.554 3.853 10.85 4.283 18.794 7.952 23.84 10.994 5.046 3.041 9.089 5.618 12.135 7.708 17.705-4.947 35.976-7.421 54.818-7.421s37.117 2.474 54.823 7.421l10.849-6.849c7.419-4.57 16.18-8.758 26.262-12.565 10.088-3.805 17.802-4.853 23.134-3.138 8.562 21.509 9.325 40.922 2.279 58.24 15.036 16.18 22.559 35.787 22.559 58.817 0 16.178-1.958 30.497-5.853 42.966-3.9 12.471-8.941 22.457-15.125 29.979-6.191 7.521-13.901 13.85-23.131 18.986-9.232 5.14-18.182 8.85-26.84 11.136-8.662 2.286-18.415 4.004-29.263 5.146 9.894 8.562 14.842 22.077 14.842 40.539v60.237c0 3.422 1.19 6.279 3.572 8.562 2.379 2.279 6.136 2.95 11.276 1.995 44.163-14.653 80.185-41.062 108.068-79.226 27.88-38.161 41.825-81.126 41.825-128.906-.01-39.771-9.818-76.454-29.414-110.049z"/>
+                </svg>
+                ), type: "Source", href: "https://github.com/username/repo" }
+            ]}
           />
 
           <ProjectCard
-            title="PlaceholderTech"
-            description="We build modern, blazing-fast web applications which helps your business grow and increase sales."
-            href="https://placeholdertech.in/"
-            icon="placeholdertech"
-            tags={["Freelancing", "React", "Node", "Firebase"]}
+            title="CricVortex"
+            href="https://cricvortex.netlify.app/"
+            description="Web Based platform that allows users to watch live match scores , upcoming fixtures and real time cricket insights all in one place."
+            dates="Aug 2024 - Sept 2024"
+            tags={["React",
+            "JavaScript",
+            "Cricapi",
+            "Tailwind",
+            "Local Storage"]}
+            link="https://cricvortex.netlify.app/??"
+            image="/cric1.0.png"
+            links={[
+              { icon: <Globe size={13}/>, type: "Website", href: "https://cricvortex.netlify.app/??" },
+              { icon: (
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  viewBox="0 0 438.549 438.549" 
+                  width="14" 
+                  height="14" 
+                  fill="currentColor">
+                  <path d="M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8-33.598-19.607-70.277-29.408-110.063-29.408-39.781 0-76.472 9.804-110.063 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.854 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.419-1.996 2.475-2.282 3.711-5.14 3.711-8.562 0-.571-.049-5.708-.144-15.417a2549.81 2549.81 0 01-.144-25.406l-6.567 1.136c-4.187.767-9.469 1.092-15.846 1-6.374-.089-12.991-.757-19.842-1.999-6.854-1.231-13.229-4.086-19.13-8.559-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-.951-2.568-2.098-3.711-3.429-1.142-1.331-1.997-2.663-2.568-3.997-.572-1.335-.098-2.43 1.427-3.289 1.525-.859 4.281-1.276 8.28-1.276l5.708.853c3.807.763 8.516 3.042 14.133 6.851 5.614 3.806 10.229 8.754 13.846 14.842 4.38 7.806 9.657 13.754 15.846 17.847 6.184 4.093 12.419 6.136 18.699 6.136 6.28 0 11.704-.476 16.274-1.423 4.565-.952 8.848-2.383 12.847-4.285 1.713-12.758 6.377-22.559 13.988-29.41-10.848-1.14-20.601-2.857-29.264-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.979-3.901-12.374-5.852-26.648-5.852-42.826 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.379-36.732 1.997-58.24 5.52-1.715 13.706-.428 24.554 3.853 10.85 4.283 18.794 7.952 23.84 10.994 5.046 3.041 9.089 5.618 12.135 7.708 17.705-4.947 35.976-7.421 54.818-7.421s37.117 2.474 54.823 7.421l10.849-6.849c7.419-4.57 16.18-8.758 26.262-12.565 10.088-3.805 17.802-4.853 23.134-3.138 8.562 21.509 9.325 40.922 2.279 58.24 15.036 16.18 22.559 35.787 22.559 58.817 0 16.178-1.958 30.497-5.853 42.966-3.9 12.471-8.941 22.457-15.125 29.979-6.191 7.521-13.901 13.85-23.131 18.986-9.232 5.14-18.182 8.85-26.84 11.136-8.662 2.286-18.415 4.004-29.263 5.146 9.894 8.562 14.842 22.077 14.842 40.539v60.237c0 3.422 1.19 6.279 3.572 8.562 2.379 2.279 6.136 2.95 11.276 1.995 44.163-14.653 80.185-41.062 108.068-79.226 27.88-38.161 41.825-81.126 41.825-128.906-.01-39.771-9.818-76.454-29.414-110.049z"/>
+                </svg>
+                ), type: "Source", href: "https://github.com/username/repo" }
+            ]}
           />
 
           <ProjectCard
-            title="Covid Rescue"
-            description="Get Real-time verified leads on Oxygen, Beds, Remdesivir and more with location and resource filtering"
-            href="https://covidrescue.co.in/"
-            icon="covidrescue"
-            tags={["Open Source", "Next.js", "Twitter"]}
+            title="Flipkart Clone"
+            href="https://shadyxui.in"
+            description="This is a Flipkart frontend Clone built using HTML , CSS and JS. It features Authentication alongwith product search , product filtering and sleek and responsive design."
+            dates="Jan 2024 - Feb 2024"
+            tags={["HTML",
+            "CSS",
+            "JS",
+            "Local Storage"]}
+            link="https://shadyxui.in"
+            image="/flipkart.png"
+            links={[
+              { icon: (
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  viewBox="0 0 438.549 438.549" 
+                  width="14" 
+                  height="14" 
+                  fill="currentColor">
+                  <path d="M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8-33.598-19.607-70.277-29.408-110.063-29.408-39.781 0-76.472 9.804-110.063 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.854 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.419-1.996 2.475-2.282 3.711-5.14 3.711-8.562 0-.571-.049-5.708-.144-15.417a2549.81 2549.81 0 01-.144-25.406l-6.567 1.136c-4.187.767-9.469 1.092-15.846 1-6.374-.089-12.991-.757-19.842-1.999-6.854-1.231-13.229-4.086-19.13-8.559-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-.951-2.568-2.098-3.711-3.429-1.142-1.331-1.997-2.663-2.568-3.997-.572-1.335-.098-2.43 1.427-3.289 1.525-.859 4.281-1.276 8.28-1.276l5.708.853c3.807.763 8.516 3.042 14.133 6.851 5.614 3.806 10.229 8.754 13.846 14.842 4.38 7.806 9.657 13.754 15.846 17.847 6.184 4.093 12.419 6.136 18.699 6.136 6.28 0 11.704-.476 16.274-1.423 4.565-.952 8.848-2.383 12.847-4.285 1.713-12.758 6.377-22.559 13.988-29.41-10.848-1.14-20.601-2.857-29.264-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.979-3.901-12.374-5.852-26.648-5.852-42.826 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.379-36.732 1.997-58.24 5.52-1.715 13.706-.428 24.554 3.853 10.85 4.283 18.794 7.952 23.84 10.994 5.046 3.041 9.089 5.618 12.135 7.708 17.705-4.947 35.976-7.421 54.818-7.421s37.117 2.474 54.823 7.421l10.849-6.849c7.419-4.57 16.18-8.758 26.262-12.565 10.088-3.805 17.802-4.853 23.134-3.138 8.562 21.509 9.325 40.922 2.279 58.24 15.036 16.18 22.559 35.787 22.559 58.817 0 16.178-1.958 30.497-5.853 42.966-3.9 12.471-8.941 22.457-15.125 29.979-6.191 7.521-13.901 13.85-23.131 18.986-9.232 5.14-18.182 8.85-26.84 11.136-8.662 2.286-18.415 4.004-29.263 5.146 9.894 8.562 14.842 22.077 14.842 40.539v60.237c0 3.422 1.19 6.279 3.572 8.562 2.379 2.279 6.136 2.95 11.276 1.995 44.163-14.653 80.185-41.062 108.068-79.226 27.88-38.161 41.825-81.126 41.825-128.906-.01-39.771-9.818-76.454-29.414-110.049z"/>
+                </svg>
+                ), type: "Source", href: "https://github.com/Anurag-singh-RBU/FLIPKART" }
+            ]}
           />
 
           <ProjectCard
-            title="Golden Bells Academy"
-            description="✍🏻 An educational portal to watch educational videos, write and submit assignments, view results and more."
-            href="https://goldenbellsacademy.com/"
-            icon="gba"
-            tags={["commercial", "NextJS", "Firebase"]}
-          />
-          <ProjectCard
-            title="Devmedium"
-            description="📝 A Blogging application platform like Dev.to and Medium with Image uploads, real-time likes and custom usernames"
-            href="https://devmedium.vercel.app/"
-            icon="devmedium"
-            tags={["NextJS", "Firestore", "Firebase"]}
-          />
-          <ProjectCard
-            title="Playground"
-            description="An open-source playground to create HTML, CSS and Javascript components on the go."
-            href="https://play.placeholdertech.in/"
-            icon="play"
-            tags={["NextJS", "Tailwind", "Chakra", "MongoDB"]}
-          />
-          <ProjectCard
-            title="Feedmeback"
-            description="The easiest way to add comments or reviews to your static site. Built as part of React 2025."
-            href="https://feedmeback-beta.vercel.app/"
-            icon="fastfeedback"
-            tags={["NextJS", "Jamstack", "Firebase", "OAuth"]}
-          />
-          <ProjectCard
-            title="Music Streaming Application"
-            description="🎶 An Open-Source music streaming website (like spotify) with rich features like creating playlist, pause, play and user login/authentication."
-            href="https://github.com/manuarora700/music-streaming-project"
-            icon="music"
-            tags={["PHP", "MySQL", "Spotify-UI", "Minimal"]}
-          />
-          <ProjectCard
-            title="GitHub Lookup"
-            description="A minimal application to search for GitHub users with user details using the GitHub API"
-            href="https://github-lookup-new.netlify.app/"
-            icon="github"
-            tags={["React", "Front-end", "Custom-CSS"]}
-          />
-
-          <ProjectCard
-            title="IPL Statistics"
-            description="A bundled web application to get details and statistics of Every player, Team and detailed analysis of each match played in IPL"
-            href="https://ipl-statistics.vercel.app/"
-            icon="ipl"
-            tags={["NextJS", "Vercel", "Dataset", "Real-world"]}
+            title="Weather App"
+            href="https://shadyxui.in"
+            description="A simple weather app that fetches real time weather data from the weatherbit.io API and displays it in a user friendly interface."
+            dates="Jan 2024 - Feb 2024"
+            tags={["HTML",
+            "CSS",
+            "JS",
+            "Weatherbit.io API"]}
+            link="https://shadyxui.in"
+            image="/weatherapp.png"
+            links={[
+              { icon: (
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  viewBox="0 0 438.549 438.549" 
+                  width="14" 
+                  height="14" 
+                  fill="currentColor">
+                  <path d="M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8-33.598-19.607-70.277-29.408-110.063-29.408-39.781 0-76.472 9.804-110.063 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.854 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.419-1.996 2.475-2.282 3.711-5.14 3.711-8.562 0-.571-.049-5.708-.144-15.417a2549.81 2549.81 0 01-.144-25.406l-6.567 1.136c-4.187.767-9.469 1.092-15.846 1-6.374-.089-12.991-.757-19.842-1.999-6.854-1.231-13.229-4.086-19.13-8.559-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-.951-2.568-2.098-3.711-3.429-1.142-1.331-1.997-2.663-2.568-3.997-.572-1.335-.098-2.43 1.427-3.289 1.525-.859 4.281-1.276 8.28-1.276l5.708.853c3.807.763 8.516 3.042 14.133 6.851 5.614 3.806 10.229 8.754 13.846 14.842 4.38 7.806 9.657 13.754 15.846 17.847 6.184 4.093 12.419 6.136 18.699 6.136 6.28 0 11.704-.476 16.274-1.423 4.565-.952 8.848-2.383 12.847-4.285 1.713-12.758 6.377-22.559 13.988-29.41-10.848-1.14-20.601-2.857-29.264-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.979-3.901-12.374-5.852-26.648-5.852-42.826 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.379-36.732 1.997-58.24 5.52-1.715 13.706-.428 24.554 3.853 10.85 4.283 18.794 7.952 23.84 10.994 5.046 3.041 9.089 5.618 12.135 7.708 17.705-4.947 35.976-7.421 54.818-7.421s37.117 2.474 54.823 7.421l10.849-6.849c7.419-4.57 16.18-8.758 26.262-12.565 10.088-3.805 17.802-4.853 23.134-3.138 8.562 21.509 9.325 40.922 2.279 58.24 15.036 16.18 22.559 35.787 22.559 58.817 0 16.178-1.958 30.497-5.853 42.966-3.9 12.471-8.941 22.457-15.125 29.979-6.191 7.521-13.901 13.85-23.131 18.986-9.232 5.14-18.182 8.85-26.84 11.136-8.662 2.286-18.415 4.004-29.263 5.146 9.894 8.562 14.842 22.077 14.842 40.539v60.237c0 3.422 1.19 6.279 3.572 8.562 2.379 2.279 6.136 2.95 11.276 1.995 44.163-14.653 80.185-41.062 108.068-79.226 27.88-38.161 41.825-81.126 41.825-128.906-.01-39.771-9.818-76.454-29.414-110.049z"/>
+                </svg>
+                ), type: "Source", href: "https://github.com/Anurag-singh-RBU/FLIPKART" }
+            ]}
           />
         </div>
 
         <a
-          href="https://github.com/manuarora700"
-          className="border flex flex-row items-center justify-center mx-auto rounded-md dark:text-gray-300 px-4 py-2 text-gray-800"
+          href="https://github.com/Anurag-singh-RBU?tab=repositories"
+          className="border flex flex-row items-center justify-center mx-auto rounded-md dark:text-gray-300 px-4 py-2 text-gray-800 mt-8"
         >
           See all at{" "}
           <span>
@@ -141,34 +227,6 @@ export default function projects() {
           </span>
         </a>
 
-        <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">
-          Upcoming Projects
-        </h3>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <ProjectCard
-            title="Motion Components"
-            description="Professional, modern and beautiful framer motion components built with Next.js and TailwindCSS"
-            href="https://aceternity.com/components"
-            icon="vscode"
-            tags={["NextJS", "Tailwind", "framer-motion"]}
-          />
-          <ProjectCard
-            title="VSCode Resume"
-            description="A VSCode themed resume for all the web developers out there. A UI which looks exactly like a React file-system based VSCode window with create and update operations."
-            href="#"
-            icon="vscode"
-            tags={["NextJS", "Tailwind", "Hackerearth"]}
-          />
-          <ProjectCard
-            title="More projects coming soon.."
-            description="I get ideas all day 🙄, All of them are updated here as soon as I start working on them."
-            href="#"
-            icon="more"
-          />
-        </div>
-
-        {/* 🎶 A music streaming website (like spotify) built using PHP, HTML/CSS, AJAX, JS, jQuery, JSON, mySQL and more. */}
         <Contact />
       </div>
     </Container>

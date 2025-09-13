@@ -12,7 +12,7 @@ export default function ProjectCard({ title, description, href, icon, tags }) {
   }
   return (
     <a
-      className="group mb-4 hover:shadow-lg rounded-xl  transition duration-200 relative border border-slate-200 dark:border-slate-700 w-full"
+      className="group mb-4 hover:shadow-lg rounded-xl transition duration-200 relative border border-slate-200 dark:border-slate-700 w-full"
       href={href}
       aria-label={title}
       target="_blank"
