@@ -31,8 +31,8 @@ const Header = () => {
   return (
     <div className="flex flex-col md:flex-row justify-between items-start md:space-x-14 w-full mb-10">
       <div className="flex md:w-3/4 flex-col mt-6">
-        <h1 className="text-4xl md:text-4xl font-bungee mb-4 text-black/70 dark:text-white">
-          <AuroraText className = "dark:hidden block">Anurag &nbsp;Singh</AuroraText><span className="dark:block hidden">Anurag &nbsp;Singh</span>
+        <h1 className="text-4xl md:text-4xl font-bungee mb-4 text-black/70 sectionOne">
+          Anurag &nbsp;Singh
         </h1>
 
         <div className="relative leading-7 items-center font-jetbrains flex-wrap text-zinc-700 dark:text-zinc-300 mb-5">

@@ -342,3 +342,12 @@ input[type="email"] {
     }
   }
 }
+
+.sectionOne {
+
+  background-image: url("https://ik.imagekit.io/sheryians/Aptitude%20&%20Reasoning/mask%20Large_ZB4lGN8hWZ.png");
+  background-size: cover;
+  background-clip: text;
+  color: transparent;
+
+}

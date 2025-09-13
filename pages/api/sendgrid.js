@@ -8,7 +8,7 @@ export default async (req, res) => {
     await sendgrid.send({
       to: [req.body.email, "anuragsingh260805@gmail.com"],
       from: "anuragsingh260805@gmail.com",
-      subject: "Greetings ! Thank you for contacting me",
+      subject: "Greetings !! Thank you for contacting me",
       html: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
       <html lang="en">
       <head>
@@ -17,7 +17,7 @@ export default async (req, res) => {
         <title>The HTML5 Herald</title>
         <meta name="description" content="The HTML5 Herald">
         <meta name="author" content="SitePoint">
-      <meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
+        <meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
       
         <link rel="stylesheet" href="css/styles.css?v=1.0">
       
