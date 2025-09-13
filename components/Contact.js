@@ -76,7 +76,7 @@ export default function Contact() {
           value={val.email}
           onChange={(e) => setVal({ ...val, email: e.target.value })}
           required
-          className="px-4 py-2 placeholder:text-sm placeholder:font-mono font-medium focus:border-0 focus:outline-none placeholder:font-semibold placeholder:tracking-wider mt-1 block w-full border-gray-300 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+          className="px-4 py-2 placeholder:text-sm placeholder:font-mono font-medium focus:border-0 focus:outline-none placeholder:font-semibold placeholder:tracking-wider mt-1 block w-full border-gray-300 rounded-md bg-white dark:bg-white text-black dark:text-black"
         />
         <div className="w-full h-auto font-mono mt-4">
           <textarea
@@ -86,7 +86,7 @@ export default function Contact() {
             name="message"
             value={val.message}
             onChange={(e) => setVal({ ...val, message: e.target.value })}
-            className="px-3 py-2 hover:border-0 hover:outline-none focus:border-0 focus:outline-none w-full border rounded"
+            className="px-3 py-2 hover:border-0 hover:outline-none focus:border-0 dark:text-black focus:outline-none w-full rounded"
             required
           />
           <button
