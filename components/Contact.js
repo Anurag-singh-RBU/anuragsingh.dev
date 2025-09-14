@@ -79,7 +79,7 @@ export default function Contact() {
             required
             className="flex-1 min-w-0 px-4 py-2 placeholder:text-sm placeholder:font-mono font-medium focus:border-0 focus:outline-none placeholder:font-semibold placeholder:tracking-wider border border-gray-300 rounded-md bg-white dark:bg-white text-black dark:text-black"
           />
-          <Button variant = "outline" className = "flex items-center text-gray-900 justify-center px-4 h-10 font-mono rounded-md" type = "submit">{form.state === "sending" ? <LoadingSpinner /> : "Send"}</Button>
+          <Button variant = "outline" className = "flex items-center bg-black text-white justify-center px-4 h-10 font-mono rounded-md" type = "submit">{form.state === "sending" ? <LoadingSpinner /> : "Send"}</Button>
         </div>
 
       </form>
