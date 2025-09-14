@@ -2,6 +2,7 @@ import { useState } from "react";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import SuccessMessage from "@/components/SuccessMessage";
 import ErrorMessage from "@/components/ErrorMessage";
+import { Button } from "./components/ui/3d-button";
 
 export default function Contact() {
   const [val, setVal] = useState({
@@ -78,20 +79,14 @@ export default function Contact() {
             required
             className="flex-1 min-w-0 px-4 py-2 placeholder:text-sm placeholder:font-mono font-medium focus:border-0 focus:outline-none placeholder:font-semibold placeholder:tracking-wider border border-gray-300 rounded-md bg-white dark:bg-white text-black dark:text-black"
           />
-
-          <button
-            className="flex items-center justify-center px-4 h-10 bg-blue-300 text-black font-mono font-bold rounded-md"
-            type="submit"
-            disabled={form.state === "sending"}
-          >
-            {form.state === "sending" ? <LoadingSpinner /> : "Send"}
-          </button>
+          <Button variant = "outline" className = "flex items-center text-gray-900 justify-center px-4 h-10 font-mono rounded-md" type = "submit">{form.state === "sending" ? <LoadingSpinner /> : "Send"}</Button>
         </div>
 
       </form>
 
       {form.state === "error" && <ErrorMessage>{form.message}</ErrorMessage>}
       {form.state === "success" && <SuccessMessage>{form.message}</SuccessMessage>}
+
     </div>
   );
 }

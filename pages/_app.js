@@ -27,7 +27,6 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
     <SessionProvider session={session}>
       <ThemeProvider attribute="class">
         <MDXProvider components={MDXComponents}>
-          {/* <Banner /> */}
           <Component {...pageProps} />
           <Chat />
         </MDXProvider>

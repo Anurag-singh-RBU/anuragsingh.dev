@@ -1,11 +1,44 @@
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import LoadingSpinner from "./LoadingSpinner";
+import ErrorMessage from "./ErrorMessage";
+import SuccessMessage from "./SuccessMessage";
+import confetti from "canvas-confetti";
+import { Button } from "./components/ui/button";
 
 export default function Chat() {
   const [open, setOpen] = useState(false);
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const handleClick = () => {
+    const duration = 5 * 1000;
+    const animationEnd = Date.now() + duration;
+    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+ 
+    const randomInRange = (min , max) =>
+      Math.random() * (max - min) + min;
+ 
+    const interval = window.setInterval(() => {
+      const timeLeft = animationEnd - Date.now();
+ 
+      if (timeLeft <= 0) {
+        return clearInterval(interval);
+      }
+ 
+      const particleCount = 50 * (timeLeft / duration);
+      confetti({
+        ...defaults,
+        particleCount,
+        origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+      });
+      confetti({
+        ...defaults,
+        particleCount,
+        origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
+      });
+    }, 250);
+  };
 
   const [formState, setFormState] = useState({
     email: {
@@ -38,72 +71,6 @@ export default function Chat() {
     },
   };
 
-  const onChangeHandler = (field, value) => {
-    let state = {
-      [field]: {
-        value,
-        error: null,
-      },
-    };
-    setFormState({ ...formState, ...state });
-  };
-
-  const handleSubmit = async () => {
-    let { email, message } = formState;
-    console.log("email", email, "message", message);
-    let updatedState = { ...formState };
-    let regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (!email.value) {
-      updatedState.email.error = `Oops! Email cannot be empty.`;
-      setFormState({ ...updatedState });
-      return;
-    }
-
-    if (!email.value.toLowerCase().match(regex)) {
-      updatedState.email.error = `Please enter a valid email address`;
-      setFormState({ ...updatedState });
-      return;
-    }
-    if (!message.value) {
-      updatedState.message.error = `Oops! Message cannot be empty.`;
-      setFormState({ ...updatedState });
-      return;
-    }
-    // Everything is fine - Proceed with the API call.
-    setLoading(true);
-    const res = await fetch("/api/resend", {
-      body: JSON.stringify({
-        email: email.value,
-        message: message.value,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-    });
-
-    const { error } = await res.json();
-    if (error) {
-      setError("Something went wrong, please try again!");
-      setLoading(false);
-      setSuccess(false);
-      return;
-    }
-    setSuccess(`Submitted successfully! It's time to celebrate`);
-    setError(false);
-    setLoading(false);
-    setFormState({
-      email: {
-        value: "",
-        error: "",
-      },
-      message: {
-        value: "",
-        error: "",
-      },
-    });
-  };
-
   const handleButtonClick = () => {
     setOpen(!open);
     setFormState({
@@ -120,6 +87,41 @@ export default function Chat() {
     setError("");
     setSuccess("");
   };
+
+    const [val, setVal] = useState({
+      email: "",
+      message: "",
+    });
+  
+    const [form, setForm] = useState({
+      state: "idle",  
+      message: "",
+    });
+  
+    const handleOnSubmit = async (e) => {
+      e.preventDefault();
+      setForm({ state: "sending", message: "" });
+  
+      try {
+        const res = await fetch("/api/sendgrid", {
+          body: JSON.stringify(val),
+          headers: { "Content-Type": "application/json" },
+          method: "POST",
+        });
+  
+        const data = await res.json();
+  
+        if (res.ok) {
+          setForm({ state: "success", message: "Message sent successfully !!" });
+          setVal({ email: "", message: "" }); 
+        } else {
+          setForm({ state: "error", message: data.error || "Something went wrong." });
+        }
+      } catch (error) {
+        setForm({ state: "error", message: error.message || "Network error." });
+      }
+    };
+
   return (
     <AnimatePresence
       initial={false}
@@ -136,59 +138,56 @@ export default function Chat() {
             className="mb-4 rounded-xl shadow-2xl bg-white dark:bg-zinc-800  flex flex-col overflow-hidden mx-4 md:mx-0"
           >
             <div className="p-4 bg-gray-100 dark:bg-zinc-700">
-              <h2 className="text-gray-700 font-bold text-xl dark:text-white">
-                Have a question ? Drop in your message 👇
+              <h2 className="text-gray-700 font-bold text-xl dark:text-white font-mono tracking-tighter">
+                Any question ? Drop in here 👇
               </h2>
-              <small className="text-xs text-gray-500 mb-10 dark:text-gray-400">
+              <small className="text-xs text-gray-500 mb-10 dark:text-gray-400 font-mono">
                 It won't take more than 10 seconds. Shoot your shot. 😉
               </small>
             </div>
-            <div className="content p-6 flex flex-col">
-              <label className="text-sm font-normal text-black mb-2 dark:text-white">
+            <div className="content p-6 flex flex-col font-GS tracking-wider">
+              <form onSubmit={handleOnSubmit} className="flex flex-col mb-3">
+              <label className="text-md tracking-wider font-mono font-bold text-black mb-2 dark:text-white">
                 Email Address
               </label>
               <input
                 type="email"
-                value={formState.email.value}
-                onChange={(e) => onChangeHandler("email", e.target.value)}
-                className="text-black rounded-md border border-gray-200 py-1 px-2 focus:outline-none focus:border-gray-400 placeholder:text-sm  dark:bg-zinc-800 dark:border-gray-700 dark:text-white mb-1"
-                placeholder="johndoe@xyz.com"
+                name="email"
+                value={val.email}
+                onChange={(e) => setVal({ ...val, email: e.target.value })}
+                required
+                className="text-black rounded-md border border-gray-200 py-1 text-sm px-2 focus:outline-none focus:border-gray-400 placeholder:text-sm placeholder:font-GS dark:bg-zinc-800 dark:border-gray-700 dark:text-white mb-1"
+                placeholder="abc@xyz.com"
               />
 
               <small className="h-4 min-h-4 text-red-500 font-semibold">
                 {formState.email.error && formState.email.error}
               </small>
 
-              <label className="text-sm font-normal text-black mb-2 dark:text-white">
+              <label className="text-md tracking-wider font-mono font-bold text-black mb-2 dark:text-white">
                 Message
               </label>
               <textarea
                 type="text"
+                name="message"
+                value={val.message}
+                onChange={(e) => setVal({ ...val, message: e.target.value })}
+                required
                 rows="5"
-                value={formState.message.value}
-                onChange={(e) => onChangeHandler("message", e.target.value)}
-                className="text-black rounded-md border border-gray-200 py-1 px-2 focus:outline-none focus:border-gray-400 placeholder:text-sm dark:bg-zinc-800 dark:border-gray-700 dark:text-white mb-1"
+                className="text-black text-sm rounded-md border border-gray-200 py-1 px-2 focus:outline-none focus:border-gray-400 placeholder:text-sm dark:bg-zinc-800 dark:border-gray-700 dark:text-white mb-1"
                 placeholder="I'd love a compliment from you."
               />
               <small className="h-4 min-h-4 text-red-500 font-semibold mb-4">
                 {formState.message.error && formState.message.error}
               </small>
-              <button
-                onClick={handleSubmit}
-                className="text-black dark:text-white w-full px-4 py-4 border-2 border-black  rounded-md font-bold text-xl dark:border-gray-700  mb-4 transition duration-200 hover:shadow-none dark:hover:shadow-none"
-              >
-                {loading ? "Submitting..." : "Submit"}
-              </button>
-              <small className="h-4 min-h-4 mb-4">
-                {success && (
-                  <p className="text-green-500 font-semibold text-sm">
-                    {success}
-                  </p>
-                )}
-                {error && (
-                  <p className="text-red-500 font-semibold text-sm">{error}</p>
-                )}
-              </small>
+              <Button onClick={handleClick} className = "bg-black text-white font-bold font-mono" disabled={form.state === "sending"} type="submit">
+                {form.state === "sending" ? <LoadingSpinner/> : "Send"}
+                </Button>
+              </form>
+              
+              {form.state === "error" && <ErrorMessage>{form.message}</ErrorMessage>}
+              {form.state === "success" && <SuccessMessage>{form.message}</SuccessMessage>}
+
             </div>
           </motion.div>
         )}
