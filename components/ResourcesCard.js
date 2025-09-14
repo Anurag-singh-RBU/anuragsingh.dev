@@ -11,7 +11,7 @@ export default function ResourcesCard({
   return (
     <Link href={link} legacyBehavior>
       <a
-        className="border border-grey-200 dark:border-zinc-800 rounded-xl p-4 w-full relative"
+        className="border border-grey-200 dark:border-zinc-800 rounded-xl p-4 w-full relative font-GS"
         {...rest}
         target="__blank"
       >
@@ -24,7 +24,7 @@ export default function ResourcesCard({
           </span>
 
           <svg
-            className="h-4 w-4 ml-1 mt-1.5"
+            className="h-4 w-4 ml-2 mt-0.5"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -39,10 +39,10 @@ export default function ResourcesCard({
           </svg>
         </div>
 
-        <h3 className="text-lg font-bold text-left mt-2 text-gray-900 dark:text-gray-100">
+        <h3 className="text-lg font-bold font-mono text-left mt-2 text-black dark:text-gray-100">
           {title}
         </h3>
-        <p className="mt-1 text-gray-700 dark:text-gray-400">{description}</p>
+        <p className="mt-1 text-sm text-gray-700 dark:text-gray-400" style={{wordSpacing: "3px"}}>{description}</p>
       </a>
     </Link>
   );
