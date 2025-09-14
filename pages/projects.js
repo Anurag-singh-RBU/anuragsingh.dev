@@ -12,7 +12,7 @@ export default function projects() {
       title="Projects – Anurag Singh"
       description="Projects that I've built from scratch , learned from courses and projects that I'm proud of."
       image="/my-logo.jpg">
-      <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
+      <div className="flex flex-col justify-center sm:items-start items-start sm:max-w-2xl w-full sm:mx-auto mb-16">
         <h3 className="text-2xl md:text-3xl font-bungee mb-10 sm:mt-8 mt-5 text-black/80 dark:text-white" style={{wordSpacing: "6px"}}>
           <HighlightBox>Projects</HighlightBox>
         </h3>

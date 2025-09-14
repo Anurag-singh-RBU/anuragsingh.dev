@@ -4,13 +4,13 @@ import { Resend } from "resend";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const sendEmail = async (req, res) => {
-  // get email from req
+
   const { email, message } = req.body;
   try {
     const data = await resend.emails.send({
-      from: "Anurag Singh <hi@manuarora.in>",
+      from: "Anurag Singh <anuragsingh260805@gmail.com>",
       to: [email],
-      cc: ["hi@manuarora.in"],
+      cc: ["anuragsingh260805@gmail.com"],
       subject: `Thank you for reaching out to Anurag`,
       react: EmailTemplate({ email: email, message: message }),
     });
