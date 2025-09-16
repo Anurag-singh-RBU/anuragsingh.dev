@@ -147,7 +147,7 @@ export default function Footer() {
           <nav className="flex gap-2 text-sm font-GS dark:text-white">
             <p className="flex flex-row text-gray-400 items-center" style={{wordSpacing: "3px"}}>
               Find me on
-              <a href="https://twitter.com" target="__blank" className="dark:text-white">
+              <a href="https://x.com/anuragRBU" target="__blank" className="dark:text-white">
                 <Twitter size={18} className="mx-2 text-black dark:text-blue-400"/>
               </a>and&nbsp;
               <a href="https://www.peerlist.io/manuarora" target="__blank">
