@@ -369,7 +369,7 @@ quizzes, and crafts personalized study plans from PDFs or notes.
           <div className="flex justify-center items-start gap-2">
             <CircleDot size={10} className="sm:mt-1.5 sm:block hidden" />
             <p className="text-sm font-mono">
-              Current CGPA : <span className="text-black dark:text-white font-bold">9.35</span> , 12th Boards : <span className="text-black dark:text-white font-semibold">88.63</span> percent and 10th Boards : <span className="text-black dark:text-white font-bold">85.5</span> percent.
+              Current CGPA : <span className="text-black dark:text-white font-bold">9.35</span> , 12th Boards : <span className="text-black dark:text-white font-bold">88.63</span> percent and 10th Boards : <span className="text-black dark:text-white font-bold">85.5</span> percent.
             </p>
           </div>
           <div className="mt-2 cursor-pointer">
