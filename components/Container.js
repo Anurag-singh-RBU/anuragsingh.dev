@@ -27,7 +27,7 @@ export default function Container(props) {
 
   const links = [
     { name: "Home", link: "/" },
-    { name: "Coding", link: "/coding" },
+    { name: "Dashboard", link: "/dashboard" },
     { name: "Resources", link: "/resources" },
     { name: "Projects", link: "/projects" },
   ];
@@ -35,10 +35,10 @@ export default function Container(props) {
   const mobileLinks = [
     { name: "Home", link: "/" },
     { name: "Projects", link: "/projects" },
-    { name: "Coding", link: "/coding" },
     { name: "Resources", link: "/resources" },
-    { name: "Colors", link: "https://shadyxui.in/colors" },
     { name: "Dashboard", link: "/dashboard" },
+    { name: "Components", link: "https://shadyxui.in/component" },
+    { name: "Colors", link: "https://shadyxui.in/colors" },
   ];
 
   return (

@@ -21,7 +21,6 @@ export default function Footer() {
               <h3 className="mb-4 text-lg text-black/70 font-bungee dark:text-white">Pages</h3>
               <nav className="flex flex-col space-y-4 text-sm font-jetbrains sm:font-semibold font-bold text-gray-600 ml-1 dark:text-teal-300">
                 <Link href="/" className="transition-colors">Home</Link>
-                <Link href="/coding" className="transition-colors">Coding</Link>
                 <Link href="/dashboard" className="transition-colors">Dashboard</Link>
                 <Link href="/projects" className="transition-colors">Projects</Link>
                 <Link href="https://shadyxui.in/colors" className="transition-colors">Colors</Link>
@@ -150,7 +149,7 @@ export default function Footer() {
               <a href="https://x.com/anuragRBU" target="__blank" className="dark:text-white">
                 <Twitter size={18} className="mx-2 text-black dark:text-blue-400"/>
               </a>and&nbsp;
-              <a href="https://www.peerlist.io/manuarora" target="__blank">
+              <a href="https://www.peerlist.io" target="__blank">
                 <img src="/peerlist.png" className="h-5 w-5"/>
               </a>
             </p>

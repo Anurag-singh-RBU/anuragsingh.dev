@@ -16,11 +16,11 @@ export default function Snippets({ snippets }) {
         </h3>
         <p className="text-gray-600 dark:text-gray-400 mb-4 font-mono">
           Helpful{" "}
-          <span className="bg-gray-100 border rounded-md px-1 py-0.5 tracking-tight dark:text-gray-300 dark:bg-gray-700">
+          <span className="bg-gray-100 border text-justify rounded-md px-1 py-0.5 tracking-tight dark:text-gray-300 dark:bg-gray-700">
             websites
           </span>{" "}
           that I've been using for years that have helped me in developing
-          applications and much more. 🔥
+          applications and much more. 
         </p>
 
         <h3 className="text-xl md:text-2xl font-bungee mb-3 sm:mt-8 mt-5 text-black/80 dark:text-white" style={{wordSpacing: "6px"}}>

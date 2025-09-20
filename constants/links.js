@@ -85,7 +85,7 @@ export const links = [
   {
     id: 10,
     name: "Codechef",
-    href: "https://codechef.com",
+    href: "https://www.codechef.com/users/heehoohaa",
     icon: SiCodechef,
   },
 ];

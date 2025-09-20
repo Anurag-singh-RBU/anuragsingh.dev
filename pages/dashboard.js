@@ -10,6 +10,8 @@ import Analytics from "@/components/metrics/Analytics";
 import HighlightBox from "@/components/HighlightBox";
 import { TweetCard } from "@/components/magicui/tweet-card";
 import { getTweet } from "react-tweet/api";
+import Image from "next/image";
+import { Fullscreen } from "lucide-react";
 
 export default function Dashboard({ tweet }) {
   return (
