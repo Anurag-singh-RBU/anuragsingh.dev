@@ -34,34 +34,15 @@ export default function Container(props) {
 
   const mobileLinks = [
     { name: "Home", link: "/" },
-    { name: "Coding", link: "/coding" },
     { name: "Projects", link: "/projects" },
+    { name: "Coding", link: "/coding" },
     { name: "Resources", link: "/resources" },
-    { name: "Freelancing", link: "/freelance" },
-    { name: "Box Shadows", link: "/boxshadows" },
-    { name: "FreeCodeCamp", link: "/freecodecamp" },
+    { name: "Colors", link: "https://shadyxui.in/colors" },
+    { name: "Dashboard", link: "/dashboard" },
   ];
 
   return (
     <div className="bg-white dark:bg-zinc-900">
-      <Head>
-        <title>{meta.title}</title>
-        <meta name="robots" content="follow, index" />
-        <meta name="description" content={meta.description} />
-        <meta property="og:url" content={`https://manuarora.in${router.asPath}`} />
-        <link rel="canonical" href={`https://manuarora.in${router.asPath}`} />
-        <meta property="og:type" content={meta.type} />
-        <meta property="og:site_name" content="Manu Arora" />
-        <meta property="og:description" content={meta.description} />
-        <meta property="og:title" content={meta.title} />
-        <meta property="og:image" content={meta.image} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@mannupaaji" />
-        <meta name="twitter:title" content={meta.title} />
-        <meta name="twitter:description" content={meta.description} />
-        <meta name="twitter:image" content={meta.image} />
-        {meta.date && <meta property="article:published_time" content={meta.date} />}
-      </Head>
 
       {/* Navbar */}
       <nav className="sticky-nav flex justify-between items-center max-w-4xl w-full p-8 mt-0 mb-0 md:mt-4 md:mb-10 mx-auto bg-white dark:bg-zinc-900 bg-opacity-60">
@@ -149,22 +130,22 @@ export const Mobile = ({ links }) => {
   };
 
   return (
-    <div className="w-full flex flex-row items-center space-x-2">
+    <div className="w-full flex flex-row items-center space-x-2 font-mono text-lg">
       <button
         onClick={() => handleClick(links[0].link)}
-        className="relative rounded-lg px-1 py-1 sm:px-4 sm:py-2 text-sm text-gray-700 dark:text-gray-200 transition-all delay-150 hover:text-gray-900 dark:hover:text-gray-900"
+        className="relative rounded-lg px-1 py-1 sm:px-4 sm:py-2 text-md text-gray-700 dark:text-gray-200 transition-all delay-150 hover:text-gray-900 dark:hover:text-gray-900"
       >
         {links[0]?.name}
       </button>
       <button
         onClick={() => handleClick(links[1].link)}
-        className="relative rounded-lg px-1 py-1 sm:px-4 sm:py-2 text-sm text-gray-700 dark:text-gray-200 transition-all delay-150 hover:text-gray-900 dark:hover:text-gray-900"
+        className="relative rounded-lg px-1 py-1 sm:px-4 sm:py-2 text-md text-gray-700 dark:text-gray-200 transition-all delay-150 hover:text-gray-900 dark:hover:text-gray-900"
       >
         {links[1]?.name}
       </button>
       <button
         onClick={() => setOpen(!open)}
-        className="p-2 rounded-md bg-gray-200 dark:bg-gray-800"
+        className="p-2 rounded-md bg-gray-200 dark:bg-gray-800 text-md"
       >
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
           strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 text-black dark:text-white">
@@ -186,7 +167,7 @@ export const Mobile = ({ links }) => {
               <button
                 key={el.link}
                 onClick={() => handleClick(el.link)}
-                className="relative font-bold px-1 py-4 sm:px-4 sm:py-2 text-sm text-gray-700 dark:text-gray-200 transition-all delay-150 hover:text-gray-900 dark:hover:text-gray-900 text-left"
+                className="relative font-bold px-1 py-4 sm:px-4 sm:py-2 text-md text-gray-700 dark:text-gray-200 transition-all delay-150 hover:text-gray-900 dark:hover:text-gray-900 text-left"
               >
                 <span className="relative z-10">{el.name}</span>
               </button>
