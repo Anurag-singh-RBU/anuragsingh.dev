@@ -44,6 +44,13 @@ export default function Container(props) {
   return (
     <div className="bg-white dark:bg-zinc-900">
 
+      <Head>
+        <title>{meta.title}</title>
+        <meta name="robots" content="follow, index" />
+        <meta name="description" content={meta.description} />
+        {meta.date && <meta property="article:published_time" content={meta.date} />}
+      </Head>
+
       {/* Navbar */}
       <nav className="sticky-nav flex justify-between items-center max-w-4xl w-full p-8 mt-0 mb-0 md:mt-4 md:mb-10 mx-auto bg-white dark:bg-zinc-900 bg-opacity-60">
         <a href="#skip" className="sr-only focus:not-sr-only">Skip to content</a>
@@ -133,19 +140,19 @@ export const Mobile = ({ links }) => {
     <div className="w-full flex flex-row items-center space-x-2 font-mono text-lg">
       <button
         onClick={() => handleClick(links[0].link)}
-        className="relative rounded-lg px-1 py-1 sm:px-4 sm:py-2 text-md text-gray-700 dark:text-gray-200 transition-all delay-150 hover:text-gray-900 dark:hover:text-gray-900"
+        className="relative rounded-lg px-1 py-1 sm:px-4 sm:py-2 text-sm text-gray-700 dark:text-gray-200 transition-all delay-150 hover:text-gray-900 dark:hover:text-gray-900"
       >
         {links[0]?.name}
       </button>
       <button
         onClick={() => handleClick(links[1].link)}
-        className="relative rounded-lg px-1 py-1 sm:px-4 sm:py-2 text-md text-gray-700 dark:text-gray-200 transition-all delay-150 hover:text-gray-900 dark:hover:text-gray-900"
+        className="relative rounded-lg px-1 py-1 sm:px-4 sm:py-2 text-sm text-gray-700 dark:text-gray-200 transition-all delay-150 hover:text-gray-900 dark:hover:text-gray-900"
       >
         {links[1]?.name}
       </button>
       <button
         onClick={() => setOpen(!open)}
-        className="p-2 rounded-md bg-gray-200 dark:bg-gray-800 text-md"
+        className="p-2 rounded-md bg-gray-200 dark:bg-gray-800 text-sm"
       >
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
           strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 text-black dark:text-white">
@@ -167,7 +174,7 @@ export const Mobile = ({ links }) => {
               <button
                 key={el.link}
                 onClick={() => handleClick(el.link)}
-                className="relative font-bold px-1 py-4 sm:px-4 sm:py-2 text-md text-gray-700 dark:text-gray-200 transition-all delay-150 hover:text-gray-900 dark:hover:text-gray-900 text-left"
+                className="relative font-bold px-1 py-4 sm:px-4 sm:py-2 text-sm text-gray-700 dark:text-gray-200 transition-all delay-150 hover:text-gray-900 dark:hover:text-gray-900 text-left"
               >
                 <span className="relative z-10">{el.name}</span>
               </button>

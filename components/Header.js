@@ -49,7 +49,7 @@ const Header = () => {
             className={
               "inline-block px-2 py-0 font-bold font-jetbrains bg-gray-100 dark:bg-zinc-700 dark:text-white mx-1"
             }
-            href="https://userogue.com">
+            href="https://scrivo.vercel.app/">
             Scrivo
           </a>
           other
@@ -74,7 +74,7 @@ const Header = () => {
                     Founder{" "}
                     <Hyperlink
                       text="@scrivo"
-                      link="https://placeholdertech.in"
+                      link="https://scrivo.vercel.app/"
                     />{" "}
                     and{" "}
                     <Hyperlink
@@ -84,11 +84,11 @@ const Header = () => {
                   </motion.p>
                   <motion.p variants={itemA} className="font-normal py-3">
                     Competitive coding{" "}
-                    <Hyperlink text="@leetcode" link="https://leetcode.com"/>{" "}
+                    <Hyperlink text="@leetcode" link="https://leetcode.com/u/singhar_7"/>{" "}
                     and{" "}
                     <Hyperlink
                       text="@codechef"
-                      link="https://app.pixelperfect.quest"
+                      link="https://www.codechef.com/users/heehoohaa"
                     />
                   </motion.p>
                   <motion.p variants={itemA} className="font-normal py-3">
@@ -109,19 +109,19 @@ const Header = () => {
                     Posts{" "}
                     <Hyperlink
                       text="@linkedin"
-                      link="https://www.freecodecamp.org/news/author/manu/"
+                      link="https://www.linkedin.com/in/anuragsinghrbu/"
                     />
                     {" "}and{" "}
                     <Hyperlink
                       text="@twitter"
-                      link="https://app.pixelperfect.quest"
+                      link="https://twitter.com/anuragRBU"
                     />
                   </motion.p>
                   <motion.p variants={itemA} className="font-normal py-3">
                     Project repositories{" "}
                     <Hyperlink
                       text="@github"
-                      link="https://www.youtube.com/@manuarora"
+                      link="https://github.com/Anurag-singh-RBU"
                     />
                   </motion.p>
 

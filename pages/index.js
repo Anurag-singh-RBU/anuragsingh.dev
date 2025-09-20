@@ -374,9 +374,10 @@ quizzes, and crafts personalized study plans from PDFs or notes.
           </div>
           <div className="mt-2 cursor-pointer">
             <a
-              href="https://wa.me/9860988325?text=Hello Anurag , I am "
+              href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
+              download="Resume.pdf"
               className="relative inline-flex gap-2 items-center justify-center dark:text-black rounded-md text-sm font-mono bg-black dark:bg-white px-3 py-2 font-semibold text-white shadow-md transition duration-300 hover:opacity-90 overflow-hidden">
               <span>Resume</span><Download size={13} fontWeight={30} className="dark:text-black"/>
               <span className="absolute bottom-0 left-0 h-[2px] w-full bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500"></span>
