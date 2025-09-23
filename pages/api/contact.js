@@ -29,25 +29,22 @@ export default async function handler(req, res) {
         </head>
         
         <body>
-            <div class="img-container" style="display: flex;justify-content: center;align-items: center;border-radius: 5px;overflow: hidden; font-family: 'helvetica', 'ui-sans';">              
+            <div class="img-container" style="display: flex;justify-content: center;align-items: center;border-radius: 5px;overflow: hidden; font-family: monospace;">              
                 </div>
                 <div class="container" style="margin-left: 20px;margin-right: 20px;">
                 <h3>Hello , ${email} 👋</h3>
                 <div style="font-size: 16px;">
-                <p>Thankyou for contacting me through my website. I'm excited to work with you.</p>
+                <p>Thank you for contacting me through my website. I am excited to work with you.</p>
                 <p><span class="spantext" style="font-weight: bold;">Reply</span> to this email with your requirements and I will get back to you.</p>
                 <p>Or simply, just say Hi :) <a href="https://wa.me/9860988325?text=Hi" target="__blank" class="whatsapp" style="text-decoration: none;font-weight: bold;background: #10B981;padding: 4px;border-radius: 5px;color: white;">WhatsApp</a></p>
                 <br>
                 </div>
-                <img src="https://manuarora.in/logo.png" class="logo-image" style="height: 50px;width: 50px;border-radius: 5px;overflow: hidden;">
-                <p class="footer" style="font-size: 16px;padding-bottom: 20px;border-bottom: 1px solid #D1D5DB;">Regards<br>Manu Arora<br>Software Developer<br>+91 9587738861</p>
+                <p class="footer" style="font-size: 16px;padding-bottom: 20px;border-bottom: 1px solid #D1D5DB;">Regards<br>Anurag Singh<br>Software Developer<br>+91 7387857715</p>
                 <div class="footer-links" style="display: flex;justify-content: center;align-items: center;">
-                    <a href="https://manuarora.in/" style="text-decoration: none;margin: 8px;color: #9CA3AF;">Website</a>
-                    <a href="https://github.com/manuarora700/" style="text-decoration: none;margin: 8px;color: #9CA3AF;">GitHub</a>
-                    <a href="https://instagram.com/maninthere/" style="text-decoration: none;margin: 8px;color: #9CA3AF;">Instagram</a>
-                    <a href="https://linkedin.com/in/manuarora28/" style="text-decoration: none;margin: 8px;color: #9CA3AF;">LinkedIn</a>
-                    <a href="https://twitter.com/mannupaaji/" style="text-decoration: none;margin: 8px;color: #9CA3AF;">Twitter</a>
-                    
+                    <a href="https://anufolio.vercel.app/" style="text-decoration: none;margin: 8px;color: #9CA3AF;">Website</a>
+                    <a href="https://github.com/Anurag-Singh-RBU/" style="text-decoration: none;margin: 8px;color: #9CA3AF;">Github</a>
+                    <a href="https://linkedin.com/in/anuragsinghrbu/" style="text-decoration: none;margin: 8px;color: #9CA3AF;">LinkedIn</a>
+                    <a href="https://twitter.com/anuragRBU/" style="text-decoration: none;margin: 8px;color: #9CA3AF;">Twitter</a>                   
                 </div>
                 </div>
         </body>
