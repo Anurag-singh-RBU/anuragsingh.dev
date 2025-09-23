@@ -4,7 +4,7 @@
 
 # HEY THERE 👋
 
-This is my personal portfolio website. The application is built with **Next.js/React/MDX** and friends.
+This is my personal portfolio website. The application is built with **Next js / React / MDX** and friends.
 
 ## Installation
 
