@@ -1,3 +1,3 @@
 <p align="center">
-  <img src="/git-AS.jpg" alt="git-AS" width="400">
+  <img src="public/git-AS.png" alt="git-AS" width="400">
 </p>
