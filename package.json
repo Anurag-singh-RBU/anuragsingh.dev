@@ -52,7 +52,7 @@
     "lucide-react": "^0.541.0",
     "mdx-prism": "^0.3.4",
     "mini-svg-data-uri": "^1.4.4",
-    "next": "^12.3.7",
+    "next": "^15.5.4",
     "next-auth": "^4.13.0",
     "next-mdx-remote": "^4.4.1",
     "next-themes": "^0.0.12",
