@@ -23,7 +23,7 @@ export default function Footer() {
                 <Link href="/" className="transition-colors">Home</Link>
                 <Link href="/dashboard" className="transition-colors">Dashboard</Link>
                 <Link href="/projects" className="transition-colors">Projects</Link>
-                <Link href="https://shadyxui.in/colors" className="transition-colors">Colors</Link>
+                <a href="https://shadyxui.in/colors" className="transition-colors">Colors</a>
               </nav>
             </div>
 
