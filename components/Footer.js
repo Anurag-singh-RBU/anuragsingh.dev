@@ -32,13 +32,9 @@ export default function Footer() {
               <h3 className="mb-4 text-lg text-black/70 font-bungee dark:text-white">Contact &nbsp;Me</h3>
               <address className="flex flex-col space-y-4 text-sm not-italic sm:font-semibold font-bold text-gray-600 dark:text-teal-300 font-mono ml-1">
                 
-                <a 
-                  href="/links" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                >
+                <Link href="/links">
                   Links
-                </a>
+                </Link>
 
                 <Link href="/resources">
                   Resources
