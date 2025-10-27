@@ -39,7 +39,7 @@ const Header = () => {
           Building
           <a
             className={
-              "inline-block px-2 py-0 font-extrabold font-jetbrains bg-gray-100 dark:bg-zinc-700 dark:text-white  mx-1"
+              "font-extrabold font-jetbrains bg-gray-100 dark:bg-zinc-700 dark:text-white mx-1 inline-flex items-center text-sm bg-black/5 dark:bg-white/15 border border-dashed dark:border-white/30 border-black/20 py-1 px-2 rounded-md skill-inner-shadow self-end text-black"
             }
             href="https://shadyxui.in">
             Shadyx
@@ -47,7 +47,7 @@ const Header = () => {
           ,
           <a
             className={
-              "inline-block px-2 py-0 font-bold font-jetbrains bg-gray-100 dark:bg-zinc-700 dark:text-white mx-1"
+              "font-extrabold font-jetbrains bg-gray-100 dark:bg-zinc-700 dark:text-white mx-1 inline-flex items-center text-sm bg-black/5 dark:bg-white/15 border border-dashed dark:border-white/30 border-black/20 py-1 px-2 rounded-md skill-inner-shadow self-end text-black"
             }
             href="https://scrivo.vercel.app/">
             Scrivo
@@ -133,7 +133,7 @@ const Header = () => {
             </AnimatePresence>
           </span>
         </div>
-        <p className="text-zinc-600 dark:text-zinc-300 text-justify font-cabin">
+        <p className="text-zinc-600 dark:text-zinc-300 text-justify font-inter">
           Full Stack Developer building SaaS products and web apps. Find me
           on
           <a

@@ -9,6 +9,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playwrite+MX+Guides&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Geist:wght@100..900&family=Playwrite+MX+Guides&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Tint&family=Cabin:ital,wght@0,400..700;1,400..700&family=Fira+Code:wght@300..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Sora:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Geist:wght@100..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playwrite+MX+Guides&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 @font-face {
   font-family: "Inter";
@@ -29,6 +30,14 @@ html {
   font-family: "Playwrite MX Guides";
   font-weight: 400;
   font-style: normal;
+}
+
+.font-hanken {
+  font-family: "Hanken Grotesk", sans-serif;
+}
+
+.font-inter {
+  font-family: "Inter", sans-serif;
 }
 
 .ubuntu-regular {
@@ -350,4 +359,12 @@ input[type="email"] {
   background-clip: text;
   color: transparent;
 
+}
+
+.skill-inner-shadow {
+  box-shadow : inset 0 1px 2px #00000014, inset 0 1px 4px #0000000a;
+}
+
+.shadow-inner{
+  --tw-shadow: inset 0 2px 4px 0 var(--tw-shadow-color, #0000000d);
 }

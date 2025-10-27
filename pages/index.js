@@ -18,6 +18,7 @@ import { ProjectCard } from "@/components/project-card";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import {WorkExperience} from "@/components/components/work-experience";
 import { skills } from "@/data/TechStack";
+import OnekoCat from "@/components/OnekoCat";
 
 export default function Home() {
 
@@ -145,7 +146,23 @@ quizzes, and crafts personalized study plans from PDFs or notes.
       description="Full-Stack developer , JavaScript enthusiast , Freelancer , Tech Blogger and a Learner. I love building products and web apps that impact millions of lives."
     >
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
+        <OnekoCat/>
         <Header/>
+
+        <div className="flex items-center gap-3 text-sm p-3 rounded-lg bg-muted/30 border border-border/50 shadow-inner w-full">
+          <div className="w-12 h-12 rounded-md bg-muted/50 flex items-center justify-center">
+            <img alt="spotify" loading="lazy" width={24} height={24} className="opacity-50 dark:opacity-100" src="/spotify.svg"></img>
+          </div>
+          <div class="flex flex-col gap-1">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-jetbrains font-semibold text-muted-foreground tracking-wide">Offline</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="mb-1 font-bungee text-[13px] tracking-wider text-black/70 dark:text-teal-400" style={{wordSpacing: "5px"}}>Not currently listening</span>
+              <span class="text-xs font-jetbrains font-semibold text-gray-600 dark:text-gray-300">Music activity unavailable</span>
+            </div>
+          </div>
+        </div>
 
         <h3 className="text-2xl md:text-3xl font-bungee mb-8 sm:mt-10 mt-5 text-black/80 dark:text-white" style={{wordSpacing: "6px"}}>
           <HighlightBox>About</HighlightBox>
