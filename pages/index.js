@@ -149,7 +149,7 @@ quizzes, and crafts personalized study plans from PDFs or notes.
         <OnekoCat/>
         <Header/>
 
-        <div className="flex items-center gap-3 text-sm p-3 rounded-lg bg-muted/30 border border-border/50 shadow-inner w-full">
+        <div className="flex items-center gap-3 text-sm p-3 rounded-lg bg-muted/30 border border-border/50 shadow-inner w-full mb-6">
           <div className="w-12 h-12 rounded-md bg-muted/50 flex items-center justify-center">
             <img alt="spotify" loading="lazy" width={24} height={24} className="opacity-50 dark:opacity-100" src="/spotify.svg"></img>
           </div>

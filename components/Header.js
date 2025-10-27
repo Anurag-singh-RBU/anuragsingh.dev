@@ -44,7 +44,7 @@ const Header = () => {
             href="https://shadyxui.in">
             Shadyx
           </a>
-          ,
+          and
           <a
             className={
               "font-extrabold font-jetbrains bg-gray-100 dark:bg-zinc-700 dark:text-white mx-1 inline-flex items-center text-sm bg-black/5 dark:bg-white/15 border border-dashed dark:border-white/30 border-black/20 py-1 px-2 rounded-md skill-inner-shadow self-end text-black"
@@ -184,8 +184,7 @@ export const Hyperlink = ({ link, text }) => {
     <a
       href={link}
       className="inline-block font-bold text-zinc-700 dark:text-zinc-200 transform hover:scale-105 transition duration-200"
-      target="__blank"
-    >
+      target="__blank">
       {text}
     </a>
   );
