@@ -35,11 +35,11 @@ const Header = () => {
           Anurag &nbsp;Singh
         </h1>
 
-        <div className="relative leading-7 items-center font-jetbrains flex-wrap text-zinc-700 dark:text-zinc-300 mb-5">
+        <div className="relative items-center font-GS flex-wrap dark:text-zinc-300 mb-5 text-sm font-GS text-gray-400" style={{wordSpacing: "2px", letterSpacing: "0.5px"}}>
           Building
           <a
             className={
-              "font-extrabold font-jetbrains bg-gray-100 dark:bg-zinc-700 dark:text-white mx-1 inline-flex items-center text-sm bg-black/5 dark:bg-white/15 border border-dashed dark:border-white/30 border-black/20 py-1 px-2 rounded-md skill-inner-shadow self-end text-black"
+              "font-extrabold font-jetbrains bg-gray-100 dark:bg-zinc-700 dark:text-white sm:mx-2 mx-1 inline-flex items-center text-sm bg-black/5 dark:bg-white/15 border border-dashed dark:border-white/30 border-black/20 py-1 px-2 rounded-md skill-inner-shadow self-end text-black"
             }
             href="https://shadyxui.in">
             Shadyx
@@ -47,7 +47,7 @@ const Header = () => {
           and
           <a
             className={
-              "font-extrabold font-jetbrains bg-gray-100 dark:bg-zinc-700 dark:text-white mx-1 inline-flex items-center text-sm bg-black/5 dark:bg-white/15 border border-dashed dark:border-white/30 border-black/20 py-1 px-2 rounded-md skill-inner-shadow self-end text-black"
+              "font-extrabold font-jetbrains bg-gray-100 dark:bg-zinc-700 dark:text-white sm:mx-2 mx-1 inline-flex items-center text-sm bg-black/5 dark:bg-white/15 border border-dashed dark:border-white/30 border-black/20 py-1 px-2 rounded-md skill-inner-shadow self-end text-black"
             }
             href="https://scrivo.vercel.app/">
             Scrivo
@@ -133,7 +133,7 @@ const Header = () => {
             </AnimatePresence>
           </span>
         </div>
-        <p className="text-zinc-600 dark:text-zinc-300 text-justify font-inter">
+        <p className="text-zinc-600 dark:text-zinc-300 text-justify font-GS">
           Full Stack Developer building SaaS products and web apps. Find me
           on
           <a
