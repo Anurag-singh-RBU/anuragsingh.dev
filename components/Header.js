@@ -35,7 +35,7 @@ const Header = () => {
           Anurag &nbsp;Singh
         </h1>
 
-        <div className="relative items-center font-GS flex-wrap dark:text-zinc-300 mb-5 text-md font-GS text-gray-400" style={{wordSpacing: "2px", letterSpacing: "0.5px"}}>
+        <div className="relative items-center font-GS flex-wrap dark:text-zinc-300 mb-5 text-md font-GS text-gray-400" style={{wordSpacing: "4px", letterSpacing: "0.5px"}}>
           Building
           <a
             className={
@@ -133,7 +133,7 @@ const Header = () => {
             </AnimatePresence>
           </span>
         </div>
-        <p className="text-zinc-600 dark:text-zinc-300 text-justify font-GS">
+        <p className="text-zinc-600 dark:text-zinc-300 text-justify font-mono">
           Full Stack Developer building SaaS products and web apps. Find me
           on
           <a
