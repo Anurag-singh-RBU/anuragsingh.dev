@@ -35,7 +35,7 @@ const Header = () => {
           Anurag &nbsp;Singh
         </h1>
 
-        <div className="relative items-center font-mono flex-wrap dark:text-zinc-300 mb-5 text-md text-gray-500" style={{wordSpacing: "4px", letterSpacing: "0.5px"}}>
+        <div className="relative items-center font-mono flex-wrap dark:text-zinc-300 mb-5 text-md text-gray-500" style={{wordSpacing: "2px", letterSpacing: "0.5px"}}>
           Building
           <a
             className={
