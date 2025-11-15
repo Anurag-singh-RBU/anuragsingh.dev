@@ -29,8 +29,8 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="flex flex-col md:flex-row justify-between items-start md:space-x-14 w-full mb-10">
-      <div className="flex md:w-3/4 flex-col mt-6">
+    <div className="flex flex-col md:flex-row justify-between items-start sm:space-x-14 w-full mb-10">
+      <div className="flex sm:w-3/4 flex-col mt-6">
         <h1 className="text-4xl md:text-4xl font-bungee mb-4 text-black/70 sectionOne">
           Anurag &nbsp;Singh
         </h1>

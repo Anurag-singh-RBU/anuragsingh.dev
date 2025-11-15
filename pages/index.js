@@ -145,7 +145,7 @@ quizzes, and crafts personalized study plans from PDFs or notes.
       title="Anurag Singh"
       description="Full-Stack developer , JavaScript enthusiast , Freelancer , Tech Blogger and a Learner. I love building products and web apps that impact millions of lives."
     >
-      <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
+      <div className="flex flex-col justify-center sm:items-start sm:max-w-2xl w-full mx-auto mb-16">
         <OnekoCat/>
         <Header/>
 

@@ -42,7 +42,7 @@ export default function Container(props) {
   ];
 
   return (
-    <div className="bg-white dark:bg-zinc-900">
+    <div className="bg-white dark:bg-zinc-900 sm:max-w-4xl w-full mx-auto">
 
       <Head>
         <title>{meta.title}</title>
@@ -108,7 +108,7 @@ export default function Container(props) {
       {/* Page content */}
       <main
         id="skip"
-        className="flex flex-col justify-center bg-white dark:bg-zinc-900 px-8 sm:px-0 text-gray-900 dark:text-gray-100 antialiased"
+        className="flex flex-col justify-center items-center bg-white dark:bg-zinc-900 px-8 sm:px-0 text-gray-900 dark:text-gray-100 antialiased"
       >
         {children}
         <Footer/>

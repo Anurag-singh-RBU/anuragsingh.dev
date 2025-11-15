@@ -8,7 +8,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./comp
 export default function Footer() {
   return (
     <footer className="relative w-full border-t font-GS mt-10 bg-background dark:bg-neutral-900/50 text-foreground transition-colors duration-300">
-      <div className="sm:px-6 max-w-2xl mx-auto py-12">
+      <div className="sm:px-6 max-w-4xl mx-auto py-12">
         
         {/* Responsive Layout */}
         <div className="flex flex-col lg:flex-row gap-12 lg:justify-between w-full">
