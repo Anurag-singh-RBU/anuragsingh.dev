@@ -39,7 +39,7 @@ const Header = () => {
           Building
           <a
             className={
-              "font-extrabold font-jetbrains bg-gray-100 dark:bg-zinc-700 dark:text-white sm:mx-2 mx-1 inline-flex items-center text-sm bg-black/5 dark:bg-white/15 border border-dashed dark:border-white/30 border-black/20 py-1 px-2 rounded-md skill-inner-shadow self-end text-black"
+              "font-bold font-jetbrains bg-gray-100 dark:bg-zinc-700 dark:text-white sm:mx-2 mx-1 inline-flex items-center text-sm bg-black/5 dark:bg-white/15 border border-dashed dark:border-white/30 border-black/20 py-1 px-2 rounded-md skill-inner-shadow self-end text-black"
             }
             href="https://shadyxui.in">
             Shadyx
@@ -47,7 +47,7 @@ const Header = () => {
           and
           <a
             className={
-              "font-extrabold font-jetbrains bg-gray-100 dark:bg-zinc-700 dark:text-white sm:mx-2 mx-1 inline-flex items-center text-sm bg-black/5 dark:bg-white/15 border border-dashed dark:border-white/30 border-black/20 py-1 px-2 rounded-md skill-inner-shadow self-end text-black"
+              "font-bold font-jetbrains bg-gray-100 dark:bg-zinc-700 dark:text-white sm:mx-2 mx-1 inline-flex items-center text-sm bg-black/5 dark:bg-white/15 border border-dashed dark:border-white/30 border-black/20 py-1 px-2 rounded-md skill-inner-shadow self-end text-black"
             }
             href="https://scrivo.vercel.app/">
             Scrivo
