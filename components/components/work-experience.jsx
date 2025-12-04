@@ -125,26 +125,6 @@ export function ExperiencePositionItem({
               <ScanEye size={18}/>
             </div>
           </div>
-
-    
-          <div className="flex items-center font-bebas font-semibold text-gray-600 dark:text-teal-500 gap-2 pl-9 ml-6 text-sm text-muted-foreground">
-            {position.employmentType && (
-              <>
-                <dl>
-                  <dt className="sr-only">Employment Type</dt>
-                  <dd>&nbsp;&nbsp;{position.employmentType}</dd>
-                </dl>
-                
-                <ClockFading size={14} className="text-black dark:text-white" />
-
-              </>
-            )}
-
-            <dl>
-              <dt className="sr-only font-sans">Employment Period</dt>
-              <dd>{position.employmentPeriod}</dd>
-            </dl>
-          </div>
         </CollapsibleTrigger>
 
         <CollapsibleContent
