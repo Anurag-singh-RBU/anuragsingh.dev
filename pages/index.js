@@ -19,6 +19,7 @@ import { AuroraText } from "@/components/magicui/aurora-text";
 import {WorkExperience} from "@/components/components/work-experience";
 import { skills } from "@/data/TechStack";
 import OnekoCat from "@/components/OnekoCat";
+import { cn } from "@/lib/utils";
 
 export default function Home() {
 
@@ -299,24 +300,25 @@ quizzes, and crafts personalized study plans from PDFs or notes.
         <div className="w-full flex justify-center mt-8 mb-10 font-jetbrains font-bold">
           <Link
             href="/projects"
-            className="text-sm px-4 py-2 rounded-md font-medium text-gray-900 dark:text-gray-100"
-          >
+            className="text-sm px-4 py-2 rounded-md font-medium text-gray-900 dark:text-gray-100">
             <div className="flex items-center justify-center">
-              <div>See More</div>
-              <svg
+              <button className="rounded-lg relative group border-[2px] border-gray-300 flex bg-neutral-800 dark:bg-neutral-700 dark:border-neutral-500 dark:font-bold text-white items-center gap-2 pl-9 py-1.5 pr-3 shadow-sm">
+                <Box/> 
+                <span className="inline-block group-hover:-translate-x-7 transition-transform duration-500 tracking-wider">See More</span>
+              </button>
+              
+              {/* <svg
                 className="h-4 w-4 ml-2 mt-0.5"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
+                stroke="currentColor">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
+                  d="M19 9l-7 7-7-7"/>
+              </svg> */}
             </div>
           </Link>
         </div>
@@ -407,4 +409,52 @@ quizzes, and crafts personalized study plans from PDFs or notes.
     </Container>
 
   );
+}
+
+const Box = () => {
+
+  return <div className="size-6 absolute left-0.5 group-hover:left-[calc(100%-1.9rem)] transition-all duration-500 ml-0.5 inset-y-0 my-auto gap-px rounded-sm bg-[#FFCC00] flex flex-col justify-center items-center group-hover:transform group-hover:rotate-180 ease-out">
+    <div className="flex gap-px">
+      <Bubble/>
+      <Bubble/>
+      <Bubble highlight/>
+      <Bubble/>
+      <Bubble/>
+    </div>
+    <div className="flex gap-px">
+      <Bubble/>
+      <Bubble/>
+      <Bubble/>
+      <Bubble highlight/>
+      <Bubble/>
+    </div> 
+    <div className="flex gap-px">
+      <Bubble highlight/>
+      <Bubble highlight/>
+      <Bubble highlight/>
+      <Bubble highlight/>
+      <Bubble highlight/>
+    </div> 
+    <div className="flex gap-px">
+      <Bubble/>
+      <Bubble/>
+      <Bubble/>
+      <Bubble highlight/>
+      <Bubble/>
+    </div>  
+     <div className="flex gap-px">
+      <Bubble/>
+      <Bubble/>
+      <Bubble highlight/>
+      <Bubble/>
+      <Bubble/>
+    </div>  
+  </div>
+
+};
+
+const Bubble = ({className , highlight}) => {
+
+  return (<span className={cn("inline-block size-[3px] rounded-full bg-[#FFFFFF40]" , highlight &&  "bg-white animate-pulse ease-linear duration-200")}></span>)
+
 }
