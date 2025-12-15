@@ -221,9 +221,8 @@ quizzes, and crafts personalized study plans from PDFs or notes.
             <span
               className="text-xs text-muted-foreground truncate h-4 font-hanken tracking-wide"
               style={{ wordSpacing: "3px" }}>
-              by{" "}
               {isPlaying || isLast
-                ? data.artists
+                ? "by" + " " + data.artists
                 : "Music activity unavailable"}
             </span>
           </div>
