@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { BsPatchCheckFill } from "react-icons/bs";
 import HighlightBox from "./HighlightBox";
+import ModernRetroButton from "./components/modern-retro-button";
+import { ChevronDownCircle } from "lucide-react";
+import Button from "./Button";
 
 const Divider = () => {
   return (
@@ -127,7 +130,7 @@ export default function Timeline() {
       ) : (
         <button
           type="button"
-          className="flex items-center text-md my-4 mx-auto px-4 py-2 rounded-md font-bold font-mono text-gray-900 dark:text-gray-100"
+          className="inline-flex items-center text-sm bg-black/5 dark:bg-white/15 border border-dashed dark:border-white/30 border-black/20 py-2 px-3 rounded-md skill-inner-shadow self-center text-black dark:text-white hover:bg-black/10 dark:hover:bg-white/20 transition-colors mt-6 font-jetbrains font-bold"
           onClick={() => showFullTimeline(true)}
         >
           See More

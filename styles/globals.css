@@ -109,6 +109,20 @@ html {
     --color-5: oklch(90.7% 0.231 133);
 
     --color-primary: #FFCC00;
+
+    --modern-retro-button-text-default: #3d1f00;
+
+    --modern-retro-button-text-hover: #fff;
+
+    --modern-retro-button-background: #fff4e6;
+
+    --modern-retro-button-box-shadow: 0 0 0 0 #FFD580;
+
+    --modern-retro-button-box-shadow-hover: 0 0 20px 2px #FFD580;
+
+    --modern-retro-button-svg-rect: #FFD580;
+
+    --modern-retro-button-svg-rect-flicker: #ff5f00;
   }
 
   .dark {
@@ -149,6 +163,13 @@ html {
     --color-3: oklch(69.6% 0.165 251);
     --color-4: oklch(80.2% 0.134 225);
     --color-5: oklch(90.7% 0.231 133);
+    --modern-retro-button-text-default: #f7f7ff;
+    --modern-retro-button-text-hover: #111118;
+    --modern-retro-button-background: #181a29;
+    --modern-retro-button-box-shadow: 0 0 0 0 #0763f7;
+    --modern-retro-button-box-shadow-hover: 0 0 20px 2px #0763f7;
+    --modern-retro-button-svg-rect: #76b3fa;
+    --modern-retro-button-svg-rect-flicker: #0c79f7;
   }
   .theme {
     --animate-aurora: aurora 8s ease-in-out infinite alternate;

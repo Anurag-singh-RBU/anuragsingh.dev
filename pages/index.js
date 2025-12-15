@@ -521,7 +521,7 @@ quizzes, and crafts personalized study plans from PDFs or notes.
           ))}
         </div>
 
-        <Timeline />
+        <Timeline/>
 
         <h3 className="text-2xl md:text-3xl font-bungee mb-8 sm:mt-20 mt-10 text-black/80 dark:text-white">
           <HighlightBox>Academics</HighlightBox>
