@@ -35,7 +35,7 @@ const Header = () => {
           Anurag &nbsp;Singh
         </h1>
 
-        <div className="relative items-center font-mono flex-wrap dark:text-zinc-300 mb-5 text-md text-gray-500" style={{wordSpacing: "2px", letterSpacing: "0.5px"}}>
+        <div className="relative items-center font-mono flex-wrap dark:text-zinc-300 mb-3 text-md text-gray-500" style={{wordSpacing: "2px", letterSpacing: "0.5px"}}>
           Building
           <a
             className={
@@ -133,7 +133,7 @@ const Header = () => {
             </AnimatePresence>
           </span>
         </div>
-        <p className="text-zinc-600 dark:text-zinc-300 text-justify font-inter">
+        <p className="text-zinc-600 dark:text-zinc-300 text-justify font-hanken leading-relaxed md:w-11/12" style={{wordSpacing: "1.5px", letterSpacing: "0.4px"}}>
           Full Stack Developer building SaaS products and web apps. Find me
           on
           <a
@@ -141,7 +141,7 @@ const Header = () => {
             className="font-bold group dark:text-zinc-400 font-jetbrains relative inline-flex overflow-hidden"
             target="__blank"
           >
-            <span className="relative font-bold text-xl dark:text-blue-400">&nbsp;X&nbsp;</span>
+            <span className="relative font-bold text-lg dark:text-blue-400">&nbsp;X&nbsp;</span>
           </a>
           for tech updates and fun.
         </p>

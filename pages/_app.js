@@ -5,11 +5,18 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import * as gtag from "@/lib/gtag";
 import Banner from "@/components/Banner";
+import { Hanken_Grotesk } from "next/font/google";
 
 import MDXComponents from "@/components/MDXComponents";
 import Chat from "@/components/Chat";
 
 import { SessionProvider } from "next-auth/react";
+
+const hanken = Hanken_Grotesk({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-hanken",
+});
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   const router = useRouter();
@@ -25,12 +32,14 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
 
   return (
     <SessionProvider session={session}>
-      <ThemeProvider attribute="class">
-        <MDXProvider components={MDXComponents}>
-          <Component {...pageProps} />
-          <Chat />
-        </MDXProvider>
-      </ThemeProvider>
+      <div className={hanken.variable}>
+        <ThemeProvider attribute="class">
+          <MDXProvider components={MDXComponents}>
+            <Component {...pageProps} />
+            <Chat />
+          </MDXProvider>
+        </ThemeProvider>
+      </div>
     </SessionProvider>
   );
 }

@@ -1,14 +1,14 @@
+import React from "react";
 import Container from "@/components/Container";
 import Link from "next/link";
 import Timeline from "@/components/Timeline";
 import Contact from "@/components/Contact";
-import { CircleDot, Download, Github, Globe } from "lucide-react"
+import { CircleDot, Download, Github, Globe, Play } from "lucide-react";
 
 import { LIGHT_COLORS } from "@/lib/constants";
 
 import { shuffleArray } from "@/lib/shuffleArray";
 import { useEffect, useState } from "react";
-import { useIsFontReady } from "@/lib/useIsFontReady";
 
 import { useTheme } from "next-themes";
 import Talks from "@/components/Talks";
@@ -16,171 +16,304 @@ import Header from "@/components/Header";
 import HighlightBox from "@/components/HighlightBox";
 import { ProjectCard } from "@/components/project-card";
 import { AuroraText } from "@/components/magicui/aurora-text";
-import {WorkExperience} from "@/components/components/work-experience";
+import { WorkExperience } from "@/components/components/work-experience";
 import { skills } from "@/data/TechStack";
 import OnekoCat from "@/components/OnekoCat";
 import { cn } from "@/lib/utils";
+import { SpotifyEqualizer } from "@/components/components/SpotifyEqualizer";
+import { SpotifySkeleton } from "@/components/components/SpotifySkeleton";
 
 export default function Home() {
-
   const WORK_EXPERIENCE = [
-  {
-    id: "quaric",
-    companyName: "Navodita Infotech",
-    companyLogo: "https://imgs.search.brave.com/NhQwsSCfuietlLWBLt-Bsb7wnP85V2AmhBVSIKPU9hk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5jYWtlcmVzdW1l/LmNvbS9pbWFnZS91/cGxvYWQvcy0tWGh5/SWtyU0EtLS9jX2Zp/bGwsZ19mYWNlLGhf/MzAwLHdfMzAwL3Yx/NzAwNzI5OTM5L2g3/c2lzaHMxaG1iamh3/Zmhtb2RxLmpwZw",
-    positions: [
-      {
-        id: "30d3a9fb-021d-452a-9d27-83655369b4b9",
-        title: "Frontend Intern",
-        employmentPeriod: "Feb 2025 - March 2025",
-        employmentType: "Remote",
-        icon: "code",
-        description: `- Designed and developed a dynamic Shopping product catalog for a real-world client project.
+    {
+      id: "quaric",
+      companyName: "Navodita Infotech",
+      companyLogo:
+        "https://imgs.search.brave.com/NhQwsSCfuietlLWBLt-Bsb7wnP85V2AmhBVSIKPU9hk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5jYWtlcmVzdW1l/LmNvbS9pbWFnZS91/cGxvYWQvcy0tWGh5/SWtyU0EtLS9jX2Zp/bGwsZ19mYWNlLGhf/MzAwLHdfMzAwL3Yx/NzAwNzI5OTM5L2g3/c2lzaHMxaG1iamh3/Zmhtb2RxLmpwZw",
+      positions: [
+        {
+          id: "30d3a9fb-021d-452a-9d27-83655369b4b9",
+          title: "Frontend Intern",
+          employmentPeriod: "Feb 2025 - March 2025",
+          employmentType: "Remote",
+          icon: "code",
+          description: `- Designed and developed a dynamic Shopping product catalog for a real-world client project.
 - Registered the Shopping site with [online.gov.vn](https://online.gov.vn) for compliance.
 - Developed online ordering to streamline purchases.
 - Implemented key features like responsive layout, real-time product filtering, and dynamic rendering of product data based on user interactions.
 - Tech Stack : MERN, Auth0, Docker, Tailwind, NGINX`,
-        skills: [
-          "Next.js",
-          "Strapi",
-          "Auth0",
-          "VNPAY-QR",
-          "Docker",
-          "NGINX",
-          "Google Cloud",
-          "Docusaurus",
-          "Extension",
-          "Research",
-          "Project Management",
-        ],
-        isExpanded: true,
-      }
-    ],
-    isCurrentEmployer: false,
-  },
-  {
-    id: "hacksagon",
-    companyName: "HackSagon 2025",
-    companyLogo: "https://imgs.search.brave.com/RUWAoatFLcQ-xAnYwSPVqOPc35JMYaCp0hu_LoPsHyc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZmF2cG5nLmNvbS8y/Mi8xLzgvaGFja2F0/aG9uLXdlYi1kZXNp/Z24tZGVzaWduZXIt/cnVieS1vbi1yYWls/cy1wbmctZmF2cG5n/LWpVakp3UFRLUEN0/d0pRdUROYndUZFNp/RkxfdC5qcGc",
-    positions: [
-      {
-        id: "30d3a9fb-021d-452a-9d27-83655369b4b0",
-        title: "Project Lead",
-        employmentPeriod: "Feb 2025 - June 2025",
-        employmentType: "Onsite",
-        icon: "code",
-        description: `- 36-hour hackathon where me and my team developed a web application called NeuroLearn using MERN Stack.
+          skills: [
+            "Next.js",
+            "Strapi",
+            "Auth0",
+            "VNPAY-QR",
+            "Docker",
+            "NGINX",
+            "Google Cloud",
+            "Docusaurus",
+            "Extension",
+            "Research",
+            "Project Management",
+          ],
+          isExpanded: true,
+        },
+      ],
+      isCurrentEmployer: false,
+    },
+    {
+      id: "hacksagon",
+      companyName: "HackSagon 2025",
+      companyLogo:
+        "https://imgs.search.brave.com/RUWAoatFLcQ-xAnYwSPVqOPc35JMYaCp0hu_LoPsHyc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZmF2cG5nLmNvbS8y/Mi8xLzgvaGFja2F0/aG9uLXdlYi1kZXNp/Z24tZGVzaWduZXIt/cnVieS1vbi1yYWls/cy1wbmctZmF2cG5n/LWpVakp3UFRLUEN0/d0pRdUROYndUZFNp/RkxfdC5qcGc",
+      positions: [
+        {
+          id: "30d3a9fb-021d-452a-9d27-83655369b4b0",
+          title: "Project Lead",
+          employmentPeriod: "Feb 2025 - June 2025",
+          employmentType: "Onsite",
+          icon: "code",
+          description: `- 36-hour hackathon where me and my team developed a web application called NeuroLearn using MERN Stack.
 - Neurolearn is an AI-powered study companion that summarizes lectures, generates
 quizzes, and crafts personalized study plans from PDFs or notes.
 - Tech Stack : React, Tailwind, Node, Express, MongoDB, OpenAI, NLP`,
-        skills: [
-          "Next.js",
-          "Strapi",
-          "Auth0",
-          "VNPAY-QR",
-          "Docker",
-          "NGINX",
-          "Google Cloud",
-          "Docusaurus",
-          "Extension",
-          "Research",
-          "Project Management",
-        ],
-        isExpanded: true,
-      }
-    ],
-    isCurrentEmployer: false,
-  },
-  {
-    id: "contribution",
-    companyName: "Contributions",
-    companyLogo: "https://imgs.search.brave.com/S5YuHClZzCyuSzkE9xZHnmh9kdHBW8QPJo2EITI0sZ0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aWNvbnNjb3V0LmNv/bS9pY29uL2ZyZWUv/cG5nLTI1Ni9mcmVl/LWdpdGh1Yi1pY29u/LXN2Zy1wbmctZG93/bmxvYWQtMzE0Nzg3/My5wbmc_Zj13ZWJw/Jnc9MTI4",
-    positions: [
-      {
-        id: "30d3a9fb-021d-452a-9d27-83655369b4b1",
-        title: "Active Contributor",
-        employmentPeriod: "Jan 2025 - Present",
-        employmentType: "Remote",
-        icon: "code",
-        description: `- Contributed to the dvelopment of a web application for a local bussiness.
+          skills: [
+            "Next.js",
+            "Strapi",
+            "Auth0",
+            "VNPAY-QR",
+            "Docker",
+            "NGINX",
+            "Google Cloud",
+            "Docusaurus",
+            "Extension",
+            "Research",
+            "Project Management",
+          ],
+          isExpanded: true,
+        },
+      ],
+      isCurrentEmployer: false,
+    },
+    {
+      id: "contribution",
+      companyName: "Contributions",
+      companyLogo:
+        "https://imgs.search.brave.com/S5YuHClZzCyuSzkE9xZHnmh9kdHBW8QPJo2EITI0sZ0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aWNvbnNjb3V0LmNv/bS9pY29uL2ZyZWUv/cG5nLTI1Ni9mcmVl/LWdpdGh1Yi1pY29u/LXN2Zy1wbmctZG93/bmxvYWQtMzE0Nzg3/My5wbmc_Zj13ZWJw/Jnc9MTI4",
+      positions: [
+        {
+          id: "30d3a9fb-021d-452a-9d27-83655369b4b1",
+          title: "Active Contributor",
+          employmentPeriod: "Jan 2025 - Present",
+          employmentType: "Remote",
+          icon: "code",
+          description: `- Contributed to the dvelopment of a web application for a local bussiness.
 - Worked in a team to design and implement a project and gained experience of React Tanstack Query and Backend stuff.
 - Acquired expertise in version control and web development with git and github.`,
-        skills: [
-          "Next.js",
-          "Strapi",
-          "Auth0",
-          "VNPAY-QR",
-          "Docker",
-          "NGINX",
-          "Google Cloud",
-          "Docusaurus",
-          "Extension",
-          "Research",
-          "Project Management",
-        ],
-        isExpanded: false,
-      }
-    ],
-    isCurrentEmployer: true,
-  },
-];
- 
+          skills: [
+            "Next.js",
+            "Strapi",
+            "Auth0",
+            "VNPAY-QR",
+            "Docker",
+            "NGINX",
+            "Google Cloud",
+            "Docusaurus",
+            "Extension",
+            "Research",
+            "Project Management",
+          ],
+          isExpanded: false,
+        },
+      ],
+      isCurrentEmployer: true,
+    },
+  ];
 
   const [colors, setColors] = useState([]);
-
-  let tempInterval;
-
-  const isFontReady = useIsFontReady();
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
   const { theme, setTheme } = useTheme();
 
-  const play = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
+  async function fetchSpotify() {
+    try {
+      const res = await fetch("/api/spotify");
+      const json = await res.json();
+      setData(json);
+    } catch {
+      setData({ status: "offline" });
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    fetchSpotify();
+    const interval = setInterval(fetchSpotify, 15000);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     setColors(shuffleArray(LIGHT_COLORS));
   }, []);
 
+  if (loading) return <SpotifySkeleton/>;
+
+  const isPlaying = data?.status === "playing";
+  const isLast = data?.status === "last";
+
+  const play = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
   return (
     <Container
       title="Anurag Singh"
-      description="Full-Stack developer , JavaScript enthusiast , Freelancer , Tech Blogger and a Learner. I love building products and web apps that impact millions of lives."
-    >
+      description="Full-Stack developer , JavaScript enthusiast , Freelancer , Tech Blogger and a Learner. I love building products and web apps that impact millions of lives.">
       <div className="flex flex-col justify-center sm:items-start sm:max-w-2xl w-full mx-auto mb-16">
         <OnekoCat/>
         <Header/>
 
-        <div className="flex items-center gap-3 text-sm p-3 rounded-lg bg-muted/30 border border-border/50 shadow-inner w-full mb-6">
-          <div className="w-12 h-12 rounded-md bg-muted/50 flex items-center justify-center">
-            <img alt="spotify" loading="lazy" width={24} height={24} className="opacity-50 dark:opacity-100" src="/spotify.svg"></img>
+        <div className="relative flex items-center gap-3 text-sm p-3 rounded-lg bg-muted/30 border border-border/50 shadow-inner w-full mb-6">
+          {isPlaying && (
+            <a
+              href={data.url}
+              target="_blank"
+              aria-label="Open in Spotify"
+              className="absolute right-2 top-1/2 -translate-y-1/2 mr-2">
+              <button className="inline-flex items-center justify-center size-9 rounded-md bg-background border border-border/60 shadow-[inset_0_1px_2px_rgba(0,0,0,0.12),inset_0_-1px_1px_rgba(255,255,255,0.4)] dark:shadow-[inset_0_1px_2px_rgba(0,0,0,0.5),inset_0_-1px_1px_rgba(255,255,255,0.05)] transition-all duration-200 hover:bg-accent active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40">
+                <Play size={18}/>
+              </button>
+            </a>
+          )}
+
+          <div className="w-12 h-12 rounded-md bg-muted/50 flex items-center justify-center overflow-hidden">
+            {isPlaying || isLast ? (
+              <img
+                src={data.image}
+                alt="album"
+                className="w-full h-full object-cover rounded-md"/>
+            ) : (
+              <img
+                src="/spotify.svg"
+                width={24}
+                height={24}
+                className="opacity-50 dark:opacity-100"/>
+            )}
           </div>
-          <div class="flex flex-col gap-1">
-            <div class="flex items-center gap-2">
-              <span class="text-xs font-jetbrains font-semibold text-muted-foreground tracking-wide">Offline</span>
-            </div>
-            <div class="flex flex-col">
-              <span class="mb-1 font-bungee text-[13px] tracking-wider text-black/70 dark:text-teal-400" style={{wordSpacing: "5px"}}>Not currently listening</span>
-              <span class="text-xs font-jetbrains font-semibold text-gray-600 dark:text-gray-300">Music activity unavailable</span>
-            </div>
+
+          <div className="flex flex-col gap-1 flex-1 ml-1">
+            <span
+              className="text-xs font-hanken font-semibold text-muted-foreground tracking-wide"
+              style={{ wordSpacing: "3px" }}>
+              {isPlaying
+                ? "Currently Playing"
+                : isLast
+                ? "Last Played"
+                : "Offline"}
+            </span>
+
+            <span
+              className="font-bungee text-[13px] tracking-wider text-black/70 dark:text-teal-400"
+              style={{ wordSpacing: "5px" }}>
+              {isPlaying || isLast ? data.title : "Not currently listening"}
+            </span>
+
+            <span
+              className="text-xs text-muted-foreground truncate h-4 font-hanken tracking-wide"
+              style={{ wordSpacing: "3px" }}>
+              by{" "}
+              {isPlaying || isLast
+                ? data.artists
+                : "Music activity unavailable"}
+            </span>
           </div>
         </div>
 
-        <h3 className="text-2xl md:text-3xl font-bungee mb-8 sm:mt-10 mt-5 text-black/80 dark:text-white" style={{wordSpacing: "6px"}}>
+        <h3
+          className="text-2xl md:text-3xl font-bungee mb-8 sm:mt-10 mt-5 text-black/80 dark:text-white"
+          style={{ wordSpacing: "6px" }}
+        >
           <HighlightBox>About</HighlightBox>
         </h3>
 
         <div className="prose prose-sm mb-5 max-w-none text-justify font-medium text-zinc-600 dark:text-zinc-300 font-mono text-foreground prose-zinc dark:prose-invert prose-headings:font-sans prose-headings:font-semibold prose-headings:text-balance prose-h2:border-b prose-h2:border-edge prose-h2:pb-2 prose-h2:text-2xl prose-lead:text-base prose-a:font-medium prose-a:break-words prose-a:text-foreground prose-a:underline prose-a:underline-offset-4 prose-code:rounded-md prose-code:border prose-code:bg-muted/50 prose-code:px-[0.3rem] prose-code:py-[0.2rem] prose-code:font-normal prose-code:before:content-none prose-code:after:content-none prose-hr:border-edge text-md">
-        <p>
-          Hello World ✨ I am <span className="text-lg font-bold dark:text-white tracking-widest text-black" style={{wordSpacing: "-3px"}}>AЛUᖇAG</span> — A Full Stack Web Developer passionate about creating high performance, user centric software solutions with intuitive and engaging designs. I have expertise in frameworks like <span className="font-bold font-mono text-black dark:text-white" style={{wordSpacing: "-3px"}}>React Js</span>, <span className="font-bold font-mono text-black tracking-wider dark:text-white" style={{wordSpacing: "-3px"}}>Node Js</span> and <span className="font-bold font-mono text-black tracking-wide dark:text-white" style={{wordSpacing: "-3px"}}>Next Js</span>. I leverage <span className="font-bold font-GS text-black tracking-wider dark:text-white">AWS</span> Services to create efficient and reliable solutions. <span className="font-bold font-mono text-black tracking-wider dark:text-white">MongoDB</span> and <span className="font-bold font-mono text-black tracking-wider dark:text-white">PostgreSQL</span> for database management, <span className="font-bold font-mono text-black tracking-wider dark:text-white">Clerk</span> and <span className="font-bold font-mono text-black tracking-wider dark:text-white">Zustand</span> for effective authentication and state management. 
-        </p>
-        <p>
-          One of my key projects <span className="text-md font-bold tracking-wider dark:text-white bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent" style={{wordSpacing: "-3px"}}>Shadyx UI</span> enhances the frontend experience on PC and Web surpassing <span className="text-teal-700 font-mono dark:text-teal-200 font-bold">150
-            </span> downloads on SourceForge and <span className="text-blue-800 font-mono font-bold dark:text-blue-300">100 plus</span> active users since 2025.
-        </p>
+          <p>
+            Hello World ✨ I am{" "}
+            <span
+              className="text-lg font-bold dark:text-white tracking-widest text-black"
+              style={{ wordSpacing: "-3px" }}
+            >
+              AЛUᖇAG
+            </span>{" "}
+            — A Full Stack Web Developer passionate about creating high
+            performance, user centric software solutions with intuitive and
+            engaging designs. I have expertise in frameworks like{" "}
+            <span
+              className="font-bold font-mono text-black dark:text-white"
+              style={{ wordSpacing: "-3px" }}
+            >
+              React Js
+            </span>
+            ,{" "}
+            <span
+              className="font-bold font-mono text-black tracking-wider dark:text-white"
+              style={{ wordSpacing: "-3px" }}
+            >
+              Node Js
+            </span>{" "}
+            and{" "}
+            <span
+              className="font-bold font-mono text-black tracking-wide dark:text-white"
+              style={{ wordSpacing: "-3px" }}
+            >
+              Next Js
+            </span>
+            . I leverage{" "}
+            <span className="font-bold font-GS text-black tracking-wider dark:text-white">
+              AWS
+            </span>{" "}
+            Services to create efficient and reliable solutions.{" "}
+            <span className="font-bold font-mono text-black tracking-wider dark:text-white">
+              MongoDB
+            </span>{" "}
+            and{" "}
+            <span className="font-bold font-mono text-black tracking-wider dark:text-white">
+              PostgreSQL
+            </span>{" "}
+            for database management,{" "}
+            <span className="font-bold font-mono text-black tracking-wider dark:text-white">
+              Clerk
+            </span>{" "}
+            and{" "}
+            <span className="font-bold font-mono text-black tracking-wider dark:text-white">
+              Zustand
+            </span>{" "}
+            for effective authentication and state management.
+          </p>
+          <p>
+            One of my key projects{" "}
+            <span
+              className="text-md font-bold tracking-wider dark:text-white bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent"
+              style={{ wordSpacing: "-3px" }}
+            >
+              Shadyx UI
+            </span>{" "}
+            enhances the frontend experience on PC and Web surpassing{" "}
+            <span className="text-teal-700 font-mono dark:text-teal-200 font-bold">
+              150
+            </span>{" "}
+            downloads on SourceForge and{" "}
+            <span className="text-blue-800 font-mono font-bold dark:text-blue-300">
+              100 plus
+            </span>{" "}
+            active users since 2025.
+          </p>
         </div>
 
-
-        <h3 className="text-2xl md:text-3xl font-bungee mb-8 sm:mt-10 mt-10 text-black/80 dark:text-white" style={{wordSpacing: "6px"}}>
+        <h3
+          className="text-2xl md:text-3xl font-bungee mb-8 sm:mt-10 mt-10 text-black/80 dark:text-white"
+          style={{ wordSpacing: "6px" }}
+        >
           <HighlightBox>Projects</HighlightBox>
         </h3>
 
@@ -190,27 +323,38 @@ quizzes, and crafts personalized study plans from PDFs or notes.
             href="https://shadyxui.in"
             description="UI components library that offers awesome reusable components for building web applications , create stunning websites and enjoy the flow from COPY to VIBE."
             dates="May 2025 - June 2025"
-            tags={["Next js",
-            "Typescript",
-            "Tailwind",
-            "Figma",
-            "Prisma",
-            "Aceternity",
-            "MongoDB"]}
+            tags={[
+              "Next js",
+              "Typescript",
+              "Tailwind",
+              "Figma",
+              "Prisma",
+              "Aceternity",
+              "MongoDB",
+            ]}
             link="https://shadyxui.in"
             image="/shadyxui.jpg"
             links={[
-              { icon: <Globe size={13}/>, type: "Website", href: "https://shadyxui.in" },
-              { icon: (
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  viewBox="0 0 438.549 438.549" 
-                  width="14" 
-                  height="14" 
-                  fill="currentColor">
-                  <path d="M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8-33.598-19.607-70.277-29.408-110.063-29.408-39.781 0-76.472 9.804-110.063 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.854 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.419-1.996 2.475-2.282 3.711-5.14 3.711-8.562 0-.571-.049-5.708-.144-15.417a2549.81 2549.81 0 01-.144-25.406l-6.567 1.136c-4.187.767-9.469 1.092-15.846 1-6.374-.089-12.991-.757-19.842-1.999-6.854-1.231-13.229-4.086-19.13-8.559-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-.951-2.568-2.098-3.711-3.429-1.142-1.331-1.997-2.663-2.568-3.997-.572-1.335-.098-2.43 1.427-3.289 1.525-.859 4.281-1.276 8.28-1.276l5.708.853c3.807.763 8.516 3.042 14.133 6.851 5.614 3.806 10.229 8.754 13.846 14.842 4.38 7.806 9.657 13.754 15.846 17.847 6.184 4.093 12.419 6.136 18.699 6.136 6.28 0 11.704-.476 16.274-1.423 4.565-.952 8.848-2.383 12.847-4.285 1.713-12.758 6.377-22.559 13.988-29.41-10.848-1.14-20.601-2.857-29.264-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.979-3.901-12.374-5.852-26.648-5.852-42.826 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.379-36.732 1.997-58.24 5.52-1.715 13.706-.428 24.554 3.853 10.85 4.283 18.794 7.952 23.84 10.994 5.046 3.041 9.089 5.618 12.135 7.708 17.705-4.947 35.976-7.421 54.818-7.421s37.117 2.474 54.823 7.421l10.849-6.849c7.419-4.57 16.18-8.758 26.262-12.565 10.088-3.805 17.802-4.853 23.134-3.138 8.562 21.509 9.325 40.922 2.279 58.24 15.036 16.18 22.559 35.787 22.559 58.817 0 16.178-1.958 30.497-5.853 42.966-3.9 12.471-8.941 22.457-15.125 29.979-6.191 7.521-13.901 13.85-23.131 18.986-9.232 5.14-18.182 8.85-26.84 11.136-8.662 2.286-18.415 4.004-29.263 5.146 9.894 8.562 14.842 22.077 14.842 40.539v60.237c0 3.422 1.19 6.279 3.572 8.562 2.379 2.279 6.136 2.95 11.276 1.995 44.163-14.653 80.185-41.062 108.068-79.226 27.88-38.161 41.825-81.126 41.825-128.906-.01-39.771-9.818-76.454-29.414-110.049z"/>
-                </svg>
-                ), type: "Source", href: "https://github.com/Anurag-singh-RBU/SHADYX-UI" }
+              {
+                icon: <Globe size={13} />,
+                type: "Website",
+                href: "https://shadyxui.in",
+              },
+              {
+                icon: (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 438.549 438.549"
+                    width="14"
+                    height="14"
+                    fill="currentColor"
+                  >
+                    <path d="M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8-33.598-19.607-70.277-29.408-110.063-29.408-39.781 0-76.472 9.804-110.063 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.854 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.419-1.996 2.475-2.282 3.711-5.14 3.711-8.562 0-.571-.049-5.708-.144-15.417a2549.81 2549.81 0 01-.144-25.406l-6.567 1.136c-4.187.767-9.469 1.092-15.846 1-6.374-.089-12.991-.757-19.842-1.999-6.854-1.231-13.229-4.086-19.13-8.559-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-.951-2.568-2.098-3.711-3.429-1.142-1.331-1.997-2.663-2.568-3.997-.572-1.335-.098-2.43 1.427-3.289 1.525-.859 4.281-1.276 8.28-1.276l5.708.853c3.807.763 8.516 3.042 14.133 6.851 5.614 3.806 10.229 8.754 13.846 14.842 4.38 7.806 9.657 13.754 15.846 17.847 6.184 4.093 12.419 6.136 18.699 6.136 6.28 0 11.704-.476 16.274-1.423 4.565-.952 8.848-2.383 12.847-4.285 1.713-12.758 6.377-22.559 13.988-29.41-10.848-1.14-20.601-2.857-29.264-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.979-3.901-12.374-5.852-26.648-5.852-42.826 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.379-36.732 1.997-58.24 5.52-1.715 13.706-.428 24.554 3.853 10.85 4.283 18.794 7.952 23.84 10.994 5.046 3.041 9.089 5.618 12.135 7.708 17.705-4.947 35.976-7.421 54.818-7.421s37.117 2.474 54.823 7.421l10.849-6.849c7.419-4.57 16.18-8.758 26.262-12.565 10.088-3.805 17.802-4.853 23.134-3.138 8.562 21.509 9.325 40.922 2.279 58.24 15.036 16.18 22.559 35.787 22.559 58.817 0 16.178-1.958 30.497-5.853 42.966-3.9 12.471-8.941 22.457-15.125 29.979-6.191 7.521-13.901 13.85-23.131 18.986-9.232 5.14-18.182 8.85-26.84 11.136-8.662 2.286-18.415 4.004-29.263 5.146 9.894 8.562 14.842 22.077 14.842 40.539v60.237c0 3.422 1.19 6.279 3.572 8.562 2.379 2.279 6.136 2.95 11.276 1.995 44.163-14.653 80.185-41.062 108.068-79.226 27.88-38.161 41.825-81.126 41.825-128.906-.01-39.771-9.818-76.454-29.414-110.049z" />
+                  </svg>
+                ),
+                type: "Source",
+                href: "https://github.com/Anurag-singh-RBU/SHADYX-UI",
+              },
             ]}
           />
           <ProjectCard
@@ -218,28 +362,39 @@ quizzes, and crafts personalized study plans from PDFs or notes.
             href="https://scrivo.vercel.app"
             description="A full featured project management platform designed to streamline task tracking and team collaboration through dashboards that is customizable workflows and real time updates."
             dates="August 2025 - Present"
-            tags={["Next js",
-            "Javascript",
-            "Tailwind CSS",
-            "Clerk",
-            "Prisma",
-            "Shadcn",
-            "Neon DB",
-            "Figma"]}
+            tags={[
+              "Next js",
+              "Javascript",
+              "Tailwind CSS",
+              "Clerk",
+              "Prisma",
+              "Shadcn",
+              "Neon DB",
+              "Figma",
+            ]}
             link="https://scrivo.vercel.app"
             image="/scrivo.jpg"
             links={[
-              { icon: <Globe size={13}/>, type: "Website", href: "https://scrivo.vercel.app" },
-              { icon: (
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  viewBox="0 0 438.549 438.549" 
-                  width="14" 
-                  height="14" 
-                  fill="currentColor">
-                  <path d="M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8-33.598-19.607-70.277-29.408-110.063-29.408-39.781 0-76.472 9.804-110.063 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.854 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.419-1.996 2.475-2.282 3.711-5.14 3.711-8.562 0-.571-.049-5.708-.144-15.417a2549.81 2549.81 0 01-.144-25.406l-6.567 1.136c-4.187.767-9.469 1.092-15.846 1-6.374-.089-12.991-.757-19.842-1.999-6.854-1.231-13.229-4.086-19.13-8.559-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-.951-2.568-2.098-3.711-3.429-1.142-1.331-1.997-2.663-2.568-3.997-.572-1.335-.098-2.43 1.427-3.289 1.525-.859 4.281-1.276 8.28-1.276l5.708.853c3.807.763 8.516 3.042 14.133 6.851 5.614 3.806 10.229 8.754 13.846 14.842 4.38 7.806 9.657 13.754 15.846 17.847 6.184 4.093 12.419 6.136 18.699 6.136 6.28 0 11.704-.476 16.274-1.423 4.565-.952 8.848-2.383 12.847-4.285 1.713-12.758 6.377-22.559 13.988-29.41-10.848-1.14-20.601-2.857-29.264-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.979-3.901-12.374-5.852-26.648-5.852-42.826 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.379-36.732 1.997-58.24 5.52-1.715 13.706-.428 24.554 3.853 10.85 4.283 18.794 7.952 23.84 10.994 5.046 3.041 9.089 5.618 12.135 7.708 17.705-4.947 35.976-7.421 54.818-7.421s37.117 2.474 54.823 7.421l10.849-6.849c7.419-4.57 16.18-8.758 26.262-12.565 10.088-3.805 17.802-4.853 23.134-3.138 8.562 21.509 9.325 40.922 2.279 58.24 15.036 16.18 22.559 35.787 22.559 58.817 0 16.178-1.958 30.497-5.853 42.966-3.9 12.471-8.941 22.457-15.125 29.979-6.191 7.521-13.901 13.85-23.131 18.986-9.232 5.14-18.182 8.85-26.84 11.136-8.662 2.286-18.415 4.004-29.263 5.146 9.894 8.562 14.842 22.077 14.842 40.539v60.237c0 3.422 1.19 6.279 3.572 8.562 2.379 2.279 6.136 2.95 11.276 1.995 44.163-14.653 80.185-41.062 108.068-79.226 27.88-38.161 41.825-81.126 41.825-128.906-.01-39.771-9.818-76.454-29.414-110.049z"/>
-                </svg>
-                ), type: "Source", href: "https://github.com/Anurag-singh-RBU/Scrivo" }
+              {
+                icon: <Globe size={13} />,
+                type: "Website",
+                href: "https://scrivo.vercel.app",
+              },
+              {
+                icon: (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 438.549 438.549"
+                    width="14"
+                    height="14"
+                    fill="currentColor"
+                  >
+                    <path d="M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8-33.598-19.607-70.277-29.408-110.063-29.408-39.781 0-76.472 9.804-110.063 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.854 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.419-1.996 2.475-2.282 3.711-5.14 3.711-8.562 0-.571-.049-5.708-.144-15.417a2549.81 2549.81 0 01-.144-25.406l-6.567 1.136c-4.187.767-9.469 1.092-15.846 1-6.374-.089-12.991-.757-19.842-1.999-6.854-1.231-13.229-4.086-19.13-8.559-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-.951-2.568-2.098-3.711-3.429-1.142-1.331-1.997-2.663-2.568-3.997-.572-1.335-.098-2.43 1.427-3.289 1.525-.859 4.281-1.276 8.28-1.276l5.708.853c3.807.763 8.516 3.042 14.133 6.851 5.614 3.806 10.229 8.754 13.846 14.842 4.38 7.806 9.657 13.754 15.846 17.847 6.184 4.093 12.419 6.136 18.699 6.136 6.28 0 11.704-.476 16.274-1.423 4.565-.952 8.848-2.383 12.847-4.285 1.713-12.758 6.377-22.559 13.988-29.41-10.848-1.14-20.601-2.857-29.264-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.979-3.901-12.374-5.852-26.648-5.852-42.826 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.379-36.732 1.997-58.24 5.52-1.715 13.706-.428 24.554 3.853 10.85 4.283 18.794 7.952 23.84 10.994 5.046 3.041 9.089 5.618 12.135 7.708 17.705-4.947 35.976-7.421 54.818-7.421s37.117 2.474 54.823 7.421l10.849-6.849c7.419-4.57 16.18-8.758 26.262-12.565 10.088-3.805 17.802-4.853 23.134-3.138 8.562 21.509 9.325 40.922 2.279 58.24 15.036 16.18 22.559 35.787 22.559 58.817 0 16.178-1.958 30.497-5.853 42.966-3.9 12.471-8.941 22.457-15.125 29.979-6.191 7.521-13.901 13.85-23.131 18.986-9.232 5.14-18.182 8.85-26.84 11.136-8.662 2.286-18.415 4.004-29.263 5.146 9.894 8.562 14.842 22.077 14.842 40.539v60.237c0 3.422 1.19 6.279 3.572 8.562 2.379 2.279 6.136 2.95 11.276 1.995 44.163-14.653 80.185-41.062 108.068-79.226 27.88-38.161 41.825-81.126 41.825-128.906-.01-39.771-9.818-76.454-29.414-110.049z" />
+                  </svg>
+                ),
+                type: "Source",
+                href: "https://github.com/Anurag-singh-RBU/Scrivo",
+              },
             ]}
           />
           <ProjectCard
@@ -247,25 +402,36 @@ quizzes, and crafts personalized study plans from PDFs or notes.
             href="https://cricvortex.netlify.app/??"
             description="Web Based platform that allows users to watch live match scores , upcoming fixtures and real time cricket insights all in one place alongwith a manual scorecard feature."
             dates="Sept 2024 - Oct 2024"
-            tags={["React",
-            "JavaScript",
-            "Cricapi",
-            "Tailwind",
-            "Local Storage"]}
+            tags={[
+              "React",
+              "JavaScript",
+              "Cricapi",
+              "Tailwind",
+              "Local Storage",
+            ]}
             link="https://cricvortex.netlify.app/??"
             image="/cricvortex.jpg"
             links={[
-              { icon: <Globe size={13}/>, type: "Website", href: "https://cricvortex.netlify.app/??" },
-              { icon: (
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  viewBox="0 0 438.549 438.549" 
-                  width="14" 
-                  height="14" 
-                  fill="currentColor">
-                  <path d="M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8-33.598-19.607-70.277-29.408-110.063-29.408-39.781 0-76.472 9.804-110.063 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.854 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.419-1.996 2.475-2.282 3.711-5.14 3.711-8.562 0-.571-.049-5.708-.144-15.417a2549.81 2549.81 0 01-.144-25.406l-6.567 1.136c-4.187.767-9.469 1.092-15.846 1-6.374-.089-12.991-.757-19.842-1.999-6.854-1.231-13.229-4.086-19.13-8.559-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-.951-2.568-2.098-3.711-3.429-1.142-1.331-1.997-2.663-2.568-3.997-.572-1.335-.098-2.43 1.427-3.289 1.525-.859 4.281-1.276 8.28-1.276l5.708.853c3.807.763 8.516 3.042 14.133 6.851 5.614 3.806 10.229 8.754 13.846 14.842 4.38 7.806 9.657 13.754 15.846 17.847 6.184 4.093 12.419 6.136 18.699 6.136 6.28 0 11.704-.476 16.274-1.423 4.565-.952 8.848-2.383 12.847-4.285 1.713-12.758 6.377-22.559 13.988-29.41-10.848-1.14-20.601-2.857-29.264-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.979-3.901-12.374-5.852-26.648-5.852-42.826 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.379-36.732 1.997-58.24 5.52-1.715 13.706-.428 24.554 3.853 10.85 4.283 18.794 7.952 23.84 10.994 5.046 3.041 9.089 5.618 12.135 7.708 17.705-4.947 35.976-7.421 54.818-7.421s37.117 2.474 54.823 7.421l10.849-6.849c7.419-4.57 16.18-8.758 26.262-12.565 10.088-3.805 17.802-4.853 23.134-3.138 8.562 21.509 9.325 40.922 2.279 58.24 15.036 16.18 22.559 35.787 22.559 58.817 0 16.178-1.958 30.497-5.853 42.966-3.9 12.471-8.941 22.457-15.125 29.979-6.191 7.521-13.901 13.85-23.131 18.986-9.232 5.14-18.182 8.85-26.84 11.136-8.662 2.286-18.415 4.004-29.263 5.146 9.894 8.562 14.842 22.077 14.842 40.539v60.237c0 3.422 1.19 6.279 3.572 8.562 2.379 2.279 6.136 2.95 11.276 1.995 44.163-14.653 80.185-41.062 108.068-79.226 27.88-38.161 41.825-81.126 41.825-128.906-.01-39.771-9.818-76.454-29.414-110.049z"/>
-                </svg>
-                ), type: "Source", href: "https://github.com/Anurag-singh-RBU/CrickVortex" }
+              {
+                icon: <Globe size={13} />,
+                type: "Website",
+                href: "https://cricvortex.netlify.app/??",
+              },
+              {
+                icon: (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 438.549 438.549"
+                    width="14"
+                    height="14"
+                    fill="currentColor"
+                  >
+                    <path d="M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8-33.598-19.607-70.277-29.408-110.063-29.408-39.781 0-76.472 9.804-110.063 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.854 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.419-1.996 2.475-2.282 3.711-5.14 3.711-8.562 0-.571-.049-5.708-.144-15.417a2549.81 2549.81 0 01-.144-25.406l-6.567 1.136c-4.187.767-9.469 1.092-15.846 1-6.374-.089-12.991-.757-19.842-1.999-6.854-1.231-13.229-4.086-19.13-8.559-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-.951-2.568-2.098-3.711-3.429-1.142-1.331-1.997-2.663-2.568-3.997-.572-1.335-.098-2.43 1.427-3.289 1.525-.859 4.281-1.276 8.28-1.276l5.708.853c3.807.763 8.516 3.042 14.133 6.851 5.614 3.806 10.229 8.754 13.846 14.842 4.38 7.806 9.657 13.754 15.846 17.847 6.184 4.093 12.419 6.136 18.699 6.136 6.28 0 11.704-.476 16.274-1.423 4.565-.952 8.848-2.383 12.847-4.285 1.713-12.758 6.377-22.559 13.988-29.41-10.848-1.14-20.601-2.857-29.264-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.979-3.901-12.374-5.852-26.648-5.852-42.826 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.379-36.732 1.997-58.24 5.52-1.715 13.706-.428 24.554 3.853 10.85 4.283 18.794 7.952 23.84 10.994 5.046 3.041 9.089 5.618 12.135 7.708 17.705-4.947 35.976-7.421 54.818-7.421s37.117 2.474 54.823 7.421l10.849-6.849c7.419-4.57 16.18-8.758 26.262-12.565 10.088-3.805 17.802-4.853 23.134-3.138 8.562 21.509 9.325 40.922 2.279 58.24 15.036 16.18 22.559 35.787 22.559 58.817 0 16.178-1.958 30.497-5.853 42.966-3.9 12.471-8.941 22.457-15.125 29.979-6.191 7.521-13.901 13.85-23.131 18.986-9.232 5.14-18.182 8.85-26.84 11.136-8.662 2.286-18.415 4.004-29.263 5.146 9.894 8.562 14.842 22.077 14.842 40.539v60.237c0 3.422 1.19 6.279 3.572 8.562 2.379 2.279 6.136 2.95 11.276 1.995 44.163-14.653 80.185-41.062 108.068-79.226 27.88-38.161 41.825-81.126 41.825-128.906-.01-39.771-9.818-76.454-29.414-110.049z" />
+                  </svg>
+                ),
+                type: "Source",
+                href: "https://github.com/Anurag-singh-RBU/CrickVortex",
+              },
             ]}
           />
           <ProjectCard
@@ -273,26 +439,37 @@ quizzes, and crafts personalized study plans from PDFs or notes.
             href="https://fiscalcdm.netlify.app"
             description="A platform that displays a calendar for visualizing historical volatility , liquidity and performance data across different time periods for financial instruments."
             dates="Dec 2024 - Jan 2025"
-            tags={["React",
-            "Typescript",
-            "Tailwind CSS",
-            "D3 js",
-            "OKX API",
-            "Ant Design"]}
+            tags={[
+              "React",
+              "Typescript",
+              "Tailwind CSS",
+              "D3 js",
+              "OKX API",
+              "Ant Design",
+            ]}
             link="https://fiscalcdm.netlify.app"
             image="/fiscalcdm.jpg"
             links={[
-              { icon: <Globe size={13}/>, type: "Website", href: "https://fiscalcdm.netlify.app" },
-              { icon: (
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  viewBox="0 0 438.549 438.549" 
-                  width="14" 
-                  height="14" 
-                  fill="currentColor">
-                  <path d="M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8-33.598-19.607-70.277-29.408-110.063-29.408-39.781 0-76.472 9.804-110.063 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.854 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.419-1.996 2.475-2.282 3.711-5.14 3.711-8.562 0-.571-.049-5.708-.144-15.417a2549.81 2549.81 0 01-.144-25.406l-6.567 1.136c-4.187.767-9.469 1.092-15.846 1-6.374-.089-12.991-.757-19.842-1.999-6.854-1.231-13.229-4.086-19.13-8.559-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-.951-2.568-2.098-3.711-3.429-1.142-1.331-1.997-2.663-2.568-3.997-.572-1.335-.098-2.43 1.427-3.289 1.525-.859 4.281-1.276 8.28-1.276l5.708.853c3.807.763 8.516 3.042 14.133 6.851 5.614 3.806 10.229 8.754 13.846 14.842 4.38 7.806 9.657 13.754 15.846 17.847 6.184 4.093 12.419 6.136 18.699 6.136 6.28 0 11.704-.476 16.274-1.423 4.565-.952 8.848-2.383 12.847-4.285 1.713-12.758 6.377-22.559 13.988-29.41-10.848-1.14-20.601-2.857-29.264-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.979-3.901-12.374-5.852-26.648-5.852-42.826 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.379-36.732 1.997-58.24 5.52-1.715 13.706-.428 24.554 3.853 10.85 4.283 18.794 7.952 23.84 10.994 5.046 3.041 9.089 5.618 12.135 7.708 17.705-4.947 35.976-7.421 54.818-7.421s37.117 2.474 54.823 7.421l10.849-6.849c7.419-4.57 16.18-8.758 26.262-12.565 10.088-3.805 17.802-4.853 23.134-3.138 8.562 21.509 9.325 40.922 2.279 58.24 15.036 16.18 22.559 35.787 22.559 58.817 0 16.178-1.958 30.497-5.853 42.966-3.9 12.471-8.941 22.457-15.125 29.979-6.191 7.521-13.901 13.85-23.131 18.986-9.232 5.14-18.182 8.85-26.84 11.136-8.662 2.286-18.415 4.004-29.263 5.146 9.894 8.562 14.842 22.077 14.842 40.539v60.237c0 3.422 1.19 6.279 3.572 8.562 2.379 2.279 6.136 2.95 11.276 1.995 44.163-14.653 80.185-41.062 108.068-79.226 27.88-38.161 41.825-81.126 41.825-128.906-.01-39.771-9.818-76.454-29.414-110.049z"/>
-                </svg>
-                ), type: "Source", href: "https://github.com/Anurag-singh-RBU/fiscal.cdm" }
+              {
+                icon: <Globe size={13} />,
+                type: "Website",
+                href: "https://fiscalcdm.netlify.app",
+              },
+              {
+                icon: (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 438.549 438.549"
+                    width="14"
+                    height="14"
+                    fill="currentColor"
+                  >
+                    <path d="M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8-33.598-19.607-70.277-29.408-110.063-29.408-39.781 0-76.472 9.804-110.063 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.854 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.419-1.996 2.475-2.282 3.711-5.14 3.711-8.562 0-.571-.049-5.708-.144-15.417a2549.81 2549.81 0 01-.144-25.406l-6.567 1.136c-4.187.767-9.469 1.092-15.846 1-6.374-.089-12.991-.757-19.842-1.999-6.854-1.231-13.229-4.086-19.13-8.559-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-.951-2.568-2.098-3.711-3.429-1.142-1.331-1.997-2.663-2.568-3.997-.572-1.335-.098-2.43 1.427-3.289 1.525-.859 4.281-1.276 8.28-1.276l5.708.853c3.807.763 8.516 3.042 14.133 6.851 5.614 3.806 10.229 8.754 13.846 14.842 4.38 7.806 9.657 13.754 15.846 17.847 6.184 4.093 12.419 6.136 18.699 6.136 6.28 0 11.704-.476 16.274-1.423 4.565-.952 8.848-2.383 12.847-4.285 1.713-12.758 6.377-22.559 13.988-29.41-10.848-1.14-20.601-2.857-29.264-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.979-3.901-12.374-5.852-26.648-5.852-42.826 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.379-36.732 1.997-58.24 5.52-1.715 13.706-.428 24.554 3.853 10.85 4.283 18.794 7.952 23.84 10.994 5.046 3.041 9.089 5.618 12.135 7.708 17.705-4.947 35.976-7.421 54.818-7.421s37.117 2.474 54.823 7.421l10.849-6.849c7.419-4.57 16.18-8.758 26.262-12.565 10.088-3.805 17.802-4.853 23.134-3.138 8.562 21.509 9.325 40.922 2.279 58.24 15.036 16.18 22.559 35.787 22.559 58.817 0 16.178-1.958 30.497-5.853 42.966-3.9 12.471-8.941 22.457-15.125 29.979-6.191 7.521-13.901 13.85-23.131 18.986-9.232 5.14-18.182 8.85-26.84 11.136-8.662 2.286-18.415 4.004-29.263 5.146 9.894 8.562 14.842 22.077 14.842 40.539v60.237c0 3.422 1.19 6.279 3.572 8.562 2.379 2.279 6.136 2.95 11.276 1.995 44.163-14.653 80.185-41.062 108.068-79.226 27.88-38.161 41.825-81.126 41.825-128.906-.01-39.771-9.818-76.454-29.414-110.049z" />
+                  </svg>
+                ),
+                type: "Source",
+                href: "https://github.com/Anurag-singh-RBU/fiscal.cdm",
+              },
             ]}
           />
         </div>
@@ -300,11 +477,14 @@ quizzes, and crafts personalized study plans from PDFs or notes.
         <div className="w-full flex justify-center mt-8 mb-10 font-jetbrains font-bold">
           <Link
             href="/projects"
-            className="text-sm px-4 py-2 rounded-md font-medium text-gray-900 dark:text-gray-100">
+            className="text-sm px-4 py-2 rounded-md font-medium text-gray-900 dark:text-gray-100"
+          >
             <div className="flex items-center justify-center">
               <button className="rounded-lg relative group border-[2px] border-gray-300 flex bg-neutral-800 dark:bg-neutral-700 dark:border-neutral-500 dark:font-bold text-white items-center gap-2 pl-9 py-1.5 pr-3 shadow-sm">
-                <Box/> 
-                <span className="inline-block group-hover:-translate-x-7 transition-transform duration-500 tracking-wider">See More</span>
+                <Box />
+                <span className="inline-block group-hover:-translate-x-7 transition-transform duration-500 tracking-wider">
+                  See More
+                </span>
               </button>
             </div>
           </Link>
@@ -315,9 +495,12 @@ quizzes, and crafts personalized study plans from PDFs or notes.
         </h3>
 
         <div className="max-w-3xl mx-auto mt-5 mb-10">
-          <WorkExperience experiences={WORK_EXPERIENCE} className="border rounded-lg" />
+          <WorkExperience
+            experiences={WORK_EXPERIENCE}
+            className="border rounded-lg"
+          />
         </div>
-        
+
         <div className="flex justify-center items-center text-2xl md:text-3xl font-bungee mb-8 sm:mt-10 mt-5 text-black/80 dark:text-white mx-auto">
           <HighlightBox className="mx-auto inline-block text-center">
             STACK
@@ -331,15 +514,16 @@ quizzes, and crafts personalized study plans from PDFs or notes.
               className="p-2 rounded-md text-xs sm:text-sm font-bold font-jetbrains
                         bg-black text-white
                         dark:bg-white dark:text-black
-                        shadow-md transition [--pattern-foreground:var(--color-zinc-950)]/5 dark:[--pattern-foreground:var(--color-white)]/5 bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-size-[10px_10px] bg-center bg-zinc-950/0.75 dark:bg-white/0.75">
+                        shadow-md transition [--pattern-foreground:var(--color-zinc-950)]/5 dark:[--pattern-foreground:var(--color-white)]/5 bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-size-[10px_10px] bg-center bg-zinc-950/0.75 dark:bg-white/0.75"
+            >
               {skill}
             </span>
           ))}
         </div>
-        
-        <Timeline/>
 
-         <h3 className="text-2xl md:text-3xl font-bungee mb-8 sm:mt-20 mt-10 text-black/80 dark:text-white">
+        <Timeline />
+
+        <h3 className="text-2xl md:text-3xl font-bungee mb-8 sm:mt-20 mt-10 text-black/80 dark:text-white">
           <HighlightBox>Academics</HighlightBox>
         </h3>
 
@@ -347,35 +531,115 @@ quizzes, and crafts personalized study plans from PDFs or notes.
           <div className="flex justify-center items-start gap-2">
             <CircleDot size={10} className="sm:mt-1.5 sm:block hidden" />
             <p className="text-sm font-mono">
-              Cracked <span className="font-bold text-blue-600 dark:text-blue-400" style={{ letterSpacing: "1px" }}>JEE MAINS <span className="text-black dark:text-white font-bold">2023</span></span> and <span className="font-bold text-black dark:text-white">2024</span> with <span className="text-black dark:text-white font-bold">92.35</span> and <span className="text-black dark:text-white font-bold">98.62</span> percentile respectively.
+              Cracked{" "}
+              <span
+                className="font-bold text-blue-600 dark:text-blue-400"
+                style={{ letterSpacing: "1px" }}
+              >
+                JEE MAINS{" "}
+                <span className="text-black dark:text-white font-bold">
+                  2023
+                </span>
+              </span>{" "}
+              and{" "}
+              <span className="font-bold text-black dark:text-white">2024</span>{" "}
+              with{" "}
+              <span className="text-black dark:text-white font-bold">
+                92.35
+              </span>{" "}
+              and{" "}
+              <span className="text-black dark:text-white font-bold">
+                98.62
+              </span>{" "}
+              percentile respectively.
             </p>
           </div>
 
           <div className="flex justify-center items-start gap-2">
             <CircleDot size={10} className="sm:mt-1.5 sm:block hidden" />
             <p className="text-sm font-mono">
-              Cracked <span className="font-bold text-blue-600 dark:text-blue-400" style={{ letterSpacing: "1px" }}>MHTCET <span className="text-black font-bold dark:text-white">2023</span></span> with <span className="text-black dark:text-white font-bold">97.63</span> percentile – State Level Entrance Exam.
+              Cracked{" "}
+              <span
+                className="font-bold text-blue-600 dark:text-blue-400"
+                style={{ letterSpacing: "1px" }}
+              >
+                MHTCET{" "}
+                <span className="text-black font-bold dark:text-white">
+                  2023
+                </span>
+              </span>{" "}
+              with{" "}
+              <span className="text-black dark:text-white font-bold">
+                97.63
+              </span>{" "}
+              percentile – State Level Entrance Exam.
             </p>
           </div>
 
           <div className="flex justify-center items-start gap-2">
             <CircleDot size={10} className="sm:mt-1.5 sm:block hidden" />
             <p className="text-sm font-mono">
-              Cracked <span className="font-bold text-blue-600 dark:text-blue-400">KIITEE <span className="text-black dark:text-white font-bold">2023</span></span> with <span className="text-black dark:text-white font-bold">99.26</span> percentile – Conducted by KIIT University Nationally.
+              Cracked{" "}
+              <span className="font-bold text-blue-600 dark:text-blue-400">
+                KIITEE{" "}
+                <span className="text-black dark:text-white font-bold">
+                  2023
+                </span>
+              </span>{" "}
+              with{" "}
+              <span className="text-black dark:text-white font-bold">
+                99.26
+              </span>{" "}
+              percentile – Conducted by KIIT University Nationally.
             </p>
           </div>
 
           <div className="flex justify-center items-start gap-2">
             <CircleDot size={10} className="sm:mt-1.5 sm:block hidden" />
             <p className="text-sm font-mono">
-              Cracked <span className="font-bold text-blue-600 dark:text-blue-400" style={{ letterSpacing: "1px" }}>JEE ADVANCE <span className="text-black dark:text-white font-bold">2023</span></span> and scored <span className="text-black dark:text-white font-bold font-sans">100</span><span className="text-black dark:text-white font-bold font-mono">&nbsp;percentile</span> in <span className="font-bold text-blue-600 dark:text-blue-400" style={{ letterSpacing: "1px" }}>JEE MAINS PHYSICS <span className="text-black dark:text-white font-bold">2024</span></span>.
+              Cracked{" "}
+              <span
+                className="font-bold text-blue-600 dark:text-blue-400"
+                style={{ letterSpacing: "1px" }}
+              >
+                JEE ADVANCE{" "}
+                <span className="text-black dark:text-white font-bold">
+                  2023
+                </span>
+              </span>{" "}
+              and scored{" "}
+              <span className="text-black dark:text-white font-bold font-sans">
+                100
+              </span>
+              <span className="text-black dark:text-white font-bold font-mono">
+                &nbsp;percentile
+              </span>{" "}
+              in{" "}
+              <span
+                className="font-bold text-blue-600 dark:text-blue-400"
+                style={{ letterSpacing: "1px" }}
+              >
+                JEE MAINS PHYSICS{" "}
+                <span className="text-black dark:text-white font-bold">
+                  2024
+                </span>
+              </span>
+              .
             </p>
           </div>
 
           <div className="flex justify-center items-start gap-2">
             <CircleDot size={10} className="sm:mt-1.5 sm:block hidden" />
             <p className="text-sm font-mono">
-              Current CGPA : <span className="text-black dark:text-white font-bold">9.35</span> , 12th Boards : <span className="text-black dark:text-white font-bold">88.63</span> percent and 10th Boards : <span className="text-black dark:text-white font-bold">85.5</span> percent.
+              Current CGPA :{" "}
+              <span className="text-black dark:text-white font-bold">9.35</span>{" "}
+              , 12th Boards :{" "}
+              <span className="text-black dark:text-white font-bold">
+                88.63
+              </span>{" "}
+              percent and 10th Boards :{" "}
+              <span className="text-black dark:text-white font-bold">85.5</span>{" "}
+              percent.
             </p>
           </div>
           <div className="mt-2 cursor-pointer">
@@ -384,64 +648,70 @@ quizzes, and crafts personalized study plans from PDFs or notes.
               target="_blank"
               rel="noopener noreferrer"
               download="Resume.pdf"
-              className="relative inline-flex gap-2 items-center justify-center dark:text-black rounded-md text-sm font-mono bg-black dark:bg-white px-3 py-2 font-semibold text-white shadow-md transition duration-300 hover:opacity-90 overflow-hidden">
-              <span>Resume</span><Download size={13} fontWeight={30} className="dark:text-black"/>
+              className="relative inline-flex gap-2 items-center justify-center dark:text-black rounded-md text-sm font-mono bg-black dark:bg-white px-3 py-2 font-semibold text-white shadow-md transition duration-300 hover:opacity-90 overflow-hidden"
+            >
+              <span>Resume</span>
+              <Download size={13} fontWeight={30} className="dark:text-black" />
               <span className="absolute bottom-0 left-0 h-[2px] w-full bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500"></span>
             </a>
           </div>
         </div>
 
-        <Contact/>
+        <Contact />
       </div>
     </Container>
-
   );
 }
 
 const Box = () => {
-
-  return <div className="size-6 absolute left-0.5 group-hover:left-[calc(100%-1.9rem)] transition-all duration-500 ml-0.5 inset-y-0 my-auto gap-px rounded-sm bg-[#FFCC00] flex flex-col justify-center items-center group-hover:transform group-hover:rotate-180 ease-out">
-    <div className="flex gap-px">
-      <Bubble/>
-      <Bubble/>
-      <Bubble highlight/>
-      <Bubble/>
-      <Bubble/>
+  return (
+    <div className="size-6 absolute left-0.5 group-hover:left-[calc(100%-1.9rem)] transition-all duration-500 ml-0.5 inset-y-0 my-auto gap-px rounded-sm bg-[#FFCC00] flex flex-col justify-center items-center group-hover:transform group-hover:rotate-180 ease-out">
+      <div className="flex gap-px">
+        <Bubble />
+        <Bubble />
+        <Bubble highlight />
+        <Bubble />
+        <Bubble />
+      </div>
+      <div className="flex gap-px">
+        <Bubble />
+        <Bubble />
+        <Bubble />
+        <Bubble highlight />
+        <Bubble />
+      </div>
+      <div className="flex gap-px">
+        <Bubble highlight />
+        <Bubble highlight />
+        <Bubble highlight />
+        <Bubble highlight />
+        <Bubble highlight />
+      </div>
+      <div className="flex gap-px">
+        <Bubble />
+        <Bubble />
+        <Bubble />
+        <Bubble highlight />
+        <Bubble />
+      </div>
+      <div className="flex gap-px">
+        <Bubble />
+        <Bubble />
+        <Bubble highlight />
+        <Bubble />
+        <Bubble />
+      </div>
     </div>
-    <div className="flex gap-px">
-      <Bubble/>
-      <Bubble/>
-      <Bubble/>
-      <Bubble highlight/>
-      <Bubble/>
-    </div> 
-    <div className="flex gap-px">
-      <Bubble highlight/>
-      <Bubble highlight/>
-      <Bubble highlight/>
-      <Bubble highlight/>
-      <Bubble highlight/>
-    </div> 
-    <div className="flex gap-px">
-      <Bubble/>
-      <Bubble/>
-      <Bubble/>
-      <Bubble highlight/>
-      <Bubble/>
-    </div>  
-     <div className="flex gap-px">
-      <Bubble/>
-      <Bubble/>
-      <Bubble highlight/>
-      <Bubble/>
-      <Bubble/>
-    </div>  
-  </div>
-
+  );
 };
 
-const Bubble = ({className , highlight}) => {
-
-  return (<span className={cn("inline-block size-[3px] rounded-full bg-[#FFFFFF40]" , highlight &&  "bg-white animate-pulse ease-linear duration-200")}></span>)
-
-}
+const Bubble = ({ className, highlight }) => {
+  return (
+    <span
+      className={cn(
+        "inline-block size-[3px] rounded-full bg-[#FFFFFF40]",
+        highlight && "bg-white animate-pulse ease-linear duration-200"
+      )}
+    ></span>
+  );
+};

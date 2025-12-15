@@ -110,6 +110,7 @@ module.exports = {
         bungee: ["Bungee", "cursive"],
         bebas: ["'Bebas Neue'", "sans-serif"],
         cabin: ["Cabin", "sans-serif"],
+        hanken: ["var(--font-hanken)", "sans-serif"],
       },
       typography: (theme) => ({
         DEFAULT: {
