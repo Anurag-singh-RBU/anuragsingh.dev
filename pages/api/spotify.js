@@ -12,7 +12,7 @@ export default async function handler(req, res) {
     return res.status(200).json({
       status: "playing",
       title: track.name,
-      artists: track.artists.map(a => a.name).join(" , "),
+      artists: track.artists.map(a => a.name).join(", "),
       album: track.album.name,
       image: track.album.images[0].url,
       url: track.external_urls.spotify,
@@ -31,7 +31,7 @@ export default async function handler(req, res) {
   return res.status(200).json({
     status: "last",
     title: track.name,
-    artists: track.artists.map(a => a.name).join(" , "),
+    artists: track.artists.map(a => a.name).join(", "),
     album: track.album.name,
     image: track.album.images[0].url,
     url: track.external_urls.spotify,
