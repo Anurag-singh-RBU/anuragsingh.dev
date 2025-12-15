@@ -333,7 +333,7 @@ quizzes, and crafts personalized study plans from PDFs or notes.
               "MongoDB",
             ]}
             link="https://shadyxui.in"
-            image="/shadyxui.jpg"
+            image="/shadyxui.png"
             links={[
               {
                 icon: <Globe size={13} />,
@@ -370,10 +370,9 @@ quizzes, and crafts personalized study plans from PDFs or notes.
               "Prisma",
               "Shadcn",
               "Neon DB",
-              "Figma",
             ]}
             link="https://scrivo.vercel.app"
-            image="/scrivo.jpg"
+            image="/scrivo.png"
             links={[
               {
                 icon: <Globe size={13} />,
