@@ -146,10 +146,11 @@ quizzes, and crafts personalized study plans from PDFs or notes.
     }
   }
 
-  useEffect(() => {
-    fetchSpotify();
-    const interval = setInterval(fetchSpotify, 15000);
-    return () => clearInterval(interval);
+   useEffect(() => {
+    fetch("/api/spotify", { cache: "no-store" })
+      .then(res => res.json())
+      .then(setData)
+      .finally(() => setLoading(false));
   }, []);
 
   useEffect(() => {
