@@ -136,7 +136,7 @@ quizzes, and crafts personalized study plans from PDFs or notes.
 
   async function fetchSpotify() {
     try {
-      const res = await fetch("/api/spotify");
+      const res = await fetch("/api/spotify", { cache: "no-store" });
       const json = await res.json();
       setData(json);
     } catch {
@@ -146,21 +146,19 @@ quizzes, and crafts personalized study plans from PDFs or notes.
     }
   }
 
-   useEffect(() => {
-    fetch("/api/spotify", { cache: "no-store" })
-      .then(res => res.json())
-      .then(setData)
-      .finally(() => setLoading(false));
+  useEffect(() => {
+    fetchSpotify();
   }, []);
 
   useEffect(() => {
     setColors(shuffleArray(LIGHT_COLORS));
   }, []);
 
-  if (loading) return <SpotifySkeleton/>;
+  if (loading) return <SpotifySkeleton />;
 
   const isPlaying = data?.status === "playing";
   const isLast = data?.status === "last";
+  const isOffline = data?.status === "offline";
 
   const play = () => {
     setTheme(theme === "dark" ? "light" : "dark");
@@ -175,14 +173,15 @@ quizzes, and crafts personalized study plans from PDFs or notes.
         <Header/>
 
         <div className="relative flex items-center gap-3 text-sm p-3 rounded-lg bg-muted/30 border border-border/50 shadow-inner w-full mb-6">
-          {isPlaying && (
+          {isPlaying && data?.url && (
             <a
               href={data.url}
               target="_blank"
               aria-label="Open in Spotify"
-              className="absolute right-2 top-1/2 -translate-y-1/2 mr-2">
-              <button className="inline-flex items-center justify-center size-9 rounded-md bg-background border border-border/60 shadow-[inset_0_1px_2px_rgba(0,0,0,0.12),inset_0_-1px_1px_rgba(255,255,255,0.4)] dark:shadow-[inset_0_1px_2px_rgba(0,0,0,0.5),inset_0_-1px_1px_rgba(255,255,255,0.05)] transition-all duration-200 hover:bg-accent active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40">
-                <Play size={18}/>
+              className="absolute right-2 top-1/2 -translate-y-1/2 mr-2"
+            >
+              <button className="inline-flex items-center justify-center size-9 rounded-md bg-background border border-border/60 transition-all hover:bg-accent active:scale-95">
+                <Play size={18} />
               </button>
             </a>
           )}
@@ -190,40 +189,38 @@ quizzes, and crafts personalized study plans from PDFs or notes.
           <div className="w-12 h-12 rounded-md bg-muted/50 flex items-center justify-center overflow-hidden">
             {isPlaying || isLast ? (
               <img
-                src={data.image}
+                src={data?.image}
                 alt="album"
-                className="w-full h-full object-cover rounded-md"/>
+                className="w-full h-full object-cover rounded-md"
+              />
             ) : (
               <img
                 src="/spotify.svg"
                 width={24}
                 height={24}
-                className="opacity-50 dark:opacity-100"/>
+                className="opacity-50"
+              />
             )}
           </div>
 
           <div className="flex flex-col gap-1 flex-1 ml-1">
-            <span
-              className="text-xs font-hanken font-semibold text-muted-foreground tracking-wide"
-              style={{ wordSpacing: "3px" }}>
+            <span className="text-xs font-semibold text-muted-foreground tracking-wide" style={{wordSpacing: "3px"}}>
               {isPlaying
                 ? "Currently Playing"
                 : isLast
                 ? "Last Played"
-                : "Offline"}
+                : "Currently not listening"}
             </span>
 
-            <span
-              className="font-bungee text-[13px] tracking-wider text-black/70 dark:text-teal-400"
-              style={{ wordSpacing: "5px" }}>
-              {isPlaying || isLast ? data.title : "Not currently listening"}
-            </span>
-
-            <span
-              className="text-xs text-muted-foreground truncate h-4 font-hanken tracking-wide"
-              style={{ wordSpacing: "3px" }}>
+            <span className="font-bungee text-[13px] tracking-wider text-black/70 dark:text-teal-400">
               {isPlaying || isLast
-                ? "by" + " " + data.artists
+                ? data?.title
+                : "Not currently listening"}
+            </span>
+
+            <span className="text-xs text-muted-foreground truncate h-4 tracking-wide" style={{wordSpacing: "3px"}}>
+              {isPlaying || isLast
+                ? `by ${data?.artists}`
                 : "Music activity unavailable"}
             </span>
           </div>

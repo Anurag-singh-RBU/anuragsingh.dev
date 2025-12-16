@@ -33,7 +33,6 @@ export default async function handler(req, res) {
       return res.status(500).json(data);
     }
 
-    // 🔥 IMPORTANT: refresh_token yahin milta hai
     return res.status(200).json({
       success: true,
       refresh_token: data.refresh_token,
