@@ -223,7 +223,7 @@ quizzes, and crafts personalized study plans from PDFs or notes.
 
             <span className="text-xs text-muted-foreground h-auto tracking-wide break-words whitespace-normal line-clamp-2" style={{wordSpacing: "3px"}}>
               {isPlaying || isLast
-                ? `by ${data?.artists?.split(",")[0]}`
+                ? `by ${data?.artists}`
                 : "Music activity unavailable"}
             </span>
           </div>
