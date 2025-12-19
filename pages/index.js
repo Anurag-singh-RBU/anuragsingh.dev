@@ -3,7 +3,7 @@ import Container from "@/components/Container";
 import Link from "next/link";
 import Timeline from "@/components/Timeline";
 import Contact from "@/components/Contact";
-import { CircleDot, Download, Github, Globe, Play } from "lucide-react";
+import { CircleDot, Download, Globe, Play } from "lucide-react";
 
 import { LIGHT_COLORS } from "@/lib/constants";
 
@@ -20,9 +20,7 @@ import { WorkExperience } from "@/components/components/work-experience";
 import { skills } from "@/data/TechStack";
 import OnekoCat from "@/components/OnekoCat";
 import { cn } from "@/lib/utils";
-import { SpotifyEqualizer } from "@/components/components/SpotifyEqualizer";
 import { SpotifySkeleton } from "@/components/components/SpotifySkeleton";
-import Image from "next/image";
 
 export default function Home() {
   const WORK_EXPERIENCE = [
@@ -323,15 +321,7 @@ quizzes, and crafts personalized study plans from PDFs or notes.
             href="https://shadyxui.in"
             description="UI components library that offers awesome reusable components for building web applications , create stunning websites and enjoy the flow from COPY to VIBE."
             dates="May 2025 - June 2025"
-            tags={[
-              "Next js",
-              "Typescript",
-              "Tailwind",
-              "Figma",
-              "Prisma",
-              "Aceternity",
-              "MongoDB",
-            ]}
+            tags={["Next js", "Typescript", "Tailwind", "Figma", "Prisma", "Aceternity", "MongoDB"]}
             link="https://shadyxui.in"
             image="/shadyxui.png"
             links={[
@@ -362,15 +352,7 @@ quizzes, and crafts personalized study plans from PDFs or notes.
             href="https://scrivo.vercel.app"
             description="A full featured project management platform designed to streamline task tracking and team collaboration through dashboards that is customizable workflows and real time updates."
             dates="August 2025 - Present"
-            tags={[
-              "Next js",
-              "Javascript",
-              "Tailwind CSS",
-              "Clerk",
-              "Prisma",
-              "Shadcn",
-              "Neon DB",
-            ]}
+            tags={["Next js", "Javascript", "Tailwind CSS", "Clerk", "Prisma", "Shadcn", "Neon DB"]}
             link="https://scrivo.vercel.app"
             image="/scrivo.png"
             links={[
@@ -401,15 +383,9 @@ quizzes, and crafts personalized study plans from PDFs or notes.
             href="https://cricvortex.netlify.app/??"
             description="Web Based platform that allows users to watch live match scores , upcoming fixtures and real time cricket insights all in one place alongwith a manual scorecard feature."
             dates="Sept 2024 - Oct 2024"
-            tags={[
-              "React",
-              "JavaScript",
-              "Cricapi",
-              "Tailwind",
-              "Local Storage",
-            ]}
+            tags={["React", "JavaScript", "Cricapi", "Tailwind", "Local Storage"]}
             link="https://cricvortex.netlify.app/??"
-            image="/cricvortex.jpg"
+            image="/CricVortex.png"
             links={[
               {
                 icon: <Globe size={13} />,
@@ -434,25 +410,18 @@ quizzes, and crafts personalized study plans from PDFs or notes.
             ]}
           />
           <ProjectCard
-            title="fiscal.cdm"
-            href="https://fiscalcdm.netlify.app"
-            description="A platform that displays a calendar for visualizing historical volatility , liquidity and performance data across different time periods for financial instruments."
-            dates="Dec 2024 - Jan 2025"
-            tags={[
-              "React",
-              "Typescript",
-              "Tailwind CSS",
-              "D3 js",
-              "OKX API",
-              "Ant Design",
-            ]}
-            link="https://fiscalcdm.netlify.app"
-            image="/fiscalcdm.jpg"
+            title="Invoicely"
+            href="https://invoicelybeta.vercel.app"
+            description="A simple and easy to use invoice generator where you can create beautiful and professional invoices in minutes."
+            dates="Nov 2025 - Present"
+            tags={["Next js", "Typescript", "Tailwind CSS", "Better Auth", "Neon DB", "Drizzle ORM"]}
+            link="https://invoicelybeta.vercel.app"
+            image="/invoicely.png"
             links={[
               {
                 icon: <Globe size={13} />,
                 type: "Website",
-                href: "https://fiscalcdm.netlify.app",
+                href: "https://invoicelybeta.vercel.app",
               },
               {
                 icon: (
@@ -467,7 +436,7 @@ quizzes, and crafts personalized study plans from PDFs or notes.
                   </svg>
                 ),
                 type: "Source",
-                href: "https://github.com/Anurag-singh-RBU/fiscal.cdm",
+                href: "https://github.com/Anurag-singh-RBU/Invoicely",
               },
             ]}
           />

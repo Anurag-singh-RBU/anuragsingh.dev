@@ -105,7 +105,7 @@ export function ProjectCard({
             {tags?.map((tag, idx) => (
               <p
                 key={idx}
-                className={`leading-5 mb-2 dark:border dark:border-zinc-700 sm:font-semibold font-bold dark:text-black text-black rounded-md text-xs mr-2 px-2`}
+                className={`leading-5 mb-2 dark:border dark:border-zinc-700 font-hanken sm:font-semibold font-bold dark:text-black text-black rounded-md text-xs mr-2 px-2`}
                 style={{ backgroundColor: "rgb(240,240,240)"}}
               >
                 {tag}
