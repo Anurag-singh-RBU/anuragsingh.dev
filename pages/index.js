@@ -22,6 +22,7 @@ import OnekoCat from "@/components/OnekoCat";
 import { cn } from "@/lib/utils";
 import { SpotifyEqualizer } from "@/components/components/SpotifyEqualizer";
 import { SpotifySkeleton } from "@/components/components/SpotifySkeleton";
+import Image from "next/image";
 
 export default function Home() {
   const WORK_EXPERIENCE = [
@@ -204,23 +205,25 @@ quizzes, and crafts personalized study plans from PDFs or notes.
           </div>
 
           <div className="flex flex-col gap-1 flex-1 ml-1">
-            <span className="text-xs font-semibold text-muted-foreground tracking-wide" style={{wordSpacing: "3px"}}>
-              {isPlaying
-                ? "Currently Playing"
-                : isLast
-                ? "Last Played"
-                : "Currently not listening"}
+            <span className="flex gap-2 items-center text-xs font-semibold text-muted-foreground tracking-wide" style={{wordSpacing: "3px"}}>
+              <div>
+                {isPlaying
+                  ? "Currently Playing"
+                  : isLast
+                  ? "Last Played"
+                  : "Currently not listening"}
+              </div>
             </span>
 
-            <span className="font-bungee text-[13px] tracking-wider text-black/70 dark:text-teal-400">
+            <span className="text-[13px] tracking-wider text-black truncate hover:underline hover:text-green-500 transition-colors cursor-pointer h-5 dark:text-teal-400 font-medium text-foreground" style={{wordSpacing: "3px"}}>
               {isPlaying || isLast
-                ? data?.title
+                ? data?.title?.split("(")[0].trim()
                 : "Not currently listening"}
             </span>
 
-            <span className="text-xs text-muted-foreground truncate h-4 tracking-wide" style={{wordSpacing: "3px"}}>
+            <span className="text-xs text-muted-foreground h-auto tracking-wide break-words whitespace-normal line-clamp-2" style={{wordSpacing: "3px"}}>
               {isPlaying || isLast
-                ? `by ${data?.artists}`
+                ? `by ${data?.artists?.split(",")[0]}`
                 : "Music activity unavailable"}
             </span>
           </div>

@@ -31,7 +31,7 @@ const Header = () => {
   return (
     <div className="flex flex-col md:flex-row justify-between items-start sm:space-x-14 w-full mb-10">
       <div className="flex sm:w-3/4 flex-col mt-6">
-        <h1 className="text-4xl md:text-4xl font-bungee mb-4 text-black/70 sectionOne">
+        <h1 className="text-4xl md:text-4xl font-bungee mb-4 text-black/70 sectionOne whitespace-nowrap">
           Anurag &nbsp;Singh
         </h1>
 
@@ -135,15 +135,7 @@ const Header = () => {
         </div>
         <p className="text-zinc-600 dark:text-zinc-300 text-justify font-hanken leading-relaxed md:w-11/12" style={{wordSpacing: "1.5px", letterSpacing: "0.4px"}}>
           Full Stack Developer building SaaS products and web apps. Find me
-          on
-          <a
-            href="https://twitter.com/anuragRBU"
-            className="font-bold group dark:text-zinc-400 font-jetbrains relative inline-flex overflow-hidden"
-            target="__blank"
-          >
-            <span className="relative font-bold text-lg dark:text-blue-400">&nbsp;X&nbsp;</span>
-          </a>
-          for tech updates and fun.
+          on twitter for tech updates and fun.
         </p>
       </div>
 
