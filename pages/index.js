@@ -37,10 +37,10 @@ export default function Home() {
           employmentType: "Remote",
           icon: "code",
           description: `- Designed and developed a dynamic Shopping product catalog for a real-world client project.
-- Registered the Shopping site with [online.gov.vn](https://online.gov.vn) for compliance.
-- Developed online ordering to streamline purchases.
-- Implemented key features like responsive layout, real-time product filtering, and dynamic rendering of product data based on user interactions.
-- Tech Stack : MERN, Auth0, Docker, Tailwind, NGINX`,
+        - Registered the Shopping site with [online.gov.vn](https://online.gov.vn) for compliance.
+        - Developed online ordering to streamline purchases.
+        - Implemented key features like responsive layout, real-time product filtering, and dynamic rendering of product data based on user interactions.
+        - Tech Stack : MERN, Auth0, Docker, Tailwind, NGINX`,
           skills: [
             "Next.js",
             "Strapi",
@@ -72,9 +72,9 @@ export default function Home() {
           employmentType: "Onsite",
           icon: "code",
           description: `- 36-hour hackathon where me and my team developed a web application called NeuroLearn using MERN Stack.
-- Neurolearn is an AI-powered study companion that summarizes lectures, generates
-quizzes, and crafts personalized study plans from PDFs or notes.
-- Tech Stack : React, Tailwind, Node, Express, MongoDB, OpenAI, NLP`,
+          - Neurolearn is an AI-powered study companion that summarizes lectures, generates
+            quizzes, and crafts personalized study plans from PDFs or notes.
+          - Tech Stack : React, Tailwind, Node, Express, MongoDB, OpenAI, NLP`,
           skills: [
             "Next.js",
             "Strapi",
@@ -106,8 +106,8 @@ quizzes, and crafts personalized study plans from PDFs or notes.
           employmentType: "Remote",
           icon: "code",
           description: `- Contributed to the dvelopment of a web application for a local bussiness.
-- Worked in a team to design and implement a project and gained experience of React Tanstack Query and Backend stuff.
-- Acquired expertise in version control and web development with git and github.`,
+          - Worked in a team to design and implement a project and gained experience of React Tanstack Query and Backend stuff.
+          - Acquired expertise in version control and web development with git and github.`,
           skills: [
             "Next.js",
             "Strapi",
@@ -385,7 +385,7 @@ quizzes, and crafts personalized study plans from PDFs or notes.
             dates="Sept 2024 - Oct 2024"
             tags={["React", "JavaScript", "Cricapi", "Tailwind", "Local Storage"]}
             link="https://cricvortex.netlify.app/??"
-            image="/CricVortex.png"
+            image="/Cricvortex.png"
             links={[
               {
                 icon: <Globe size={13} />,
@@ -416,7 +416,7 @@ quizzes, and crafts personalized study plans from PDFs or notes.
             dates="Nov 2025 - Present"
             tags={["Next js", "Typescript", "Tailwind CSS", "Better Auth", "Neon DB", "Drizzle ORM"]}
             link="https://invoicelybeta.vercel.app"
-            image="/invoicely.png"
+            image="/Invoicely.png"
             links={[
               {
                 icon: <Globe size={13} />,
