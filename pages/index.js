@@ -21,6 +21,7 @@ import { skills } from "@/data/TechStack";
 import OnekoCat from "@/components/OnekoCat";
 import { cn } from "@/lib/utils";
 import { SpotifySkeleton } from "@/components/components/SpotifySkeleton";
+import { Quote } from "@/components/Quote";
 
 export default function Home() {
   const WORK_EXPERIENCE = [
@@ -625,7 +626,10 @@ export default function Home() {
           </div>
         </div>
 
-        <Contact />
+        <Contact/>
+        <div className="w-full mt-8">
+          <Quote/>
+        </div>
       </div>
     </Container>
   );
