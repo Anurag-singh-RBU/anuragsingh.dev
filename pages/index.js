@@ -22,6 +22,7 @@ import OnekoCat from "@/components/OnekoCat";
 import { cn } from "@/lib/utils";
 import { SpotifySkeleton } from "@/components/components/SpotifySkeleton";
 import { Quote } from "@/components/Quote";
+import Image from "next/image";
 
 export default function Home() {
   const WORK_EXPERIENCE = [
@@ -625,6 +626,17 @@ export default function Home() {
             </a>
           </div>
         </div>
+
+        <section className="w-full">
+          <h3 className="text-2xl md:text-3xl font-bungee mb-8 sm:mt-20 mt-10 text-black/80 dark:text-white">
+            <HighlightBox>LeetCode</HighlightBox>
+            <Image src="/leetcode.png" alt="LeetCode" className="w-full h-full mt-8 object-cover dark:hidden block"width={100} height={100} priority unoptimized/>
+            <Image src="/leetcode-dark.png" alt="LeetCode" className="w-full h-full mt-8 object-cover dark:block hidden"width={100} height={100} priority unoptimized/>
+          </h3>
+          <div className="text-sm text-muted-foreground font-hanken tracking-wide flex justify-center items-center" style={{wordSpacing: "3px"}}>
+            <span className="text-sm tracking-wider font-hanken text-black font-bold dark:text-teal-300"> 2,084 </span>&nbsp;submissions in 2025
+          </div>
+        </section>
 
         <Contact/>
         <div className="w-full mt-8">
