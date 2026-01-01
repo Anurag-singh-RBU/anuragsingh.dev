@@ -35,13 +35,12 @@ const Header = () => {
           <div className="absolute left-[5px] top-[60px] sm:block hidden" style={{ transform: "translate(-5px, 6px)" }}>
             <motion.svg
               key="spinning-snowflake-small1"
-              animate={{ rotate: [0, 60, -60, 0] , transition: { duration: 0.5 }}}
-              initial={{ rotate: 0 }}
+              animate={{ rotate: [0, 60, -60, 0] , y: 0, opacity: 1, transition: { duration: 0.5 }}}
+              initial={{ rotate: 0 , opacity: 0, y: "1vh"}}
               transition={{
                 repeat: Infinity,
                 repeatType: "loop",
                 duration: 8,
-                delay: 0.5,
                 ease: [0.32, 0.72, 0.52, 0.98] 
               }}
               xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +63,6 @@ const Header = () => {
             </motion.svg>
           </div>
 
-          {/* Center large snowflake */}
           <div className="absolute left-1/2 top-1/2" style={{ transform: "translate(-50%, -52%)" }}>
             <motion.svg
               key="spinning-snowflake"
@@ -96,12 +94,11 @@ const Header = () => {
             </motion.svg>
           </div>
 
-          {/* Bottom right smallest snowflake */}
           <div className="absolute right-[-15px] bottom-0 sm:block hidden" style={{ transform: "translate(10px, -6px)" }}>
             <motion.svg
               key="spinning-snowflake-small2"
-              animate={{ rotate: [0, -60, 60, 0], transition: { duration: 0.5 }}}
-              initial={{ rotate: 0 , transition: { duration: 0.5}}}
+              animate={{ rotate: [0, -60, 60, 0], opacity: 1, y: 0, transition: { duration: 0.5 }}}
+              initial={{ rotate: 0 , opacity: 0, y: "1vh", transition: { duration: 0.5, delay: 0.5}}}
               transition={{
                 repeat: Infinity,
                 repeatType: "loop",
