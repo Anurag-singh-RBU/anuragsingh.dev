@@ -628,13 +628,13 @@ export default function Home() {
         </div>
 
         <section className="w-full">
-          <h3 className="text-2xl md:text-3xl font-bungee mb-8 sm:mt-20 mt-10 text-black/80 dark:text-white">
+          <h3 className="text-2xl md:text-3xl font-bungee sm:mb-6 mb-4 sm:mt-20 mt-[50px] text-black/80 dark:text-white">
             <HighlightBox>LeetCode</HighlightBox>
             <Image src="/leetcode.png" alt="LeetCode" className="w-full h-full mt-8 object-cover dark:hidden block"width={100} height={100} priority unoptimized/>
             <Image src="/leetcode-dark.png" alt="LeetCode" className="w-full h-full mt-8 object-cover dark:block hidden"width={100} height={100} priority unoptimized/>
           </h3>
           <div className="text-sm text-muted-foreground font-hanken tracking-wide flex justify-center items-center" style={{wordSpacing: "3px"}}>
-            <span className="text-sm tracking-wider font-hanken text-black font-bold dark:text-teal-300"> 2,084 </span>&nbsp;submissions in 2025
+            <span className="text-sm tracking-widest font-hanken text-black font-bold dark:text-teal-300"> 2,084 </span>&nbsp;submissions in 2025
           </div>
         </section>
 

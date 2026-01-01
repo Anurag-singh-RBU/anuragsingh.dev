@@ -4,8 +4,8 @@ export const quotes = [
       author: 'George Savile',
     },
     {
-      quote: `You have a right to perform your prescribed duty , but you are not entitled to the fruits of actions.`,
-      author: 'Bhagavad Gita',
+      quote: `Tum aankhon se batana hum samajh jayenge`,
+      author: 'Dikshant',
     },
     {
       quote: `Man is made by his belief. As he believes , so he is.`,
