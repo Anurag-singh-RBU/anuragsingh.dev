@@ -49,8 +49,8 @@ export default function Contact() {
       <h5 className="text-lg md:text-xl text-gray-700 font-bungee sm:mb-5 mb-2" style={{ wordSpacing: "5px" }}>
         Want to Interact ?
       </h5>
-      <p className="my-1 text-gray-800 dark:text-blue-900 font-mono text-sm sm:text-lg mb-5" style={{ wordSpacing: "-3px" }}>
-        Say HI – I’d love to hear from you ❤️
+      <p className="my-1 text-gray-800 dark:text-blue-900 font-hanken text-sm sm:text-lg mb-5">
+        Say Hello – I would love to hear from you.
       </p>
       <a
         href="https://wa.me/9860988325?text=Hello Anurag , I am "
@@ -63,7 +63,7 @@ export default function Contact() {
       </a>
 
       <Divider />
-      <p className="my-1 text-gray-800 dark:text-gray-700 font-mono font-bold">
+      <p className="my-1 text-gray-800 dark:text-gray-700 font-hanken font-medium">
         Drop in your email ID and I will get back to you.
       </p>
       <form className="my-4 font-mono" onSubmit={handleOnSubmit}>

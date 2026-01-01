@@ -17,10 +17,10 @@ export const quotes = [
     },
     {
       quote: `If the pain doesn't kill me , it will only make me stronger.`,
-      author: 'Sung Jin-Woo , Solo Leveling',
+      author: 'Sung Jin Woo',
     },
     {
       quote: `I’ll take a potato chip - AND EAT IT !`,
-      author: 'Light Yagami , Death Note',
+      author: 'Light Yagami',
     },
 ];
