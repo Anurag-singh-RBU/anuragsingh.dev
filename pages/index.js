@@ -155,7 +155,7 @@ export default function Home() {
     setColors(shuffleArray(LIGHT_COLORS));
   }, []);
 
-  if (loading) return <SpotifySkeleton />;
+  if (loading) return <SpotifySkeleton/>;
 
   const isPlaying = data?.status === "playing";
   const isLast = data?.status === "last";

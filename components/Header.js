@@ -34,7 +34,7 @@ const Header = () => {
           <div className="absolute left-[5px] top-[60px] sm:block hidden" style={{ transform: "translate(-5px, 6px)" }}>
             <motion.svg
               key="spinning-snowflake-small1"
-              animate={{ rotate: [0, 60, -60, 0] , y: 0, opacity: 1, transition: { duration: 0.5 }}}
+              animate={{ rotate: [0, 60, -60, 0] , y: 0, opacity: 0.8, transition: { duration: 0.5 }}}
               initial={{ rotate: 0 , opacity: 0, y: "1vh"}}
               transition={{
                 repeat: Infinity,
@@ -96,7 +96,7 @@ const Header = () => {
           <div className="absolute right-[-15px] bottom-0 sm:block hidden" style={{ transform: "translate(10px, -6px)" }}>
             <motion.svg
               key="spinning-snowflake-small2"
-              animate={{ rotate: [0, -60, 60, 0], opacity: 1, y: 0, transition: { duration: 0.5 }}}
+              animate={{ rotate: [0, -60, 60, 0], opacity: 0.6, y: 0, transition: { duration: 0.5 }}}
               initial={{ rotate: 0 , opacity: 0, y: "1vh", transition: { duration: 0.5, delay: 0.5}}}
               transition={{
                 repeat: Infinity,
