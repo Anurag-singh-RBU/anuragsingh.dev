@@ -38,11 +38,11 @@ export default function Home() {
           employmentPeriod: "Feb 2025 - March 2025",
           employmentType: "Remote",
           icon: "code",
-          description: `- Designed and developed a dynamic Shopping product catalog for a real-world client project.
-        - Registered the Shopping site with [online.gov.vn](https://online.gov.vn) for compliance.
-        - Developed online ordering to streamline purchases.
-        - Implemented key features like responsive layout, real-time product filtering, and dynamic rendering of product data based on user interactions.
-        - Tech Stack : MERN, Auth0, Docker, Tailwind, NGINX`,
+          description: `Designed and developed a dynamic Shopping product catalog for a real-world client project.
+          Registered the Shopping site with [online.gov.vn](https://online.gov.vn) for compliance.
+          Developed online ordering to streamline purchases.
+          Implemented key features like responsive layout, real-time product filtering, and dynamic rendering of product data based on user interactions.
+          Tech Stack : MERN, Auth0, Docker, Tailwind, NGINX`,
           skills: [
             "Next.js",
             "Strapi",
@@ -73,10 +73,10 @@ export default function Home() {
           employmentPeriod: "Feb 2025 - June 2025",
           employmentType: "Onsite",
           icon: "code",
-          description: `- 36-hour hackathon where me and my team developed a web application called NeuroLearn using MERN Stack.
-          - Neurolearn is an AI-powered study companion that summarizes lectures, generates
-            quizzes, and crafts personalized study plans from PDFs or notes.
-          - Tech Stack : React, Tailwind, Node, Express, MongoDB, OpenAI, NLP`,
+          description: `36-hour hackathon where me and my team developed a web application called NeuroLearn using MERN Stack.
+          Neurolearn is an AI-powered study companion that summarizes lectures, generates
+          quizzes, and crafts personalized study plans from PDFs or notes.
+          Tech Stack : React, Tailwind, Node, Express, MongoDB, OpenAI, NLP`,
           skills: [
             "Next.js",
             "Strapi",
@@ -107,9 +107,9 @@ export default function Home() {
           employmentPeriod: "Jan 2025 - Present",
           employmentType: "Remote",
           icon: "code",
-          description: `- Contributed to the dvelopment of a web application for a local bussiness.
-          - Worked in a team to design and implement a project and gained experience of React Tanstack Query and Backend stuff.
-          - Acquired expertise in version control and web development with git and github.`,
+          description: `Contributed to the dvelopment of a web application for a local bussiness.
+          Worked in a team to design and implement a project and gained experience of React Tanstack Query and Backend stuff.
+          Acquired expertise in version control and web development with git and github.`,
           skills: [
             "Next.js",
             "Strapi",
