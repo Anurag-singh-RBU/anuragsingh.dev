@@ -30,7 +30,7 @@ const Header = () => {
     <div className="flex flex-col md:flex-row justify-between items-start sm:space-x-14 w-full mb-10">
       <div className="flex sm:w-3/4 flex-col mt-6">
       <div className="flex flex-row items-center space-x-2 mb-2 -ml-10">
-        <div className="relative w-[70px] h-[65px] sm:block hidden">
+        <div className="relative w-[70px] h-[65px] sm:block hidden -mt-[70px]">
           <div className="absolute left-[5px] top-[60px] sm:block hidden" style={{ transform: "translate(-5px, 6px)" }}>
             <motion.svg
               key="spinning-snowflake-small1"

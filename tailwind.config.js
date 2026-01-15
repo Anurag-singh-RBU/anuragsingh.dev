@@ -111,6 +111,7 @@ module.exports = {
         bebas: ["'Bebas Neue'", "sans-serif"],
         cabin: ["Cabin", "sans-serif"],
         hanken: ["var(--font-hanken)", "sans-serif"],
+        instagramsans: ["Instagram Sans", "sans-serif"],
       },
       typography: (theme) => ({
         DEFAULT: {
